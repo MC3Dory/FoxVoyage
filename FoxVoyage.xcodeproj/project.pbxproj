@@ -12,6 +12,11 @@
 		16AF69F72A68F08800A3C891 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16AF69F62A68F08800A3C891 /* Assets.xcassets */; };
 		16AF69FA2A68F08800A3C891 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16AF69F92A68F08800A3C891 /* Preview Assets.xcassets */; };
 		16AF6A012A68F09C00A3C891 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 16AF6A002A68F09C00A3C891 /* .gitignore */; };
+		16AF6A0B2A68F36A00A3C891 /* Empty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16AF6A0A2A68F36A00A3C891 /* Empty.swift */; };
+		16AF6A0D2A68F37300A3C891 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16AF6A0C2A68F37300A3C891 /* Test.swift */; };
+		16AF6A0F2A68F37900A3C891 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16AF6A0E2A68F37900A3C891 /* Test.swift */; };
+		16AF6A112A68F37F00A3C891 /* TestV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16AF6A102A68F37F00A3C891 /* TestV.swift */; };
+		16AF6A132A68F38400A3C891 /* Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16AF6A122A68F38400A3C891 /* Views.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +26,11 @@
 		16AF69F62A68F08800A3C891 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		16AF69F92A68F08800A3C891 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		16AF6A002A68F09C00A3C891 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		16AF6A0A2A68F36A00A3C891 /* Empty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Empty.swift; sourceTree = "<group>"; };
+		16AF6A0C2A68F37300A3C891 /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
+		16AF6A0E2A68F37900A3C891 /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
+		16AF6A102A68F37F00A3C891 /* TestV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestV.swift; sourceTree = "<group>"; };
+		16AF6A122A68F38400A3C891 /* Views.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +95,7 @@
 		16AF6A032A68F0E000A3C891 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				16AF6A122A68F38400A3C891 /* Views.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -92,6 +103,7 @@
 		16AF6A052A68F0ED00A3C891 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				16AF6A102A68F37F00A3C891 /* TestV.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -99,6 +111,7 @@
 		16AF6A062A68F10100A3C891 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				16AF6A0E2A68F37900A3C891 /* Test.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -106,6 +119,7 @@
 		16AF6A072A68F10600A3C891 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				16AF6A0C2A68F37300A3C891 /* Test.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -113,6 +127,7 @@
 		16AF6A082A68F11A00A3C891 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				16AF6A0A2A68F36A00A3C891 /* Empty.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -198,7 +213,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				16AF69F52A68F08700A3C891 /* ContentView.swift in Sources */,
+				16AF6A0D2A68F37300A3C891 /* Test.swift in Sources */,
+				16AF6A112A68F37F00A3C891 /* TestV.swift in Sources */,
+				16AF6A132A68F38400A3C891 /* Views.swift in Sources */,
+				16AF6A0F2A68F37900A3C891 /* Test.swift in Sources */,
 				16AF69F32A68F08700A3C891 /* FoxVoyageApp.swift in Sources */,
+				16AF6A0B2A68F36A00A3C891 /* Empty.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
