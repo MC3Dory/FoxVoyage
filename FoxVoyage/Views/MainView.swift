@@ -95,9 +95,17 @@ struct MainView: View {
                     .cornerRadius(999)
                     .foregroundColor(.white)
                 
-                HStack (spacing: 52){
-                    Image(systemName: "map.fill")
-                        .font(.system(size: 18))
+                HStack (spacing: 62){
+                    ZStack{
+                        Circle()
+                            .frame(width: 56, height: 56)
+                            .foregroundColor(Color("Redish400"))
+                        
+                        Image(systemName: "map.fill")
+                            .font(.system(size: 18))
+                            .foregroundColor(.white)
+                    }
+
                     Image(systemName: "person")
                         .font(.system(size: 18))
                     Image(systemName: "person")
