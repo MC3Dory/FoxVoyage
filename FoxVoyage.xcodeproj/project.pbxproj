@@ -11,6 +11,7 @@
 		16AF69F52A68F08700A3C891 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16AF69F42A68F08700A3C891 /* ContentView.swift */; };
 		16AF69F72A68F08800A3C891 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16AF69F62A68F08800A3C891 /* Assets.xcassets */; };
 		16AF69FA2A68F08800A3C891 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16AF69F92A68F08800A3C891 /* Preview Assets.xcassets */; };
+		16AF6A012A68F09C00A3C891 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 16AF6A002A68F09C00A3C891 /* .gitignore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		16AF69F42A68F08700A3C891 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		16AF69F62A68F08800A3C891 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		16AF69F92A68F08800A3C891 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		16AF6A002A68F09C00A3C891 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +37,7 @@
 		16AF69E62A68F08700A3C891 = {
 			isa = PBXGroup;
 			children = (
+				16AF6A002A68F09C00A3C891 /* .gitignore */,
 				16AF69F12A68F08700A3C891 /* FoxVoyage */,
 				16AF69F02A68F08700A3C891 /* Products */,
 			);
@@ -51,8 +54,13 @@
 		16AF69F12A68F08700A3C891 /* FoxVoyage */ = {
 			isa = PBXGroup;
 			children = (
-				16AF69F22A68F08700A3C891 /* FoxVoyageApp.swift */,
-				16AF69F42A68F08700A3C891 /* ContentView.swift */,
+				16AF6A092A68F12000A3C891 /* App */,
+				16AF6A082A68F11A00A3C891 /* Extensions */,
+				16AF6A072A68F10600A3C891 /* Helpers */,
+				16AF6A062A68F10100A3C891 /* Models */,
+				16AF6A052A68F0ED00A3C891 /* Services */,
+				16AF6A032A68F0E000A3C891 /* Views */,
+				16AF6A022A68F0D400A3C891 /* ViewModels */,
 				16AF69F62A68F08800A3C891 /* Assets.xcassets */,
 				16AF69F82A68F08800A3C891 /* Preview Content */,
 			);
@@ -65,6 +73,57 @@
 				16AF69F92A68F08800A3C891 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		16AF6A022A68F0D400A3C891 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		16AF6A032A68F0E000A3C891 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		16AF6A052A68F0ED00A3C891 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		16AF6A062A68F10100A3C891 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		16AF6A072A68F10600A3C891 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		16AF6A082A68F11A00A3C891 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		16AF6A092A68F12000A3C891 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				16AF69F22A68F08700A3C891 /* FoxVoyageApp.swift */,
+				16AF69F42A68F08700A3C891 /* ContentView.swift */,
+			);
+			path = App;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,6 +185,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				16AF69FA2A68F08800A3C891 /* Preview Assets.xcassets in Resources */,
+				16AF6A012A68F09C00A3C891 /* .gitignore in Resources */,
 				16AF69F72A68F08800A3C891 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
