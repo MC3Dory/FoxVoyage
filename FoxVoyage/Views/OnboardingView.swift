@@ -72,10 +72,10 @@ struct OnboardingView: View {
                                 .fontWeight(.semibold)
                                 .foregroundColor(.white)
                                 .frame(width: 350, height: 50)
-                                .background {
+                                .background (
                                     Capsule()
                                         .fill(Color(hex: orangeButton))
-                                }
+                                )
                         } else {
                             HStack {
                                 Image(systemName: "apple.logo")
@@ -83,10 +83,10 @@ struct OnboardingView: View {
                                 Text("Sign in With Apple ID")
                                     .foregroundColor(.black)
                             } .frame(width: 350, height: 50)
-                                .background {
+                                .background (
                                     Capsule()
                                         .fill(Color.white)
-                                }
+                                )
                         }
                     }
                 }
