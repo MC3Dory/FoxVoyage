@@ -28,44 +28,51 @@ struct OnboardingView: View {
         
         TabView(selection: $currentStep) {
             ForEach(0..<onboardingSteps.count,id:\.self) { it in
-                    
+                
                 VStack {
-                    Rectangle()
-                        .fill(.white)
-                        .opacity(0.0)
-                        .frame(maxWidth: .infinity, maxHeight: 550)
-                        .overlay {
-                            Image(onboardingSteps[it].image)
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(maxWidth: .infinity)
+                    VStack {
+                        Rectangle()
+                            .fill(.white)
+                            .opacity(0.0)
+                            .frame(maxWidth: .infinity, maxHeight: 550)
+                            .overlay {
+                                Image(onboardingSteps[it].image)
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(maxWidth: .infinity)
+                                
+                            }
+                        VStack (alignment: .leading) {
                             
+                            Text (onboardingSteps[it].title)
+                                .font(.system(size: 32))
+                                .fontWeight(.semibold)
+                                .foregroundColor (currentStep < onboardingSteps.count - 1 ? .black : .white)
+                                .multilineTextAlignment(.leading)
+                            
+                            Spacer()
+                                .frame(maxHeight: 10)
+                            
+                            Text (onboardingSteps[it].description)
+                                .font(.system(size:17))
+                                .foregroundColor (currentStep < onboardingSteps.count - 1 ? .black : .white)
+                                .multilineTextAlignment(.leading)
                         }
-                    VStack (alignment: .leading) {
+                        .tag(it)
                         
-                        Text (onboardingSteps[it].title)
-                            .font(.system(size: 32))
-                            .fontWeight(.semibold)
-                            .foregroundColor (currentStep < onboardingSteps.count - 1 ? .black : .white)
-                            .multilineTextAlignment(.leading)
+                        .padding(16)
                         
-                        Spacer()
-                            .frame(maxHeight: 10)
+                        Spacer(minLength: 25)
+                            .frame(maxHeight: 25)
                         
-                        Text (onboardingSteps[it].description)
-                            .font(.system(size:17))
-                            .foregroundColor (currentStep < onboardingSteps.count - 1 ? .black : .white)
-                            .multilineTextAlignment(.leading)
                     }
-                    .tag(it)
-                    
-                    .padding(16)
-                    
-                    Spacer()
-                        .frame(maxHeight: 25)
+                    .background (currentStep < onboardingSteps.count - 1 ? .white : Color(hex: bgColor))
+                    .ignoresSafeArea()
                     
                     Button (action: {
-                        currentStep += 1
+                        if currentStep < onboardingSteps.count - 1 {
+                            currentStep += 1
+                        }
                     }) {
                         if currentStep < onboardingSteps.count - 1 {
                             Text("Next")
@@ -80,7 +87,7 @@ struct OnboardingView: View {
                             HStack {
                                 Image(systemName: "apple.logo")
                                     .foregroundColor(.black)
-                                Text("Sign in With Apple ID")
+                                Text("Sign in with Apple ID")
                                     .foregroundColor(.black)
                             } .frame(width: 350, height: 50)
                                 .background (
@@ -90,8 +97,6 @@ struct OnboardingView: View {
                         }
                     }
                 }
-                .background (currentStep < onboardingSteps.count - 1 ? .white : Color(hex: bgColor))
-                .ignoresSafeArea()
             }
             .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
         }
