@@ -9,10 +9,11 @@ import SwiftUI
 
 struct PlacedetailView: View {
     @State private var index = 0
+    @State private var indexmission = 0
     
     var body: some View {
         GeometryReader { geometry in
-            ZStack(alignment: .topLeading) {
+            ZStack() {
                 // Carousel - Background Screen
                 TabView(selection: $index) {
                     Image("forest")
@@ -30,7 +31,7 @@ struct PlacedetailView: View {
                         .frame(width: geometry.size.width, height: geometry.size.height)
                         .tag(1)
                 }
-                .tabViewStyle(PageTabViewStyle(indexDisplayMode: .always))
+                .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
                 .edgesIgnoringSafeArea(.all)
                 .frame(width: geometry.size.width, height: geometry.size.height)
                 .zIndex(-1) // Set carousel to the backgroundp
@@ -82,20 +83,29 @@ struct PlacedetailView: View {
                     
                     //mission
                     HStack {
-                        ZStack {
-                            Rectangle()
-                                .frame(width: 227, height: 112)
-                                .foregroundColor(.white)
-                                .cornerRadius(20)
-                            VStack(alignment: .leading) {
-                                Text("Mencoba makanan pak slamet cihuy")
-                                    .font(.custom("SFProText-Regular", size: 16))
-                                    .padding(.bottom, 14)
-                                Text("Tambahkan foto")
-                                    .font(.custom("SFProText-Regular", size: 12))
-                                    .foregroundColor(Color("Black400"))
+                        
+                        ZStack{
+                            TabView(selection: $indexmission) {
+                                ForEach((0..<3), id: \.self) { index in
+                                    CardView()
+                                    
+                                }
                             }
+                            .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
+                           
+                            //pagetabviewcarousel
+                            HStack(spacing: 2) {
+                                ForEach((0..<3), id: \.self) { index in
+                                    RoundedRectangle(cornerRadius: 10)
+                                        .fill(index == self.indexmission ? Color("Black900") : Color("Black900").opacity(0.5))
+                                        .frame(width: 30, height: 5)
+
+                                }
+                            }
+                            .padding(.bottom, 80)
+                            .padding(.trailing, 80)
                         }
+                        .frame(height: 200)
                         
                         ZStack {
                             Rectangle()
@@ -118,9 +128,40 @@ struct PlacedetailView: View {
                     }
                 }.padding(.horizontal, 16)
             }
+            //pagetabview carousel
+            HStack(spacing: 8) {
+                ForEach((0..<3), id: \.self) { index in
+                    Circle()
+                        .fill(index == self.index ? Color.white : Color.white.opacity(0.5))
+                        .frame(width: 10, height: 10)
+                }
+            }
+            .padding(.top, 570)
+            .padding(.horizontal, 160)
         }
     }
 }
+
+struct CardView: View{
+    var body: some View{
+        ZStack {
+            Rectangle()
+                .frame(width: 227, height: 112)
+                .foregroundColor(.white)
+                .cornerRadius(20)
+            VStack(alignment: .leading) {
+                Text("Mencoba makanan pak slamet cihuy")
+                    .font(.custom("SFProText-Regular", size: 16))
+                    .padding(.top, 20)
+                Text("Tambahkan foto")
+                    .font(.custom("SFProText-Regular", size: 12))
+                    .foregroundColor(Color("Black400"))
+                    .padding(.top, 5)
+            }
+        }
+    }
+}
+
 
 struct PlacedetailView_Previews: PreviewProvider {
     static var previews: some View {
