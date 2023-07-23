@@ -64,7 +64,6 @@ struct OnboardingView: View {
                         .padding(16)
                         
                         Spacer(minLength: 25)
-                            .frame(maxHeight: 25)
                         
                     }
                     .background (currentStep < onboardingSteps.count - 1 ? .white : Color(hex: bgColor))
