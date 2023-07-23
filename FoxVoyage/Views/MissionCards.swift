@@ -13,16 +13,26 @@ struct MissionCards: View {
     
     var body: some View {
         VStack {
+            
             VStack (alignment: .leading) {
                 Text ("Fox Quests")
-                    .font(.system(size: 40))
-                    .foregroundColor(Color(hex: orange))
+                    .font(.system(size: 41))
+                    .foregroundColor(Color.black)
                     .fontWeight(.semibold)
                     .padding(.leading, 25)
+                    .padding(.top, 40)
                 
+                Text ("A series of captivating challenges designed to ignite your wanderlust and preserve every cherished moment along the way.")
+                    .font(.system(size: 16))
+                    .padding(.leading, 25)
+                    .padding(.trailing, 25)
+                    .multilineTextAlignment(.leading)
+                    .foregroundColor(Color.gray)
+                    .padding(.bottom)
+                    
                 ScrollView {
                     VStack {
-                        ForEach(0..<20) {
+                        ForEach(0..<25) {
                             mission in
                             ZStack {
                                 Color(hex: violet)
