@@ -14,7 +14,7 @@ struct MissionCards: View {
     var body: some View {
         VStack {
             VStack (alignment: .leading) {
-                Text ("Fox Mission")
+                Text ("Fox Quests")
                     .font(.system(size: 40))
                     .foregroundColor(Color(hex: orange))
                     .fontWeight(.semibold)
@@ -24,11 +24,23 @@ struct MissionCards: View {
                     VStack {
                         ForEach(0..<20) {
                             mission in
-                            
                             ZStack {
                                 Color(hex: violet)
                                     .frame(width: 350, height: 200, alignment: .center)
                                     .cornerRadius(15)
+                                    .padding(.horizontal)
+                                
+                                Circle ()
+                                    .frame(width: 115)
+                                    .foregroundColor(Color.gray)
+                                    .opacity(0.6)
+                                
+                                Image(systemName: "lock.fill")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: 50, height: 50)
+                                    .foregroundColor(.white)
+                                    
                                 HStack{
                                     Spacer()
                                     
@@ -42,7 +54,7 @@ struct MissionCards: View {
                                             .resizable()
                                             .scaledToFit()
                                             .frame(width: 150, height: 150)
-                                            
+                                        
                                     } .padding(.trailing, 10)
                         
                                 }
