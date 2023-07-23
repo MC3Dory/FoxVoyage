@@ -38,10 +38,10 @@ struct OnboardingView: View {
                             .overlay {
                                 Image(onboardingSteps[it].image)
                                     .resizable()
-                                    .aspectRatio(contentMode: .fit)
+                                    .aspectRatio(contentMode: currentStep == 1 ? .fit : .fill)
                                     .frame(maxWidth: .infinity)
-                                
                             }
+                        
                         VStack (alignment: .leading) {
                             
                             Text (onboardingSteps[it].title)
@@ -57,6 +57,7 @@ struct OnboardingView: View {
                                 .font(.system(size:17))
                                 .foregroundColor (currentStep < onboardingSteps.count - 1 ? .black : .white)
                                 .multilineTextAlignment(.leading)
+
                         }
                         .tag(it)
                         
@@ -85,9 +86,7 @@ struct OnboardingView: View {
                                 )
                         } else {
                             HStack {
-                                Image(systemName: "apple.logo")
-                                    .foregroundColor(.black)
-                                Text("Sign in with Apple ID")
+                                Text("Get Started")
                                     .foregroundColor(.black)
                             } .frame(width: 350, height: 50)
                                 .background (
@@ -96,7 +95,7 @@ struct OnboardingView: View {
                                 )
                         }
                     }
-                }
+                }.background(currentStep == 2 ? Color(hex: bgColor) : .white)
             }
             .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
         }
