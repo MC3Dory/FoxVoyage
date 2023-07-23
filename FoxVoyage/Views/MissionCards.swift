@@ -53,7 +53,7 @@ struct MissionCards: View {
                                         Image ("Fox")
                                             .resizable()
                                             .scaledToFit()
-                                            .frame(width: 150, height: 150)
+                                            .frame(width: 110, height: 110)
                                         
                                     } .padding(.trailing, 10)
                         
