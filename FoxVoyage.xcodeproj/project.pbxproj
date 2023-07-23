@@ -58,6 +58,7 @@
 		16AF6A132A68F38400A3C891 /* Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16AF6A122A68F38400A3C891 /* Views.swift */; };
 		16AF6A152A68F39800A3C891 /* filefile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16AF6A142A68F39800A3C891 /* filefile.swift */; };
 		16E0BF5F2A6CE50400B7FBC8 /* MissiondetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E0BF5E2A6CE50400B7FBC8 /* MissiondetailView.swift */; };
+		16E0BF612A6D014E00B7FBC8 /* EmptywishlistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E0BF602A6D014E00B7FBC8 /* EmptywishlistView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -114,6 +115,7 @@
 		16AF6A122A68F38400A3C891 /* Views.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views.swift; sourceTree = "<group>"; };
 		16AF6A142A68F39800A3C891 /* filefile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = filefile.swift; sourceTree = "<group>"; };
 		16E0BF5E2A6CE50400B7FBC8 /* MissiondetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissiondetailView.swift; sourceTree = "<group>"; };
+		16E0BF602A6D014E00B7FBC8 /* EmptywishlistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptywishlistView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -229,6 +231,7 @@
 				16E0BF5E2A6CE50400B7FBC8 /* MissiondetailView.swift */,
 				1696421C2A69A1C9000EAE19 /* MainView.swift */,
 				1685E4B82A6A18EA008F5FE7 /* ExploreView.swift */,
+				16E0BF602A6D014E00B7FBC8 /* EmptywishlistView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -384,6 +387,7 @@
 				16AF69F52A68F08700A3C891 /* ContentView.swift in Sources */,
 				1696421D2A69A1C9000EAE19 /* MainView.swift in Sources */,
 				16AF6A152A68F39800A3C891 /* filefile.swift in Sources */,
+				16E0BF612A6D014E00B7FBC8 /* EmptywishlistView.swift in Sources */,
 				16AF6A0D2A68F37300A3C891 /* Testtt.swift in Sources */,
 				1685E4B92A6A18EA008F5FE7 /* ExploreView.swift in Sources */,
 				16AF6A112A68F37F00A3C891 /* TestV.swift in Sources */,
