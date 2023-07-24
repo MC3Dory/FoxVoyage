@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct locationAccessView: View {
+    @State private var showAlert = false
+    
     var body: some View {
         VStack{
             HStack{
@@ -53,18 +55,18 @@ struct locationAccessView: View {
             
             Spacer()
             
-            Button{
-                
-            }
-        label: {
-            Text("Give Access")
+            VStack{
+                Button{
+                    
+                }
+            label: {
+                Text("Give Access")
                 .foregroundColor(.white)
                 .frame(maxWidth: 358, maxHeight: 64)
                 .background(Color("Redish400"))
-                .cornerRadius(50)
-              
-        }
-            
+                .cornerRadius(999)
+            }
+            }
        
         }
     }

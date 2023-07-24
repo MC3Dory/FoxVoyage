@@ -58,6 +58,7 @@
 		16AF6A152A68F39800A3C891 /* filefile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16AF6A142A68F39800A3C891 /* filefile.swift */; };
 		216051F92A6A2B6600301D1E /* LocationAccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216051F82A6A2B6600301D1E /* LocationAccessView.swift */; };
 		216051FB2A6B882200301D1E /* InformationNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216051FA2A6B882200301D1E /* InformationNameView.swift */; };
+		216052012A6D514E00301D1E /* InformationLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216052002A6D514E00301D1E /* InformationLocationView.swift */; };
 		21A1C00C2A68F91200561254 /* GalleryAccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A1C00B2A68F91200561254 /* GalleryAccessView.swift */; };
 /* End PBXBuildFile section */
 
@@ -115,6 +116,7 @@
 		16AF6A142A68F39800A3C891 /* filefile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = filefile.swift; sourceTree = "<group>"; };
 		216051F82A6A2B6600301D1E /* LocationAccessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationAccessView.swift; sourceTree = "<group>"; };
 		216051FA2A6B882200301D1E /* InformationNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationNameView.swift; sourceTree = "<group>"; };
+		216052002A6D514E00301D1E /* InformationLocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationLocationView.swift; sourceTree = "<group>"; };
 		21A1C00B2A68F91200561254 /* GalleryAccessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryAccessView.swift; sourceTree = "<group>"; };
 		21DCC53E2A68FAA6009B4A88 /* GalleryAccessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryAccessView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -232,6 +234,7 @@
 				21A1C00B2A68F91200561254 /* GalleryAccessView.swift */,
 				216051F82A6A2B6600301D1E /* LocationAccessView.swift */,
 				216051FA2A6B882200301D1E /* InformationNameView.swift */,
+				216052002A6D514E00301D1E /* InformationLocationView.swift */,
 				1696421C2A69A1C9000EAE19 /* MainView.swift */,
 				1685E4B82A6A18EA008F5FE7 /* ExploreView.swift */,
 			);
@@ -394,6 +397,7 @@
 				1685E4B92A6A18EA008F5FE7 /* ExploreView.swift in Sources */,
 				21A1C00C2A68F91200561254 /* GalleryAccessView.swift in Sources */,
 				216051F92A6A2B6600301D1E /* LocationAccessView.swift in Sources */,
+				216052012A6D514E00301D1E /* InformationLocationView.swift in Sources */,
 				16AF6A112A68F37F00A3C891 /* TestV.swift in Sources */,
 				16AF6A132A68F38400A3C891 /* Views.swift in Sources */,
 				16AF6A0F2A68F37900A3C891 /* Test.swift in Sources */,

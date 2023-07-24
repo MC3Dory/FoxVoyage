@@ -30,14 +30,8 @@ struct InformationNameView: View {
             TextField("Your name...", text: $name)
                 .font(.custom("SFProDisplay-Regular", size: 34))
                 .frame(maxWidth: 355, alignment: .leading)
+                .foregroundColor(Color("Redish400"))
          
-           
-            
-            
-            
-         
-            
-          
            
             Spacer()
             
@@ -53,11 +47,11 @@ struct InformationNameView: View {
                     .foregroundColor(.white)
             }
                 .frame(maxWidth: 358, maxHeight: 64)
-                .background(Color("Black200"))
+                .background(name.isEmpty ? Color.gray : Color("Redish400")).background(Color("Redish400"))
                 .cornerRadius(50)
               
         }
-            
+        .disabled(name.isEmpty)
        
         }
 
