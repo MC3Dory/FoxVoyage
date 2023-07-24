@@ -48,7 +48,7 @@ struct InformationNameView: View {
             }
                 .frame(maxWidth: 358, maxHeight: 64)
                 .background(name.isEmpty ? Color.gray : Color("Redish400")).background(Color("Redish400"))
-                .cornerRadius(50)
+                .cornerRadius(999)
               
         }
         .disabled(name.isEmpty)

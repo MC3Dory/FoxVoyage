@@ -62,7 +62,7 @@ struct GalleryAccessView: View {
                 .foregroundColor(.white)
                 .frame(maxWidth: 358, maxHeight: 64)
                 .background(Color("Redish400"))
-                .cornerRadius(50)
+                .cornerRadius(999)
                 
                
         }

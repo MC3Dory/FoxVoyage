@@ -38,7 +38,7 @@ struct InformationLocationView: View {
                 .padding(5)
 
                 .border(Color.gray, width: 1)
-                .cornerRadius(99)
+                .cornerRadius(999)
              
            
             Spacer()
