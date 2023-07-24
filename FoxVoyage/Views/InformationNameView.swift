@@ -27,7 +27,7 @@ struct InformationNameView: View {
                 
             }
                
-            TextField("Your name...", text: $name)
+            TextField("Your name....", text: $name)
                 .font(.custom("SFProDisplay-Regular", size: 34))
                 .frame(maxWidth: 355, alignment: .leading)
                 .foregroundColor(Color("Redish400"))
