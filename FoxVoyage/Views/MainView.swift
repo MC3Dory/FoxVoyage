@@ -7,22 +7,21 @@
 
 import SwiftUI
 
+struct TabItem: Identifiable {
+    let id = UUID()
+    let systemImageName: String
+    var isActive: Bool
+}
+
 struct MainView: View {
+    @State private var activeTabIndex = 0
     
-    init(){
-        printFonts()
-    }
-    
-    func printFonts(){
-        let fontFamilyNames = UIFont.familyNames
-        
-        for familyName in fontFamilyNames{
-            print("---------------")
-            print("Font family name -> [\(familyName)]")
-            let names = UIFont.fontNames(forFamilyName: familyName)
-            print("Font Names -> [\(names)]")
-        }
-    }
+    private let tabItems: [TabItem] = [
+        TabItem(systemImageName: "map.fill", isActive: true),
+        TabItem(systemImageName: "person", isActive: false),
+        TabItem(systemImageName: "person", isActive: false),
+        TabItem(systemImageName: "person", isActive: false)
+    ]
     
     var body: some View {
         VStack{
@@ -86,36 +85,35 @@ struct MainView: View {
                     Image(systemName: "arrow.right")
                         .foregroundColor(.white)
                 }
-
+                
             }
             
-            ZStack{
+            //tabview
+            ZStack {
                 Rectangle()
                     .frame(width: 359, height: 72)
                     .cornerRadius(999)
                     .foregroundColor(.white)
                 
-                HStack (spacing: 62){
-                    ZStack{
-                        Circle()
-                            .frame(width: 56, height: 56)
-                            .foregroundColor(Color("Redish400"))
-                        
-                        Image(systemName: "map.fill")
-                            .font(.system(size: 18))
-                            .foregroundColor(.white)
+                HStack (spacing: 40) {
+                    ForEach(tabItems) { item in
+                        Button(action: {
+                            activeTabIndex = tabItems.firstIndex(where: { $0.id == item.id }) ?? 0
+                        }) {
+                            ZStack {
+                                Circle()
+                                    .frame(width: 56, height: 56)
+                                    .foregroundColor(item.isActive ? Color("Redish400") : .white)
+                                
+                                Image(systemName: item.systemImageName)
+                                    .font(.system(size: 18))
+                                    .foregroundColor(item.isActive ? .white : Color("Black400"))
+                            }
+                        }
                     }
-
-                    Image(systemName: "person")
-                        .font(.system(size: 18))
-                    Image(systemName: "person")
-                        .font(.system(size: 18))
-                    Image(systemName: "person")
-                        .font(.system(size: 18))
                 }
-                
             }
-
+            
             
             
             
