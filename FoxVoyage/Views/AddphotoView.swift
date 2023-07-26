@@ -29,6 +29,16 @@ struct CameraView : View{
                 .cornerRadius(30)
                 .padding(.bottom, 40)
             
+            //backbutton
+            Button(action: {}, label: {
+                Image(systemName: "xmark")
+                    .foregroundColor(Color("Black900"))
+                    .padding()
+                    .background(Color.white)
+                    .clipShape(Circle())
+            }).padding(.leading, 320)
+                .padding(.bottom, 690)
+            
             
             VStack{
                 
@@ -72,35 +82,23 @@ struct CameraView : View{
                         Spacer()
                         
                     }else{
-                        VStack{
+                        
+                        Button(action: camera.takePic, label: {
                             
-                            Button(action: {}, label: {
-                                Image(systemName: "xmark")
-                                    .foregroundColor(Color("Black900"))
-                                    .padding()
-                                    .background(Color.white)
-                                    .clipShape(Circle())
-                            }).padding(.top, -660)
-                                .padding(.leading, 290)
-                            
-                            Button(action: camera.takePic, label: {
+                            ZStack{
                                 
-                                ZStack{
-                                    
-                                    Circle()
-                                        .fill(Color("Black900"))
-                                        .frame(width: 54, height: 54)
-                                    
-                                    Circle()
-                                        .stroke(Color.white, lineWidth: 6)
-                                        .frame(width: 64, height: 64)
-                                    
-                                }.padding(.bottom, 30)
-                            
+                                Circle()
+                                    .fill(Color("Black900"))
+                                    .frame(width: 54, height: 54)
                                 
-                            })
-                           
-                        }
+                                Circle()
+                                    .stroke(Color.white, lineWidth: 6)
+                                    .frame(width: 64, height: 64)
+                                
+                            }.padding(.bottom, 30)
+                            
+                            
+                        })
                         
                     }
                 }.frame(height: 75)
