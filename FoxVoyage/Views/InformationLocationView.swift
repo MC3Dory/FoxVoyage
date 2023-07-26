@@ -30,6 +30,7 @@ struct InformationLocationView: View {
                     
                     TextField("home adress", text: $searchText)
                         .font(.custom("SFProDisplay-Regular", size: 17))
+                        .foregroundColor(Color("Redish400"))
                         .padding(.trailing, 12.0)
                         .frame(maxWidth: 250, alignment: .leading)
                      
