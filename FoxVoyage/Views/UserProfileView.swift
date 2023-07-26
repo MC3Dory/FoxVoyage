@@ -9,105 +9,57 @@ import SwiftUI
 
 struct UserProfileView: View {
     @State private var currentTab: Int = 0
-    private let categories = ["Memories", "Statistic"]
+    @State private var currentNavBar: Int = 0
+    private let categories = ["Memories", "Record"]
     
     var body: some View {
         
-        ScrollView {
+        ZStack {
             VStack (alignment: .leading) {
                 Profile ()
                 
-                ScrollView (.horizontal, showsIndicators: false) {
-                    
+                VStack (alignment: .leading, spacing: 0) {
                     HStack {
-                        ForEach(0 ..< categories.count) { i in
+                        ForEach(0...categories.count - 1, id:\.self) { i in
                             TabProfile (isActive: i == currentTab, text: categories[i])
                                 .onTapGesture {
                                     currentTab = i
                                 }
                         }
-                        
                     }
-                    .padding()
+                    .padding(.leading)
+                    .padding(.trailing)
+                    .padding(.top)
+                    Divider()
                 }
                 
-                Text("Weekly")
-                    .font(.system(size: 25))
-                    .padding(.leading, 15)
-                
-                HStack {
-                    ZStack {
-                        Rectangle ()
-                            .frame(width: 170, height: 150)
-                            .foregroundColor(Color("Green200"))
-                            .cornerRadius(30)
-                            .padding(.leading, 15)
-                        
-                        VStack (alignment: .leading, spacing: 0) {
-                            Text ("Trip")
-                                .position(x:60, y:25)
-                                .foregroundColor(.white)
-                                .font(.system(size: 22))
-                            
-                            Text ("4")
-                                .fontWeight(.semibold)
-                                .font(.system(size: 35))
-                                .position(x:60, y:25)
-                                .foregroundColor(.white)
-                            
-                            Text ("place")
-                                .font(.system(size: 20))
-                                .position(x:60, y:25)
-                                .foregroundColor(.white)
-                            
-                        }
-                    }
+                if currentTab == 0 {
                     Spacer()
-                    
-                    ZStack {
-                        Rectangle ()
-                            .frame(width: 170, height: 150)
-                            .foregroundColor(Color("Green200"))
-                            .cornerRadius(30)
-                            .padding(.trailing, 15)
-                        
-                        VStack (alignment: .leading, spacing: 0) {
-                            Text ("Fox")
-                                .position(x:60, y:25)
-                                .foregroundColor(.white)
-                                .font(.system(size: 22))
-                            
-                            Text ("1")
-                                .fontWeight(.semibold)
-                                .font(.system(size: 35))
-                                .position(x:60, y:25)
-                                .foregroundColor(.white)
-                            
-                            Text ("collected")
-                                .font(.system(size: 20))
-                                .position(x:60, y:25)
-                                .foregroundColor(.white)
-                            
-                        }
-                    }
-                    
+                } else {
+                    WeeklyView()
+                    Spacer()
                 }
+                
             }
+            .frame(maxHeight: .infinity)
+            .ignoresSafeArea()
             
             HStack {
-                BottomNavBar (image: Image(systemName: "magnifyingglass")) {}
-                BottomNavBar (image: Image(systemName: "bookmark")) {}
-                BottomNavBar (image: Image(systemName: "map")) {}
-                BottomNavBar (image: Image(systemName: "person.crop.circle.fill")) {}
+                BottomNavBar (image: Image(systemName: "magnifyingglass"), isSelected: currentNavBar == 0) {currentNavBar = 0}
+                BottomNavBar (image: Image(systemName: "bookmark"), isSelected: currentNavBar == 1) {currentNavBar = 1}
+                BottomNavBar (image: Image(systemName: "map"), isSelected: currentNavBar == 2) {currentNavBar = 2}
+                BottomNavBar (image: Image(systemName: "person.crop.circle.fill"), isSelected: currentNavBar == 3) {currentNavBar = 3}
                 
             }
+            .frame(height: 50)
             .padding()
-            .background(.black)
+            .background(.white)
             .clipShape(Capsule())
             .padding()
             .frame(maxHeight: .infinity, alignment: .bottom)
+            
         }
-        .ignoresSafeArea()
+        
     }
 }
 
@@ -122,7 +74,10 @@ struct Profile: View {
         ZStack {
             Image("ProfileBG")
                 .resizable()
-                .scaledToFit()
+                .aspectRatio(contentMode: .fill)
+                .frame(maxWidth: 100)
+            //                .frame(width: 300)
+                .ignoresSafeArea()
             
             Circle()
                 .frame(width: 180)
@@ -134,7 +89,18 @@ struct Profile: View {
                         .frame(width: 80, height: 80)
                         .foregroundColor(Color("Redish400"))
                 )
+            
+            Text("Jonison")
+                .frame(height: 41)
+                .padding(.horizontal)
+                .background(.white)
+                .cornerRadius(20, corners: [.topLeft, .topRight, .bottomLeft])
+                .position(x: 120, y: 100)
+            
         }
+        .frame(maxHeight: 300)
+        .background(.blue)
+        .ignoresSafeArea()
     }
 }
 
@@ -143,33 +109,32 @@ struct TabProfile: View {
     let text: String
     
     var body: some View {
-        HStack {
-            VStack (alignment: .leading, spacing: 0) {
-                Text(text)
-                    .font(.system(size: 20))
-                    .foregroundColor(isActive ? Color("Redish400"): Color.black.opacity(0.4))
-                
-                Spacer()
-                
-                if (isActive) {
-                    Color("Redish400")
-                        .frame(width: 90, height: 2)
-                        .clipShape(Capsule())
-                }
-            } .padding(.trailing, 25)
+        VStack (alignment: .center, spacing: 0) {
+            Text(text)
+                .font(.system(size: 20))
+                .foregroundColor(isActive ? Color("Redish400"): Color.black.opacity(0.4))
+            
+            if (isActive) {
+                Color("Redish400")
+                    .frame(width: 90, height: 2)
+                    .clipShape(Capsule())
+            }
         }
+        .padding(.trailing, 25)
     }
 }
 
 struct BottomNavBar: View {
     let image: Image
+    let isSelected: Bool
     let action: ()-> Void
-    
+
     var body: some View {
         Button(action: action, label: {
             image
                 .frame(maxWidth: .infinity)
-                .foregroundColor(.gray)
+                .foregroundColor(isSelected ? Color("Redish400") : Color(.gray))
+                .font(.system(size: 25))
         })
     }
 }
