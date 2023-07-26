@@ -17,10 +17,10 @@ struct EmptywishlistView: View {
                 .foregroundColor(Color("Black600"))
                 .padding(.trailing, 300)
             
-            Text("ada 0 rencana trip untuk dilakukan")
+            Text("Looks like you haven't crafted your fantastic \ntravel plan yet!")
                 .font(.custom("SFProDisplay-Regular", size: 34))
                 .foregroundColor(Color("Black900"))
-                .padding(.trailing, 100)
+                .padding(.trailing, 50)
             
             
             //imagestate
@@ -28,25 +28,39 @@ struct EmptywishlistView: View {
                 .frame(width: 239, height: 190)
                 .padding(.bottom, 32)
                 .padding(.top, 128)
-            Text("Wishlist menanti cerita seru")
+            Text("Your wishlist is yearning for an exhilarating tale")
                 .font(.custom("SFProText-Regular", size: 17))
                 .foregroundColor(Color("Black600"))
-            Text("Rencanakan petualangan selanjutnya")
+            Text("so start planning your next adventure now!")
                 .font(.custom("SFProText-Regular", size: 17))
                 .foregroundColor(Color("Black600"))
             
-            //button plus
-            Button(action: {
-                
-            }) {
-                Image(systemName: "plus")
-                    .font(.system(size: 24))
-                    .foregroundColor(.white)
-            }
-            .frame(width: 64, height: 64)
-            .background(Color("Redish400"))
-            .clipShape(Circle())
-            .offset(x: 130, y: -540)
+            Button(action: {}, label: {
+                ZStack{
+                    
+                    RoundedRectangle(cornerRadius: 999)
+                        .fill(Color("Redish100"))
+                        .frame(width: 358, height: 64)
+                    
+                    RoundedRectangle(cornerRadius: 999)
+                        .stroke(Color("Redish400"), lineWidth: 2)
+                        .frame(width: 358, height: 64)
+                    
+                    HStack{
+                        Text("Add place")
+                            .font(.custom("SFProText-Medium", size: 17))
+                            .foregroundColor(Color("Black900"))
+                        Image(systemName: "arrow.up.right")
+                            .font(.custom("SFProText-Medium", size: 17))
+                            .foregroundColor(Color("Black900"))
+                    }
+
+                    
+                }
+               
+                    
+             
+            })
             
             Spacer()
             

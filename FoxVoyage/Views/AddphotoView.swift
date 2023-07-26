@@ -15,94 +15,143 @@ struct AddphotoView: View {
     }
 }
 
+
 struct CameraView : View{
     
     @StateObject var camera = CameraModel()
+    @State var isFirstFotoTaken = false
     
     var body: some View{
         
         ZStack{
-            
-            //to be camera preview
-            CameraPreview(camera: camera)
-                .frame(width: 358, height: 568)
-                .cornerRadius(30)
-                .padding(.bottom, 40)
-            
-            //backbutton
-            Button(action: {}, label: {
-                Image(systemName: "xmark")
-                    .foregroundColor(Color("Black900"))
-                    .padding()
-                    .background(Color.white)
-                    .clipShape(Circle())
-            }).padding(.leading, 320)
-                .padding(.bottom, 690)
-            
-            
-            VStack{
+            if !isFirstFotoTaken {
+                //to be camera preview
+                CameraPreview(camera: camera)
+                    .frame(width: 358, height: 568)
+                    .cornerRadius(30)
+                    .padding(.bottom, 40)
                 
-                if camera.isTaken{
-                    
+                VStack(alignment: .leading){
                     HStack{
-                        
+                        Rectangle().fill(Color.mint)
+                            .frame(width: 128, height: 176)
+                            .cornerRadius(30)
+                            .padding(.bottom, 40)
+                    
                         Spacer()
-                        
-                        Button(action: camera.reTake, label: {
-                            Image(systemName: "arrow.triangle.2.circlepath.camera")
-                                .foregroundColor(.blue)
-                                .padding()
-                                .background(Color.white)
-                                .clipShape(Circle())
-                        })
-                        .padding(.trailing, 10)
                     }
                     
+                    Spacer()
                 }
                 
+            }else{
+                Image(uiImage: UIImage(data: camera.picData)!)
+                    .frame(width: 358, height: 568)
+                    .cornerRadius(30)
+                    .padding(.bottom, 40)
                 
-                Spacer()
-                
-                HStack{
-                    
-                    //if taken showing save and again take button
-                    if camera.isTaken{
-                        
-                        Button(action: {if !camera.isSaved{camera.savePic()}}, label: {
-                            Text(camera.isSaved ? "Saved" : "Save")
-                                .foregroundColor(.black)
-                                .fontWeight(.semibold)
-                                .padding(.vertical, 10)
-                                .padding(.horizontal, 20)
-                                .background(Color.white)
-                                .clipShape(Capsule())
-                        })
-                        .padding(.leading)
-                        
+                VStack(alignment: .leading){
+                    HStack{
+                        CameraPreview(camera: camera)
+                            .frame(width: 128, height: 176)
+                            .cornerRadius(30)
+                            .padding(.bottom, 40)
                         Spacer()
-                        
-                    }else{
-                        
-                        Button(action: camera.takePic, label: {
-                            
-                            ZStack{
-                                
-                                Circle()
-                                    .fill(Color("Black900"))
-                                    .frame(width: 54, height: 54)
-                                
-                                Circle()
-                                    .stroke(Color.white, lineWidth: 6)
-                                    .frame(width: 64, height: 64)
-                                
-                            }.padding(.bottom, 30)
-                            
-                            
-                        })
-                        
                     }
-                }.frame(height: 75)
+                    Spacer()
+                }
             }
+            
+            VStack{
+                Spacer()
+                Button{
+                    camera.takePic()
+                    if isFirstFotoTaken{
+                        isFirstFotoTaken = true
+                    }
+
+                }label: {
+                    ZStack{
+
+                        Circle()
+                            .fill(Color("Black900"))
+                            .frame(width: 54, height: 54)
+
+                        Circle()
+                            .stroke(Color.white, lineWidth: 6)
+                            .frame(width: 64, height: 64)
+
+                    }.padding(.bottom, 30)
+                }
+
+            }
+            
+//            VStack{
+//
+////                if camera.isTaken{
+////
+////                    HStack{
+////
+////                        Spacer()
+////
+////                        Button(action: camera.reTake, label: {
+////                            Image(systemName: "arrow.triangle.2.circlepath.camera")
+////                                .foregroundColor(.blue)
+////                                .padding()
+////                                .background(Color.white)
+////                                .clipShape(Circle())
+////                        })
+////                        .padding(.trailing, 10)
+////                    }
+////
+////                }
+//
+//
+//                Spacer()
+//
+//                HStack{
+//
+//                    //if taken showing save and again take button
+//                    if camera.isTaken{
+//
+//                        Button(action: {if !camera.isSaved{camera.savePic()}}, label: {
+//                            Text(camera.isSaved ? "Saved" : "Save")
+//                                .foregroundColor(.black)
+//                                .fontWeight(.semibold)
+//                                .padding(.vertical, 10)
+//                                .padding(.horizontal, 20)
+//                                .background(Color.white)
+//                                .clipShape(Capsule())
+//                        })
+//                        .padding(.leading)
+//
+//                        Spacer()
+//
+//                    }else{
+//
+//                        Button{
+//                            camera.takePic()
+//                            if isFirstFotoTaken{
+//                                isFirstFotoTaken = true
+//                            }
+//
+//                        }label: {
+//                            ZStack{
+//
+//                                Circle()
+//                                    .fill(Color("Black900"))
+//                                    .frame(width: 54, height: 54)
+//
+//                                Circle()
+//                                    .stroke(Color.white, lineWidth: 6)
+//                                    .frame(width: 64, height: 64)
+//
+//                            }.padding(.bottom, 30)
+//                        }
+//
+//                    }
+//                }.frame(height: 75)
+//            }
             
         }.frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(Color("Black900"))
@@ -122,7 +171,7 @@ struct CameraView : View{
 class CameraModel : NSObject, ObservableObject, AVCapturePhotoCaptureDelegate{
     
     @Published var isTaken = false
-    
+    @Published var isFirstPhotoTaken = false
     @Published var session = AVCaptureSession()
     
     @Published var alert = false
@@ -180,9 +229,7 @@ class CameraModel : NSObject, ObservableObject, AVCapturePhotoCaptureDelegate{
                 if self.session.canAddInput(input){
                     self.session.addInput(input)
                 }
-                
-                
-                
+
                 //same for output
                 if self.session.canAddOutput(self.output){
                     self.session.addOutput(self.output)
@@ -207,7 +254,7 @@ class CameraModel : NSObject, ObservableObject, AVCapturePhotoCaptureDelegate{
         DispatchQueue.global(qos: .background).async {
             
             self.output.capturePhoto(with: AVCapturePhotoSettings(), delegate: self)
-            self.session.stopRunning()
+//            self.session.stopRunning()
             
             DispatchQueue.main.async {
                 withAnimation{self.isTaken.toggle()}
