@@ -8,155 +8,135 @@
 import SwiftUI
 
 struct WishlistView: View {
-    @State private var searchText = ""
+    
+    @State private var activeTabIndex = 0
+    
+    private let tabItems: [TabItem] = [
+        TabItem(systemImageName: "map.fill", isActive: true),
+        TabItem(systemImageName: "bookmark", isActive: false),
+        TabItem(systemImageName: "rectangle.dashed.and.paperclip", isActive: false),
+        TabItem(systemImageName: "person", isActive: false)
+    ]
+    
+    let text = "Mega Wisata Ocarina"
     
     var body: some View {
-        VStack (alignment: .leading){
-            ZStack{
-                Text("Buat momen \nterbaik di \ntempat terbaik")
-                    .font(.custom("SFProDisplay-Regular", size: 34))
-                    .foregroundColor(Color("Black900"))
-                    .padding(.leading, 16)
+        VStack{
+            //user
+            HStack{
+                Text("Hi,")
+                    .font(.custom("SFProDisplay-Regular", size: 20))
+                    .foregroundColor(Color("Black600"))
                 
-                Image("camera")
-                    .offset(x: 225, y:10)
-            }
-
+                Text("Kelly")
+                    .font(.custom("SFProDisplay-Regular", size: 20))
+                    .foregroundColor(Color("Redish400"))
+            }.padding(.trailing, 290)
             
+            
+            
+            Text("Looks like you haven't crafted your fantastic \ntravel plan yet!")
+                .font(.custom("SFProDisplay-Regular", size: 34))
+                .foregroundColor(Color("Black900"))
+                .padding(.trailing, 50)
+            
+            WishListCard()
+            
+            Spacer()
+            
+            //tabview
             ZStack {
-                RoundedRectangle(cornerRadius: 999)
-                    .foregroundColor(.clear)
-                    .frame(width: 358, height: 56)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 999)
-                            .stroke(Color("Redish400"), lineWidth: 1)
-                    )
+                Rectangle()
+                    .frame(width: 359, height: 72)
+                    .cornerRadius(999)
+                    .foregroundColor(.white)
                 
-                HStack{
-                    Image(systemName: "magnifyingglass")
-                        .foregroundColor(Color("Black400"))
-                        .padding(.leading, 40)
-                    
-                    TextField("Cari di", text: $searchText)
-                        .font(.custom("SFProText-Regular", size: 17))
-                        .foregroundColor(.white)
-                        .overlay(
-                            Text("Kota Batam")
-                                .font(.custom("SFProText-Regular", size: 17))
-                                .foregroundColor(Color("Black600"))
-                                .padding(.leading, -105)
-                        )
-                    
-                    
-                    if !searchText.isEmpty {
+                HStack (spacing: 40) {
+                    ForEach(tabItems) { item in
                         Button(action: {
-                            searchText = ""
+                            activeTabIndex = tabItems.firstIndex(where: { $0.id == item.id }) ?? 0
                         }) {
-                            Image(systemName: "xmark.circle.fill")
-                                .foregroundColor(.white)
+                            ZStack {
+                                Circle()
+                                    .frame(width: 56, height: 56)
+                                    .foregroundColor(item.isActive ? Color("Redish400") : .white)
+                                
+                                Image(systemName: item.systemImageName)
+                                    .font(.system(size: 18))
+                                    .foregroundColor(item.isActive ? .white : Color("Black400"))
+                            }
                         }
                     }
                 }
-            }.padding(.top, 30)
-                .padding(.bottom, 24)
-            
-            
-            //RecomendCardView
-            RecomendCardView()
-            
-            
-            
+            }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color("Redish100"))
-        .padding(.top, -200)
     }
+    
+
+    
+    
 }
 
-struct RecomendCardView: View {
-    var body: some View {
+
+
+
+struct WishListCard : View{
+    let text = "Mega Wisata Ocarina"
+    var body: some View{
         ZStack{
+            
             Rectangle()
-                .frame(width: 358, height: 250)
+                .frame(width: 358, height: 100)
                 .cornerRadius(30)
                 .foregroundColor(Color("Red100"))
             
-            VStack{
-                ZStack{
-                    //image
-                    HStack (spacing:0){
-                        Image("place1")
-                        Image("place2")
-                    }
-                    //button
-                    Button(action: {
+            VStack (spacing: 0){
+                
+                HStack(spacing: 40){
+                    VStack (alignment: .leading){
+                        ForEach(splitText(text: text, maxWords: 2), id: \.self) { chunk in
+                            Text(chunk.joined(separator: " "))
+                                .foregroundColor(.white)
+                                .font(.custom("SFProDisplay-Medium", size: 28))
+                        }
                         
-                    }) {
-                        Image(systemName: "bookmark")
-                            .font(.system(size: 24))
-                            .foregroundColor(Color("Black900"))
                     }
-                    .frame(width: 48, height: 48)
-                    .background(Color.white)
-                    .clipShape(Circle())
-                    .offset(x: 140, y: -40)
                     
-                }
-
-                //tag
-                ZStack {
-                    RoundedRectangle(cornerRadius: 20)
-                        .frame(width: 66, height: 32)
-                        .foregroundColor(.clear)
-                        .overlay(RoundedRectangle(cornerRadius: 20).stroke(Color.white, lineWidth: 1))
-                    
-                    Text("Park")
-                        .font(.custom("SFProText-Medium", size: 15))
+                    Text("Misi")
                         .foregroundColor(.white)
-                }.padding(.top, 2)
-                    .padding(.trailing, 260)
-                
-                //informationDetail
-                ZStack{
-                    HStack (spacing: 32){
-                        Text("Misi")
-                            .font(.custom("SFProText-Regular", size: 16))
-                            .foregroundColor(.white)
-                        Text("Jarak")
-                            .font(.custom("SFProText-Regular", size: 16))
-                            .foregroundColor(.white)
-                    }
-                }.padding(.leading, 180)
-                    .padding(.top, -20)
-                
-                ZStack{
-                    HStack{
-                        Text("Fanindo")
-                            .font(.custom("SFProDisplay-Medium", size: 28))
-                            .padding(.trailing, 100)
-                            .foregroundColor(.white)
-                        
-                        Text("3")
-                            .font(.custom("SFProText-Regular", size: 16))
-                            .padding(.trailing, 40)
-                            .foregroundColor(.white)
-                        
-                        Text("10 km")
-                            .font(.custom("SFProText-Regular", size: 16))
-                            .padding(.trailing, 30)
-                            .foregroundColor(.white)
-                    }.padding(.leading, 10)
-                        .padding(.top, 20)
-                    
-                }.padding(.top, -30)
-                
+                        .font(.custom("SFProText-Regular", size: 16))
+                    Text("Jarak")
+                        .foregroundColor(.white)
+                        .font(.custom("SFProText-Regular", size: 16))
+                }
+                HStack (spacing: 40){
+                    Text("3")
+                        .foregroundColor(.white)
+                        .font(.custom("SFProText-Display", size: 20))
+                    Text("1.8 km")
+                        .foregroundColor(.white)
+                        .font(.custom("SFProText-Display", size: 20))
+                }.padding(.leading, 190)
             }
-            .padding(.top, -10)
-        }.padding(.horizontal, 16)
+            
+        }
+    }
+    // Fungsi untuk membagi teks menjadi bagian-bagian dengan dua kata dalam setiap bagian
+    func splitText(text: String, maxWords: Int) -> [[String]] {
+        var chunks: [[String]] = []
+        let words = text.split(separator: " ")
         
+        for index in stride(from: 0, to: words.count, by: maxWords) {
+            let endIndex = min(index + maxWords, words.count)
+            let chunk = Array(words[index..<endIndex])
+            chunks.append(chunk.map { String($0) })
+        }
+        
+        return chunks
     }
 }
-
 
 struct WishlistView_Previews: PreviewProvider {
     static var previews: some View {
