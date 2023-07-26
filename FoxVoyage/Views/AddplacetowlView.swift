@@ -14,6 +14,9 @@ struct AddplacetowlView: View {
     //addwishlist
     @State private var isAddTowishList = false
     
+    //claim
+    @State private var isClaim = false
+    
     var body: some View {
         GeometryReader { geometry in
             ZStack() {
@@ -91,6 +94,7 @@ struct AddplacetowlView: View {
                         Color("Violet400")
                             .aspectRatio(contentMode: .fill)
                             .edgesIgnoringSafeArea(.all)
+                        
                         VStack (alignment: .leading){
                             Text("About")
                                 .font(.custom("SFProText-Regular", size: 17))
@@ -173,14 +177,64 @@ struct AddplacetowlView: View {
                             
                     }.tag(1)
                     
+                    
                     ZStack{
-                        Image("cafe")
-                            .resizable()
+                        Color("Redish100")
                             .aspectRatio(contentMode: .fill)
                             .edgesIgnoringSafeArea(.all)
-                            .scaledToFill()
-                            .frame(width: geometry.size.width, height: geometry.size.height)
-                            .tag(2)
+                        
+                        VStack (alignment: .leading){
+                            HStack{
+                                VStack (alignment: .leading){
+                                    //TASK: NAMA TEMPAT
+                                    Text("Nuvasa Bay")
+                                        .font(.custom("SFProDisplay-SemiBold", size: 34))
+                                        .foregroundColor(Color("Black900"))
+                                        .padding(.top, -180)
+                                    
+                                    
+                                    Text("Finish the quest to earn a stamp")
+                                        .font(.custom("SFProText-Regular", size: 13))
+                                        .foregroundColor(Color("Black600"))
+                                        .padding(.top, -160)
+                                    
+                                    //TASK : BUTTON CLAIM
+                                    Button(action:{
+                                        isClaim.toggle()
+                                    }){
+                                        
+                                        ZStack{
+                                            Rectangle()
+                                                .frame(width: 148, height: 48)
+                                                .cornerRadius(999)
+                                                .foregroundColor(isClaim ? Color("Black400") : Color("Redish400"))
+                                            HStack{
+                                                Text("Claim")
+                                                    .font(.custom("SFProText-Medium", size: 15))
+                                                    .foregroundColor(isClaim ? Color("Black200") : Color(.white) )
+                                                Image(systemName: "arrow.up.right")
+                                                    .foregroundColor(Color("Black200"))
+                                            }
+                                            
+                                        }
+                                    } .padding(.top, -140)
+                                }.padding(.top, -80)
+                                Image("badges")
+                                    .padding(.top, -260)
+                                    .padding(.trailing, -100)
+
+                            }
+
+                            
+                            
+                                
+                            
+                            //TASK: CARD MISSION
+                            CardMission()
+                                .padding(.top, -110)
+                           
+                            
+                        }
                     }.tag(2)
 
                     
@@ -203,6 +257,50 @@ struct AddplacetowlView: View {
             }
         }
     }
+}
+
+struct CardMission: View{
+    var body: some View{
+        //TASK : CARD MISSION
+        ZStack{
+            Rectangle()
+                .frame(width: 358, height: 174)
+                .cornerRadius(30)
+                .foregroundColor(.white)
+            
+            //TASK: NAMA MISI --> maksimal 4 kata perbaris
+            VStack (alignment:.leading){
+                HStack{
+                    VStack{
+                        //TASK : NAMA MISI
+                        Text("Water and beach activities")
+                            .font(.custom("SFProDisplay-Medium", size: 20))
+                            .foregroundColor(Color("Black900"))
+                            .multilineTextAlignment(.leading)
+                            .lineLimit(2)
+                        //DESCRIPTION MISISION
+                        Text("Enjoy the crystal-clear waters of the South \nChina Sea by indulging in a variety of\nwater sports.")
+                            .font(.custom("SFProText-Regular", size: 11))
+                            .foregroundColor(Color("Black600"))
+                    }.padding(.top, -50)
+                    //TASK : AKAN BERUBAH MENJADI GIFT KETIKA TELAH SELESAIKAN MISI
+                    Image("lockedmission")
+                        .padding(.top, -30)
+                }
+                
+                Button(action: {}, label: {
+                    Text("Add your photo here")
+                        .font(.custom("SFProText-Regular", size: 16))
+                        .foregroundColor(Color("Redish400"))
+                        .underline()
+                        .padding(.bottom, -20)
+                })
+                
+            }
+            
+        }
+    }
+    
 }
 
 struct AddplacetowlView_Previews: PreviewProvider {
