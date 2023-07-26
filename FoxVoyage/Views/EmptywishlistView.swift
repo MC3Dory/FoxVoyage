@@ -12,10 +12,17 @@ struct EmptywishlistView: View {
         VStack{
             
             //user
-            Text("Hi, john")
-                .font(.custom("SFProDisplay-Regular", size: 20))
-                .foregroundColor(Color("Black600"))
-                .padding(.trailing, 300)
+            HStack{
+                Text("Hi,")
+                    .font(.custom("SFProDisplay-Regular", size: 20))
+                    .foregroundColor(Color("Black600"))
+                
+                Text("Kelly")
+                    .font(.custom("SFProDisplay-Regular", size: 20))
+                    .foregroundColor(Color("Redish400"))
+            }.padding(.trailing, 290)
+            
+                
             
             Text("Looks like you haven't crafted your fantastic \ntravel plan yet!")
                 .font(.custom("SFProDisplay-Regular", size: 34))
