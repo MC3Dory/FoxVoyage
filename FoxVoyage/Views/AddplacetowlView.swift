@@ -1,16 +1,18 @@
 //
-//  PlacedetailView.swift
+//  AddplacetowlView.swift
 //  FoxVoyage
 //
-//  Created by Nindya Alita Rosalia on 21/07/23.
+//  Created by Nindya Alita Rosalia on 26/07/23.
 //
 
 import SwiftUI
 
-struct PlacedetailView: View {
+struct AddplacetowlView: View {
     
-    //carousel
     @State private var index = 0
+    
+    //addwishlist
+    @State private var isAddTowishList = false
     
     var body: some View {
         GeometryReader { geometry in
@@ -24,20 +26,9 @@ struct PlacedetailView: View {
                             .edgesIgnoringSafeArea(.all)
                             .scaledToFill()
                             .frame(width: geometry.size.width, height: geometry.size.height)
-                            
                         
-                        VStack {
-                            //TASK : MAKSIMAL 2 LINE
-                            Text("Nuvasa")
-                                .font(.custom("SFProDisplay-Bold", size: 64))
-                                .foregroundColor(.white)
-                                .padding(.top, 50)
-                            Text("Bay")
-                                .font(.custom("SFProDisplay-Bold", size: 64))
-                                .foregroundColor(.white)
-                            
+                        VStack{
                             Spacer()
-                            
                             
                             ZStack{
                                 RoundedRectangle(cornerRadius: 999)
@@ -52,47 +43,55 @@ struct PlacedetailView: View {
                                 Text("Artificial Attraction")
                                     .font(.custom("SFProText-Medium", size: 15))
                                     .foregroundColor(.white)
-                            }.padding(.bottom, 16)
-                                .padding(.trailing, 170)
+                                
+                                
+                            }.padding(.trailing, 145)
+                            
+                            //TASK: NAMA TEMPAT
+                            Text("Nuvasa Bay")
+                                .font(.custom("SFProDisplay-Medium", size: 34))
+                                .foregroundColor(.white)
+                                .padding(.bottom, 25)
+                                .padding(.trailing, 145)
                             
                             //TASK: ALAMAT
                             Text("Sambau, Kecamatan Nongsa, Kota Batam, Kepulauan Riau 29465")
                                 .font(.custom("SFProText-Regular", size: 16))
                                 .foregroundColor(.white)
                                 .padding(.horizontal, 16)
-                                .padding(.trailing, 30)
                                 .padding(.bottom, 50)
                             
-                            //TASK: SLIDE ANIMATION FOR CHECKIN
-                            ZStack{
-                                RoundedRectangle(cornerRadius: 999)
-                                    .fill(Color.white)
-                                    .frame(width: 358, height: 64)
-                                
-                                Group{
-                                    Circle()
-                                        .frame(width: 56, height: 56)
-                                        .foregroundColor(Color("Redish400"))
+                            
+                            Button(action:{
+                                isAddTowishList.toggle()
+                            }){
+                                ZStack{
+                                    Rectangle()
+                                        .frame(width: 358, height: 64)
+                                        .cornerRadius(999)
+                                        .foregroundColor(.white)
                                     
-                                    Image(systemName: "arrow.right")
-                                        .foregroundColor(Color.white)
+                                    HStack{
+                                        
+                                        Text("Add to Wishlist")
+                                            .font(.custom("SFProText-Medium", size: 17))
+                                            .foregroundColor(Color("Black900"))
+                                        
+                                        Image(systemName: isAddTowishList ? "bookmark" : "checkmark")
+                                            .foregroundColor(Color("Black900"))
+                                    }
                                     
-                                }.padding(.trailing, 290)
-                                
-                                Text("Slide to Checkin")
+                                }
                             }
                         }
-                        
-                        
+                            
                     }.tag(0)
                     
                     ZStack{
                         Color("Violet400")
                             .aspectRatio(contentMode: .fill)
                             .edgesIgnoringSafeArea(.all)
-                            
                         VStack (alignment: .leading){
-                            
                             Text("About")
                                 .font(.custom("SFProText-Regular", size: 17))
                                 .foregroundColor(.white)
@@ -146,65 +145,68 @@ struct PlacedetailView: View {
                                 .foregroundColor(.white)
                             
                             Spacer()
-                            //TASK: SLIDE ANIMATION FOR CHECKIN
-                            ZStack{
-                                RoundedRectangle(cornerRadius: 999)
-                                    .fill(Color.white)
-                                    .frame(width: 358, height: 64)
-                                
-                                Group{
-                                    Circle()
-                                        .frame(width: 56, height: 56)
-                                        .foregroundColor(Color("Redish400"))
+                            
+                            Button(action:{
+                                isAddTowishList.toggle()
+                            }){
+                                ZStack{
+                                    Rectangle()
+                                        .frame(width: 358, height: 64)
+                                        .cornerRadius(999)
+                                        .foregroundColor(.white)
                                     
-                                    Image(systemName: "arrow.right")
-                                        .foregroundColor(Color.white)
+                                    HStack{
+                                        
+                                        Text("Add to Wishlist")
+                                            .font(.custom("SFProText-Medium", size: 17))
+                                            .foregroundColor(Color("Black900"))
+                                        
+                                        Image(systemName: isAddTowishList ? "bookmark" : "checkmark")
+                                            .foregroundColor(Color("Black900"))
+                                    }
                                     
-                                }.padding(.trailing, 290)
-                                
-                                Text("Slide to capture momen")
+                                }
                             }
                         }
                         
+                        
                             
-                      
                     }.tag(1)
                     
                     ZStack{
-                        Color("Redish100")
+                        Image("cafe")
+                            .resizable()
                             .aspectRatio(contentMode: .fill)
                             .edgesIgnoringSafeArea(.all)
-                            
+                            .scaledToFill()
+                            .frame(width: geometry.size.width, height: geometry.size.height)
+                            .tag(2)
                     }.tag(2)
+
                     
                 }
                 .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
                 .edgesIgnoringSafeArea(.all)
                 .frame(width: geometry.size.width, height: geometry.size.height)
                 .zIndex(-1) // Set carousel to the backgroundp
-                
-                
-            }
             
-            //pagetabview carousel
-            HStack(spacing: 8) {
-                ForEach((0..<3), id: \.self) { index in
-                    Circle()
-                        .fill(index == self.index ? Color.white : Color.white.opacity(0.5))
-                        .frame(width: 10, height: 10)
+                //pagetabview carousel
+                HStack(spacing: 8) {
+                    ForEach((0..<3), id: \.self) { index in
+                        Circle()
+                            .fill(index == self.index ? Color.white : Color.white.opacity(0.5))
+                            .frame(width: 10, height: 10)
+                    }
                 }
+                .padding(.top, 570)
+                .padding(.horizontal, 160)
             }
-            .padding(.top, 650)
-            .padding(.horizontal, 164)
         }
-        
     }
-    
 }
 
-
-struct PlacedetailView_Previews: PreviewProvider {
+struct AddplacetowlView_Previews: PreviewProvider {
     static var previews: some View {
-        PlacedetailView()
+        AddplacetowlView()
     }
 }

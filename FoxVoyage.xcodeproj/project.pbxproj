@@ -60,6 +60,7 @@
 		16BC610B2A6D3B6C002C6859 /* WishlistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BC610A2A6D3B6C002C6859 /* WishlistView.swift */; };
 		16BC61112A6D8455002C6859 /* PlaceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BC61102A6D8455002C6859 /* PlaceModel.swift */; };
 		16CDA83C2A712CC700BBD9CF /* JorneyfilledView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16CDA83B2A712CC700BBD9CF /* JorneyfilledView.swift */; };
+		16CDA85A2A716B1E00BBD9CF /* AddplacetowlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16CDA8592A716B1E00BBD9CF /* AddplacetowlView.swift */; };
 		16D764AB2A6FAF420079917C /* JourneyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D764AA2A6FAF420079917C /* JourneyView.swift */; };
 		16D764AD2A6FB2F60079917C /* CheckinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D764AC2A6FB2F60079917C /* CheckinView.swift */; };
 		16D764AF2A6FB33F0079917C /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D764AE2A6FB33F0079917C /* CardView.swift */; };
@@ -129,6 +130,7 @@
 		16BC610A2A6D3B6C002C6859 /* WishlistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishlistView.swift; sourceTree = "<group>"; };
 		16BC61102A6D8455002C6859 /* PlaceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceModel.swift; sourceTree = "<group>"; };
 		16CDA83B2A712CC700BBD9CF /* JorneyfilledView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JorneyfilledView.swift; sourceTree = "<group>"; };
+		16CDA8592A716B1E00BBD9CF /* AddplacetowlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddplacetowlView.swift; sourceTree = "<group>"; };
 		16D764AA2A6FAF420079917C /* JourneyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourneyView.swift; sourceTree = "<group>"; };
 		16D764AC2A6FB2F60079917C /* CheckinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckinView.swift; sourceTree = "<group>"; };
 		16D764AE2A6FB33F0079917C /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
@@ -260,6 +262,7 @@
 				216051FA2A6B882200301D1E /* InformationNameView.swift */,
 				216052002A6D514E00301D1E /* InformationLocationView.swift */,
 				166A06EE2A6A2690004D6E4B /* PlacedetailView.swift */,
+				16CDA8592A716B1E00BBD9CF /* AddplacetowlView.swift */,
 				16D764AC2A6FB2F60079917C /* CheckinView.swift */,
 				165EED4B2A702856005EC89B /* AddphotoView.swift */,
 				16D764AE2A6FB33F0079917C /* CardView.swift */,
@@ -444,6 +447,7 @@
 				16AF6A0D2A68F37300A3C891 /* Testtt.swift in Sources */,
 				1685E4B92A6A18EA008F5FE7 /* ExploreView.swift in Sources */,
 				21A1C00C2A68F91200561254 /* GalleryAccessView.swift in Sources */,
+				16CDA85A2A716B1E00BBD9CF /* AddplacetowlView.swift in Sources */,
 				216051F92A6A2B6600301D1E /* LocationAccessView.swift in Sources */,
 				216052012A6D514E00301D1E /* InformationLocationView.swift in Sources */,
 				16BC61112A6D8455002C6859 /* PlaceModel.swift in Sources */,
