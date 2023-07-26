@@ -43,15 +43,23 @@ struct UserProfileView: View {
                             .cornerRadius(30)
                             .padding(.leading, 15)
                         
-                        VStack (alignment: .leading) {
+                        VStack (alignment: .leading, spacing: 0) {
                             Text ("Trip")
                                 .position(x:60, y:25)
                                 .foregroundColor(.white)
-                                
                                 .font(.system(size: 22))
-                                
                             
                             Text ("4")
+                                .fontWeight(.semibold)
+                                .font(.system(size: 35))
+                                .position(x:60, y:25)
+                                .foregroundColor(.white)
+                            
+                            Text ("place")
+                                .font(.system(size: 20))
+                                .position(x:60, y:25)
+                                .foregroundColor(.white)
+                            
                         }
                     }
                     Spacer()
@@ -62,11 +70,44 @@ struct UserProfileView: View {
                             .foregroundColor(Color("Green200"))
                             .cornerRadius(30)
                             .padding(.trailing, 15)
+                        
+                        VStack (alignment: .leading, spacing: 0) {
+                            Text ("Fox")
+                                .position(x:60, y:25)
+                                .foregroundColor(.white)
+                                .font(.system(size: 22))
+                            
+                            Text ("1")
+                                .fontWeight(.semibold)
+                                .font(.system(size: 35))
+                                .position(x:60, y:25)
+                                .foregroundColor(.white)
+                            
+                            Text ("collected")
+                                .font(.system(size: 20))
+                                .position(x:60, y:25)
+                                .foregroundColor(.white)
+                            
+                        }
                     }
                     
                 }
             }
-        } .ignoresSafeArea()
+            
+            HStack {
+                BottomNavBar (image: Image(systemName: "magnifyingglass")) {}
+                BottomNavBar (image: Image(systemName: "bookmark")) {}
+                BottomNavBar (image: Image(systemName: "map")) {}
+                BottomNavBar (image: Image(systemName: "person.crop.circle.fill")) {}
+                
+            }
+            .padding()
+            .background(.black)
+            .clipShape(Capsule())
+            .padding()
+            .frame(maxHeight: .infinity, alignment: .bottom)
+        }
+        .ignoresSafeArea()
     }
 }
 
@@ -117,5 +158,18 @@ struct TabProfile: View {
                 }
             } .padding(.trailing, 25)
         }
+    }
+}
+
+struct BottomNavBar: View {
+    let image: Image
+    let action: ()-> Void
+    
+    var body: some View {
+        Button(action: action, label: {
+            image
+                .frame(maxWidth: .infinity)
+                .foregroundColor(.gray)
+        })
     }
 }
