@@ -1,8 +1,8 @@
 //
-//  MainView.swift
+//  JourneyView.swift
 //  FoxVoyage
 //
-//  Created by Nindya Alita Rosalia on 21/07/23.
+//  Created by Nindya Alita Rosalia on 25/07/23.
 //
 
 import SwiftUI
@@ -13,13 +13,14 @@ struct TabItem: Identifiable {
     var isActive: Bool
 }
 
-struct MainView: View {
+
+struct JourneyView: View {
     @State private var activeTabIndex = 0
     
     private let tabItems: [TabItem] = [
         TabItem(systemImageName: "map.fill", isActive: true),
-        TabItem(systemImageName: "person", isActive: false),
-        TabItem(systemImageName: "person", isActive: false),
+        TabItem(systemImageName: "bookmark", isActive: false),
+        TabItem(systemImageName: "rectangle.dashed.and.paperclip", isActive: false),
         TabItem(systemImageName: "person", isActive: false)
     ]
     
@@ -70,23 +71,7 @@ struct MainView: View {
             }
             
             Spacer()
-            ZStack{
-                
-                Rectangle()
-                    .frame(width: 266, height: 64)
-                    .cornerRadius(999)
-                    .foregroundColor(Color("Redish400"))
-                
-                HStack (spacing: 12){
-                    Text("Check In")
-                        .font(.custom("SFProDisplay-Medium", size: 17))
-                        .foregroundColor(.white)
-                    
-                    Image(systemName: "arrow.right")
-                        .foregroundColor(.white)
-                }
-                
-            }
+            
             
             //tabview
             ZStack {
@@ -128,8 +113,8 @@ struct MainView: View {
     }
 }
 
-struct MainView_Previews: PreviewProvider {
+struct JourneyView_Previews: PreviewProvider {
     static var previews: some View {
-        MainView()
+        JourneyView()
     }
 }

@@ -1,20 +1,20 @@
 //
-//  PlacedetailView.swift
+//  CheckinView.swift
 //  FoxVoyage
 //
-//  Created by Nindya Alita Rosalia on 21/07/23.
+//  Created by Nindya Alita Rosalia on 25/07/23.
 //
 
 import SwiftUI
 
-struct PlacedetailView: View {
+struct CheckinView: View {
     
     //carousel
     @State private var index = 0
     @State private var indexmission = 0
     
     //addwishlist
-    @State private var isWishlistAdded = false
+    @State private var isCheckIn = false
     
     var body: some View {
         GeometryReader { geometry in
@@ -114,32 +114,28 @@ struct PlacedetailView: View {
                         
                         //button addwishlist
                         Button(action: {
-                            isWishlistAdded.toggle()
+                            isCheckIn.toggle()
                         }) {
                             ZStack {
                                 Rectangle()
                                     .frame(width: 123, height: 112)
-                                    .foregroundColor(isWishlistAdded ? Color.white : Color("Green200"))
+                                    .foregroundColor(isCheckIn ? Color("Redish400") : Color("Black400"))
                                     .cornerRadius(20)
                                 
                                 VStack (alignment:.leading){
-                                    Text(isWishlistAdded ? "Ditambahkan" : "Tambah ke")
-                                        .font(.custom("SFProText-Regular", size: 17))
-                                        .foregroundColor(isWishlistAdded ? Color.black : Color.white)
-                                        .padding(.leading, 10)
-                                    
-                                    Text(isWishlistAdded ? "ke wishlist" : "wishlist")
-                                        .font(.custom("SFProText-Regular", size: 17))
-                                        .foregroundColor(isWishlistAdded ? Color.black : Color.white)
+                                    Text("Check In")
+//                                        .font(.custom("SFProText-Regular", size: 17))
+                                        .font(.system(.caption2))
+                                        .foregroundColor(Color.white)
                                         .padding(.leading, 10)
                                     
                                     ZStack {
                                         Circle()
                                             .frame(width: 48, height: 48)
-                                            .foregroundColor(isWishlistAdded ? Color("Green200") : Color.white)
+                                            .foregroundColor(Color.white)
                                         
-                                        Image(systemName: isWishlistAdded ? "bookmark.fill" : "bookmark")
-                                            .foregroundColor(isWishlistAdded ? Color.white : .black)
+                                        Image(systemName:"arrow.right")
+                                            .foregroundColor(isCheckIn ? Color.white : .black)
                                     }
                                     .padding(.leading, 67.0)
                                 }
@@ -165,9 +161,8 @@ struct PlacedetailView: View {
 }
 
 
-
-struct PlacedetailView_Previews: PreviewProvider {
+struct CheckinView_Previews: PreviewProvider {
     static var previews: some View {
-        PlacedetailView()
+        CheckinView()
     }
 }
