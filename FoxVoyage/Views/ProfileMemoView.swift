@@ -13,13 +13,18 @@ struct ProfileMemoView: View {
         
         ScrollView {
             VStack {
-                ForEach(0 ..< 10) { Memo in
+                ZStack{
                     Rectangle()
                         .frame(height: 200, alignment: .center)
+                        .foregroundColor(.blue)
                         .cornerRadius(30)
                         .padding(.horizontal, 16)
                         .padding(.vertical, 5)
                     
+                    HStack {
+                        
+                            
+                    }
                 }
             }
         }
@@ -29,6 +34,6 @@ struct ProfileMemoView: View {
 
 struct ProfileMemoView_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileMemoView()
+        ProfileMemoView(title: "String", month: "String", moments: "2", date: 2, totMoments: 2)
     }
 }
