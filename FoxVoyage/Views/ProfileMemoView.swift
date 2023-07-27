@@ -58,8 +58,8 @@ struct MemoCardView: View {
                         Font.custom("SF Pro Display", size: 22)
                             .weight(.medium)
                     )
-                    .kerning(0.35)
                     .foregroundColor(.white)
+                    .multilineTextAlignment(.leading)
                 
                     .padding()
                 
