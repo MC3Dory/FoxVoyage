@@ -22,16 +22,12 @@ struct locationAccessView: View {
             }
             .frame(maxWidth: 355, alignment: .leading)
             HStack{
-                Text("navigation")
+                Text("navigation,")
                     .font(.custom("SFProDisplay-Regular", size: 34))
                 Text("authorize")
-                    .foregroundColor(Color("Black200"))
+                 
                     .font(.custom("SFProDisplay-Regular", size: 34))
-//                Text("permission")
-//                    .font(.custom("SFProDisplay-Regular", size: 34))
-//                Text("untuk")
-//                    .foregroundColor(Color("Black200"))
-//                    .font(.custom("SFProDisplay-Regular", size: 34))
+               
             }
             .frame(maxWidth: 355, alignment: .leading)
             HStack{

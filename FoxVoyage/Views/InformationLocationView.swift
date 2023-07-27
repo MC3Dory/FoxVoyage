@@ -53,7 +53,7 @@ struct InformationLocationView: View {
             }
         label: {
             HStack{
-                Text("Selanjurnya")
+                Text("Next")
                     .font(.custom("SFProText-Regular", size: 17))
                     .foregroundColor(.white)
                 Image(systemName: "arrow.up.forward")
