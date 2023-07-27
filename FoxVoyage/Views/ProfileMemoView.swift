@@ -34,6 +34,6 @@ struct ProfileMemoView: View {
 
 struct ProfileMemoView_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileMemoView(title: "String", month: "String", moments: "2", date: 2, totMoments: 2)
+        ProfileMemoView()
     }
 }
