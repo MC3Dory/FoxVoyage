@@ -17,6 +17,8 @@
 		166BD6A02A72B13F002ED78D /* CoreDataRequestViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 166BD69F2A72B13F002ED78D /* CoreDataRequestViews.swift */; };
 		1674CE2F2A72C35100D7349E /* LocationAccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216051F82A6A2B6600301D1E /* LocationAccessView.swift */; };
 		1674CE302A72C44500D7349E /* InformationNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216051FA2A6B882200301D1E /* InformationNameView.swift */; };
+		1674CE312A72C5E400D7349E /* ExploreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1685E4B82A6A18EA008F5FE7 /* ExploreView.swift */; };
+		1674CE342A72CA6300D7349E /* PopularPlaceCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1674CE332A72CA6300D7349E /* PopularPlaceCard.swift */; };
 		1685E4CC2A6A1D87008F5FE7 /* SF-Pro-Text-Ultralight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1685E4BA2A6A1D84008F5FE7 /* SF-Pro-Text-Ultralight.otf */; };
 		1685E4CD2A6A1D87008F5FE7 /* SF-Pro-Text-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1685E4BB2A6A1D84008F5FE7 /* SF-Pro-Text-Black.otf */; };
 		1685E4CE2A6A1D87008F5FE7 /* SF-Pro-Text-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1685E4BC2A6A1D84008F5FE7 /* SF-Pro-Text-Thin.otf */; };
@@ -92,6 +94,7 @@
 		166BD67D2A722C87002ED78D /* JsonManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonManager.swift; sourceTree = "<group>"; };
 		166BD67F2A722C91002ED78D /* data.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
 		166BD69F2A72B13F002ED78D /* CoreDataRequestViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataRequestViews.swift; sourceTree = "<group>"; };
+		1674CE332A72CA6300D7349E /* PopularPlaceCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularPlaceCard.swift; sourceTree = "<group>"; };
 		1685E4B82A6A18EA008F5FE7 /* ExploreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreView.swift; sourceTree = "<group>"; };
 		1685E4BA2A6A1D84008F5FE7 /* SF-Pro-Text-Ultralight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Ultralight.otf"; sourceTree = "<group>"; };
 		1685E4BB2A6A1D84008F5FE7 /* SF-Pro-Text-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Black.otf"; sourceTree = "<group>"; };
@@ -180,6 +183,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1674CE322A72CA4D00D7349E /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				1674CE332A72CA6300D7349E /* PopularPlaceCard.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		1696421F2A69A38E000EAE19 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -278,6 +289,7 @@
 		16AF6A032A68F0E000A3C891 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				1674CE322A72CA4D00D7349E /* Components */,
 				16AF6A122A68F38400A3C891 /* Views.swift */,
 				21A1C00B2A68F91200561254 /* GalleryAccessView.swift */,
 				216051F82A6A2B6600301D1E /* LocationAccessView.swift */,
@@ -473,6 +485,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1674CE312A72C5E400D7349E /* ExploreView.swift in Sources */,
 				1674CE302A72C44500D7349E /* InformationNameView.swift in Sources */,
 				1674CE2F2A72C35100D7349E /* LocationAccessView.swift in Sources */,
 				16B7E0AC2A72BC0900102B5E /* GalleryAccessView.swift in Sources */,
@@ -488,6 +501,7 @@
 				166BD67E2A722C87002ED78D /* JsonManager.swift in Sources */,
 				166BD67C2A722836002ED78D /* PlaceModel.swift in Sources */,
 				16EE195F2A71DAF300309BDA /* AddphotomissionView.swift in Sources */,
+				1674CE342A72CA6300D7349E /* PopularPlaceCard.swift in Sources */,
 				16E0BF612A6D014E00B7FBC8 /* EmptywishlistView.swift in Sources */,
 				16B7E0AB2A72B73C00102B5E /* OnboardingView.swift in Sources */,
 				21DCD2102A71967000F55FC8 /* MomentCardModel.swift in Sources */,

@@ -91,6 +91,10 @@ struct PlaceModel: Decodable, Identifiable {
     }
 }
 
+extension PlaceModel{
+    static let example = PlaceModel(id: UUID(), longitude: "1020314", latitude: "1.2012310", name: "Test Place", tag: "Atraksi", address: "Nongsa", district: "Batu Besar", operationalHour: "09.00 - 21.00", desc: "deskripsi disini")
+}
+
 
 struct ActivityModel{
     let title: String

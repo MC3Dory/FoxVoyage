@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ExploreView: View {
-    
+    @State var places: [PlaceModel] = []
     //addwishlist
     @State private var isAddTowishList = false
     
@@ -158,7 +158,6 @@ struct ExploreView: View {
             
             //popular group
             Group{
-                
                 HStack{
                     Text("Popular")
                         .font(.custom("SFProDisplay-Regular", size: 22))
@@ -174,73 +173,19 @@ struct ExploreView: View {
                 }.padding(.horizontal, 40)
                     .padding(.top, 24)
                 
-                HStack (spacing: 30){
-                    ZStack{
-                        Rectangle()
-                            .frame(width: 171, height: 226)
-                            .cornerRadius(30)
-                            .foregroundColor(Color("Redish100"))
+                if !places.isEmpty{
+                    HStack (spacing: 30){
+//                        PopularPlaceCard(place: places[0])
+//                        PopularPlaceCard(place: places[0])
                         
-                        VStack{
-                            Button(action:{
-                                isAddTowishList.toggle()
-                            }){
-                                ZStack{
-                                    Image("explore1")
-                                    
-                                    Circle()
-                                        .frame(width: 48, height: 48)
-                                        .foregroundColor(.white)
-                                    
-                                    Image(systemName: isAddTowishList ? "bookmark" : "bookmark.fill")
-                                        .foregroundColor( isAddTowishList ? .black : Color("Redish400"))
-                                }
-                                
-                                
-                                
-                            }
-                            //TASK: NAMA TEMPAT --> maksimal jadi 2 line
-                            Text("Welcome to\nBatam")
-                                .font(.custom("SFProDisplay-Regular", size: 20))
-                                .padding(.leading, -30)
+                        ForEach(places){ place in
+                            PopularPlaceCard(place: place)
                         }
-                        
-                        
-                        
                     }
-                    
-                    ZStack{
-                        Rectangle()
-                            .frame(width: 171, height: 226)
-                            .cornerRadius(30)
-                            .foregroundColor(Color("Redish100"))
-                        
-                        VStack{
-                            Button(action:{
-                                isAddTowishList.toggle()
-                            }){
-                                ZStack{
-                                    Image("explore1")
-                                    
-                                    Circle()
-                                        .frame(width: 48, height: 48)
-                                        .foregroundColor(.white)
-                                    
-                                    Image(systemName: isAddTowishList ? "bookmark" : "bookmark.fill")
-                                        .foregroundColor( isAddTowishList ? .black : Color("Redish400"))
-                                }
-                            }
-                            //TASK: NAMA TEMPAT --> maksimal jadi 2 line
-                            Text("Welcome to\nBatam")
-                                .font(.custom("SFProDisplay-Regular", size: 20))
-                                .padding(.leading, -30)
-                        }
-                        
-                        
-                        
-                    }
-                    
+                } else{
+                    ProgressView()
                 }
+                
                 
             }
             
@@ -476,6 +421,15 @@ struct ExploreView: View {
             
         }
         
+        .onAppear{
+            fetchPlaces()
+        }
+    }
+    
+    func fetchPlaces(){
+        //taruh isloading
+        places = CoreDataController.sharedInstance.fetchPlaceModels()
+        //
     }
 }
 
