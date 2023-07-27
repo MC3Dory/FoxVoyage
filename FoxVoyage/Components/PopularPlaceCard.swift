@@ -9,8 +9,11 @@ import SwiftUI
 
 
 struct PopularPlaceCard : View{
+    
     let place: PlaceModel
     @State var isAddTowishList: Bool = false
+    
+    
     var body: some View {
         ZStack{
             Rectangle()
@@ -32,8 +35,6 @@ struct PopularPlaceCard : View{
                         Image(systemName: isAddTowishList ? "bookmark" : "bookmark.fill")
                             .foregroundColor( isAddTowishList ? .black : Color("Redish400"))
                     }
-                    
-                    
                     
                 }
                 //TASK: NAMA TEMPAT --> maksimal jadi 2 line

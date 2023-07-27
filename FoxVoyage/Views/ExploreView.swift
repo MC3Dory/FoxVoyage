@@ -175,12 +175,12 @@ struct ExploreView: View {
                 
                 if !places.isEmpty{
                     HStack (spacing: 30){
-//                        PopularPlaceCard(place: places[0])
-//                        PopularPlaceCard(place: places[0])
+                        PopularPlaceCard(place: places[0])
+                        PopularPlaceCard(place: places[0])
                         
-                        ForEach(places){ place in
-                            PopularPlaceCard(place: place)
-                        }
+//                        ForEach(places){ place in
+//                            PopularPlaceCard(place: place)
+//                        }
                     }
                 } else{
                     ProgressView()
