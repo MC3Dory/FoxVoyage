@@ -56,7 +56,6 @@
 		16AF69F72A68F08800A3C891 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16AF69F62A68F08800A3C891 /* Assets.xcassets */; };
 		16AF69FA2A68F08800A3C891 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16AF69F92A68F08800A3C891 /* Preview Assets.xcassets */; };
 		16AF6A012A68F09C00A3C891 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 16AF6A002A68F09C00A3C891 /* .gitignore */; };
-		16AF6A0B2A68F36A00A3C891 /* Empty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16AF6A0A2A68F36A00A3C891 /* Empty.swift */; };
 		16AF6A0D2A68F37300A3C891 /* Testtt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16AF6A0C2A68F37300A3C891 /* Testtt.swift */; };
 		16AF6A0F2A68F37900A3C891 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16AF6A0E2A68F37900A3C891 /* Test.swift */; };
 		16AF6A112A68F37F00A3C891 /* TestV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16AF6A102A68F37F00A3C891 /* TestV.swift */; };
@@ -80,6 +79,10 @@
 		21DCD20C2A71726400F55FC8 /* MomentsCapturedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21DCD20B2A71726400F55FC8 /* MomentsCapturedView.swift */; };
 		21DCD20E2A71961B00F55FC8 /* MomentCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21DCD20D2A71961B00F55FC8 /* MomentCardView.swift */; };
 		21DCD2102A71967000F55FC8 /* MomentCardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21DCD20F2A71967000F55FC8 /* MomentCardModel.swift */; };
+		D7A762002A70C91200DE143C /* UserProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A761FF2A70C91200DE143C /* UserProfileView.swift */; };
+		D7A7621C2A715E4800DE143C /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A7621B2A715E4800DE143C /* View.swift */; };
+		D7A7621E2A71666600DE143C /* WeeklyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A7621D2A71666600DE143C /* WeeklyView.swift */; };
+		D7A762202A7225F800DE143C /* ProfileMemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A7621F2A7225F800DE143C /* ProfileMemoView.swift */; };
 		D7D888C02A6D07F0004F984E /* MissionCards.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D888BF2A6D07F0004F984E /* MissionCards.swift */; };
 		D7D888C22A6D150E004F984E /* HexColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D888C12A6D150E004F984E /* HexColor.swift */; };
 /* End PBXBuildFile section */
@@ -136,7 +139,6 @@
 		16AF69F62A68F08800A3C891 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		16AF69F92A68F08800A3C891 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		16AF6A002A68F09C00A3C891 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
-		16AF6A0A2A68F36A00A3C891 /* Empty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Empty.swift; sourceTree = "<group>"; };
 		16AF6A0C2A68F37300A3C891 /* Testtt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Testtt.swift; sourceTree = "<group>"; };
 		16AF6A0E2A68F37900A3C891 /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
 		16AF6A102A68F37F00A3C891 /* TestV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestV.swift; sourceTree = "<group>"; };
@@ -156,12 +158,15 @@
 		216051FA2A6B882200301D1E /* InformationNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationNameView.swift; sourceTree = "<group>"; };
 		216052002A6D514E00301D1E /* InformationLocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationLocationView.swift; sourceTree = "<group>"; };
 		21A1C00B2A68F91200561254 /* GalleryAccessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryAccessView.swift; sourceTree = "<group>"; };
-		21DCC53E2A68FAA6009B4A88 /* GalleryAccessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryAccessView.swift; sourceTree = "<group>"; };
 		21DCD2032A70C5ED00F55FC8 /* InformationLocationSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationLocationSearchView.swift; sourceTree = "<group>"; };
 		21DCD2072A71422600F55FC8 /* DetailedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedView.swift; sourceTree = "<group>"; };
 		21DCD20B2A71726400F55FC8 /* MomentsCapturedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentsCapturedView.swift; sourceTree = "<group>"; };
 		21DCD20D2A71961B00F55FC8 /* MomentCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentCardView.swift; sourceTree = "<group>"; };
 		21DCD20F2A71967000F55FC8 /* MomentCardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentCardModel.swift; sourceTree = "<group>"; };
+		D7A761FF2A70C91200DE143C /* UserProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileView.swift; sourceTree = "<group>"; };
+		D7A7621B2A715E4800DE143C /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		D7A7621D2A71666600DE143C /* WeeklyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyView.swift; sourceTree = "<group>"; };
+		D7A7621F2A7225F800DE143C /* ProfileMemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileMemoView.swift; sourceTree = "<group>"; };
 		D7D888BF2A6D07F0004F984E /* MissionCards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionCards.swift; sourceTree = "<group>"; };
 		D7D888C12A6D150E004F984E /* HexColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexColor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -289,11 +294,8 @@
 				16E0BF5E2A6CE50400B7FBC8 /* MissiondetailView.swift */,
 				16D764AA2A6FAF420079917C /* JourneyView.swift */,
 				16CDA83B2A712CC700BBD9CF /* JorneyfilledView.swift */,
-				1685E4B82A6A18EA008F5FE7 /* ExploreView.swift */,
-				D7D888BF2A6D07F0004F984E /* MissionCards.swift */,
 				16E0BF602A6D014E00B7FBC8 /* EmptywishlistView.swift */,
 				16BC610A2A6D3B6C002C6859 /* WishlistView.swift */,
-				1696421C2A69A1C9000EAE19 /* MainView.swift */,
 				1685E4B82A6A18EA008F5FE7 /* ExploreView.swift */,
 				21DCD2072A71422600F55FC8 /* DetailedView.swift */,
 				21DCD20B2A71726400F55FC8 /* MomentsCapturedView.swift */,
@@ -301,6 +303,9 @@
 				21DCD20D2A71961B00F55FC8 /* MomentCardView.swift */,
 				21DCD20F2A71967000F55FC8 /* MomentCardModel.swift */,
 				D7D888BF2A6D07F0004F984E /* MissionCards.swift */,
+				D7A761FF2A70C91200DE143C /* UserProfileView.swift */,
+				D7A7621D2A71666600DE143C /* WeeklyView.swift */,
+				D7A7621F2A7225F800DE143C /* ProfileMemoView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -337,8 +342,8 @@
 		16AF6A082A68F11A00A3C891 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				16AF6A0A2A68F36A00A3C891 /* Empty.swift */,
 				D7D888C12A6D150E004F984E /* HexColor.swift */,
+				D7A7621B2A715E4800DE143C /* View.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -474,6 +479,7 @@
 				165EED4C2A702856005EC89B /* AddphotoView.swift in Sources */,
 				16CDA83C2A712CC700BBD9CF /* JorneyfilledView.swift in Sources */,
 				166BD6762A720593002ED78D /* PlaceModel.xcdatamodeld in Sources */,
+				D7A762202A7225F800DE143C /* ProfileMemoView.swift in Sources */,
 				16BC610B2A6D3B6C002C6859 /* WishlistView.swift in Sources */,
 				216051FB2A6B882200301D1E /* InformationNameView.swift in Sources */,
 				16AF6A152A68F39800A3C891 /* filefile.swift in Sources */,
@@ -482,12 +488,9 @@
 				16EE195F2A71DAF300309BDA /* AddphotomissionView.swift in Sources */,
 				16E0BF612A6D014E00B7FBC8 /* EmptywishlistView.swift in Sources */,
 				21DCD2102A71967000F55FC8 /* MomentCardModel.swift in Sources */,
-
-				1696421D2A69A1C9000EAE19 /* MainView.swift in Sources */,
 				21DCD2082A71422600F55FC8 /* DetailedView.swift in Sources */,
 				216051FB2A6B882200301D1E /* InformationNameView.swift in Sources */,
 				16AF6A152A68F39800A3C891 /* filefile.swift in Sources */,
-
 				16AF6A0D2A68F37300A3C891 /* Testtt.swift in Sources */,
 				1685E4B92A6A18EA008F5FE7 /* ExploreView.swift in Sources */,
 				166BD6782A7207F2002ED78D /* DataController.swift in Sources */,
@@ -500,7 +503,13 @@
 				16D764AB2A6FAF420079917C /* JourneyView.swift in Sources */,
 				216051F92A6A2B6600301D1E /* LocationAccessView.swift in Sources */,
 				216052012A6D514E00301D1E /* InformationLocationView.swift in Sources */,
-
+				D7A762002A70C91200DE143C /* UserProfileView.swift in Sources */,
+				16AF6A0D2A68F37300A3C891 /* Testtt.swift in Sources */,
+				1685E4B92A6A18EA008F5FE7 /* ExploreView.swift in Sources */,
+				D7A7621E2A71666600DE143C /* WeeklyView.swift in Sources */,
+				21A1C00C2A68F91200561254 /* GalleryAccessView.swift in Sources */,
+				216051F92A6A2B6600301D1E /* LocationAccessView.swift in Sources */,
+				216052012A6D514E00301D1E /* InformationLocationView.swift in Sources */,
 				16AF6A112A68F37F00A3C891 /* TestV.swift in Sources */,
 				16AF6A132A68F38400A3C891 /* Views.swift in Sources */,
 				21DCD20E2A71961B00F55FC8 /* MomentCardView.swift in Sources */,
@@ -509,9 +518,9 @@
 				16AF69F32A68F08700A3C891 /* FoxVoyageApp.swift in Sources */,
 				16D764AF2A6FB33F0079917C /* CardView.swift in Sources */,
 				D7D888C22A6D150E004F984E /* HexColor.swift in Sources */,
-				16AF6A0B2A68F36A00A3C891 /* Empty.swift in Sources */,
 				21DCD20C2A71726400F55FC8 /* MomentsCapturedView.swift in Sources */,
-				16E0BF5F2A6CE50400B7FBC8 /* (null) in Sources */,
+				16E0BF5F2A6CE50400B7FBC8 /* MissiondetailView.swift in Sources */,
+				D7A7621C2A715E4800DE143C /* View.swift in Sources */,
 				166A06EF2A6A2690004D6E4B /* PlacedetailView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
