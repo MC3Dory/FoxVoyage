@@ -26,19 +26,24 @@ struct InformationLocationView: View {
                 HStack{
                     Image(systemName: "magnifyingglass")
                         .foregroundColor(.gray)
-                        .padding()
+                        
                     
                     TextField("home adress", text: $searchText)
                         .font(.custom("SFProDisplay-Regular", size: 17))
+                        .foregroundColor(Color("Redish400"))
                         .padding(.trailing, 12.0)
                         .frame(maxWidth: 250, alignment: .leading)
                      
                                             }
+                .padding(.horizontal, 24)
+                .padding(.vertical, 0)
                 .frame(width: 358, height: 56, alignment: .leading)
-                .padding(5)
-
-                .border(Color.gray, width: 1)
                 .cornerRadius(999)
+                .overlay(
+                RoundedRectangle(cornerRadius: 999)
+                .inset(by: 0.5)
+                .stroke(Color(red: 0.82, green: 0.83, blue: 0.85), lineWidth: 1)
+                )
              
            
             Spacer()
@@ -48,7 +53,7 @@ struct InformationLocationView: View {
             }
         label: {
             HStack{
-                Text("Selanjurnya")
+                Text("Next")
                     .font(.custom("SFProText-Regular", size: 17))
                     .foregroundColor(.white)
                 Image(systemName: "arrow.up.forward")
