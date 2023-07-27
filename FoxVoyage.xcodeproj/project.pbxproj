@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		165EED4C2A702856005EC89B /* AddphotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165EED4B2A702856005EC89B /* AddphotoView.swift */; };
 		166A06EF2A6A2690004D6E4B /* PlacedetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 166A06EE2A6A2690004D6E4B /* PlacedetailView.swift */; };
+		166BD6762A720593002ED78D /* PlaceModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 166BD6742A720593002ED78D /* PlaceModel.xcdatamodeld */; };
+		166BD6782A7207F2002ED78D /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 166BD6772A7207F2002ED78D /* DataController.swift */; };
 		1685E4B92A6A18EA008F5FE7 /* ExploreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1685E4B82A6A18EA008F5FE7 /* ExploreView.swift */; };
 		1685E4CC2A6A1D87008F5FE7 /* SF-Pro-Text-Ultralight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1685E4BA2A6A1D84008F5FE7 /* SF-Pro-Text-Ultralight.otf */; };
 		1685E4CD2A6A1D87008F5FE7 /* SF-Pro-Text-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1685E4BB2A6A1D84008F5FE7 /* SF-Pro-Text-Black.otf */; };
@@ -78,6 +80,8 @@
 /* Begin PBXFileReference section */
 		165EED4B2A702856005EC89B /* AddphotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddphotoView.swift; sourceTree = "<group>"; };
 		166A06EE2A6A2690004D6E4B /* PlacedetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacedetailView.swift; sourceTree = "<group>"; };
+		166BD6752A720593002ED78D /* PlaceModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PlaceModel.xcdatamodel; sourceTree = "<group>"; };
+		166BD6772A7207F2002ED78D /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		1685E4B82A6A18EA008F5FE7 /* ExploreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreView.swift; sourceTree = "<group>"; };
 		1685E4BA2A6A1D84008F5FE7 /* SF-Pro-Text-Ultralight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Ultralight.otf"; sourceTree = "<group>"; };
 		1685E4BB2A6A1D84008F5FE7 /* SF-Pro-Text-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Black.otf"; sourceTree = "<group>"; };
@@ -293,6 +297,8 @@
 			children = (
 				16AF6A0E2A68F37900A3C891 /* Test.swift */,
 				16BC61102A6D8455002C6859 /* PlaceModel.swift */,
+				166BD6742A720593002ED78D /* PlaceModel.xcdatamodeld */,
+				166BD6772A7207F2002ED78D /* DataController.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -443,6 +449,7 @@
 				16AF69F52A68F08700A3C891 /* ContentView.swift in Sources */,
 				165EED4C2A702856005EC89B /* AddphotoView.swift in Sources */,
 				16CDA83C2A712CC700BBD9CF /* JorneyfilledView.swift in Sources */,
+				166BD6762A720593002ED78D /* PlaceModel.xcdatamodeld in Sources */,
 				16BC610B2A6D3B6C002C6859 /* WishlistView.swift in Sources */,
 				216051FB2A6B882200301D1E /* InformationNameView.swift in Sources */,
 				16AF6A152A68F39800A3C891 /* filefile.swift in Sources */,
@@ -450,6 +457,7 @@
 				16E0BF612A6D014E00B7FBC8 /* EmptywishlistView.swift in Sources */,
 				16AF6A0D2A68F37300A3C891 /* Testtt.swift in Sources */,
 				1685E4B92A6A18EA008F5FE7 /* ExploreView.swift in Sources */,
+				166BD6782A7207F2002ED78D /* DataController.swift in Sources */,
 				21A1C00C2A68F91200561254 /* GalleryAccessView.swift in Sources */,
 				16CDA85A2A716B1E00BBD9CF /* AddplacetowlView.swift in Sources */,
 				216051F92A6A2B6600301D1E /* LocationAccessView.swift in Sources */,
@@ -667,6 +675,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		166BD6742A720593002ED78D /* PlaceModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				166BD6752A720593002ED78D /* PlaceModel.xcdatamodel */,
+			);
+			currentVersion = 166BD6752A720593002ED78D /* PlaceModel.xcdatamodel */;
+			path = PlaceModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 16AF69E72A68F08700A3C891 /* Project object */;
 }

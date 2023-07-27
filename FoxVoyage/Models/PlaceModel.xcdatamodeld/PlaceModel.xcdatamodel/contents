@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21754" systemVersion="22D68" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Place" representedClassName="Place" syncable="YES" codeGenerationType="class">
+        <attribute name="address" optional="YES" attributeType="String"/>
+        <attribute name="coordinate" optional="YES" attributeType="String"/>
+        <attribute name="date" optional="YES" attributeType="Date" defaultDateTimeInterval="712116060" usesScalarValueType="NO"/>
+        <attribute name="desc" optional="YES" attributeType="String"/>
+        <attribute name="idplace" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="photo" optional="YES" attributeType="String"/>
+        <attribute name="photobyuser" optional="YES" attributeType="String"/>
+        <attribute name="placename" optional="YES" attributeType="String" defaultValueString="default"/>
+        <attribute name="type" optional="YES" attributeType="String"/>
+    </entity>
+</model>

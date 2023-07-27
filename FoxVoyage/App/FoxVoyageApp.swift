@@ -9,9 +9,13 @@ import SwiftUI
 
 @main
 struct FoxVoyageApp: App {
+    
+    @State private var dataController = DataContoller()
+    
     var body: some Scene {
         WindowGroup {
-           AddphotomissionView()
+           ContentView()
+                .environment(\.managedObjectContext, dataController.container.viewContext)
         }
     }
 }

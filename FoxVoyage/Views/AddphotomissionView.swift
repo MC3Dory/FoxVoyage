@@ -9,6 +9,13 @@ import SwiftUI
 import AVFoundation
 
 struct AddphotomissionView: View {
+    
+//    @Environment(\.managedObjectContext) var managedObjContext
+//    @Environment(.\dismiss) var dismiss
+//    
+//    @State private var photobyuser = ""
+    
+    
     var body: some View {
         TakeMomentsView()
     }
@@ -28,15 +35,15 @@ struct TakeMomentsView: View{
                 .cornerRadius(30)
                 .padding(.bottom, 40)
             
-            //backbutton
-            Button(action: {}, label: {
-                Image(systemName: "xmark")
-                    .foregroundColor(Color("Black900"))
-                    .padding()
-                    .background(Color.white)
-                    .clipShape(Circle())
-            }).padding(.leading, 320)
-                .padding(.bottom, 690)
+//            //backbutton
+//            Button(action: {}, label: {
+//                Image(systemName: "xmark")
+//                    .foregroundColor(Color("Black900"))
+//                    .padding()
+//                    .background(Color.white)
+//                    .clipShape(Circle())
+//            }).padding(.leading, 320)
+//                .padding(.bottom, 690)
             
             
             VStack{
@@ -75,6 +82,9 @@ struct TakeMomentsView: View{
                                 .padding(.horizontal, 20)
                                 .background(Color.white)
                                 .clipShape(Capsule())
+                            
+//                            DataContoller().addPhoto(photobyuser: picData, context: NSManagedObjectContext)
+//                            dismiss()
                         })
                         .padding(.leading)
                         

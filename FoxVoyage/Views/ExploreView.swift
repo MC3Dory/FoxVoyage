@@ -8,107 +8,374 @@
 import SwiftUI
 
 struct ExploreView: View {
+    
+    //addwishlist
+    @State private var isAddTowishList = false
+    
     var body: some View {
         VStack{
             HStack{
+                
+                //profile photo
                 ZStack{
-                    Rectangle()
-                        .frame(width: 175, height: 56)
-                        .cornerRadius(999)
-                        .foregroundColor(.white)
-                    
                     Circle()
-                        .frame(width: 48, height: 48)
-                        .foregroundColor(Color("Green200"))
-                        .padding(.trailing, 123)
-                        .padding(.leading, 4)
+                        .frame(width: 72, height: 72)
+                        .foregroundColor(Color("Redish400"))
+                    Image(systemName: "person.fill")
+                        .font(.system(size: 60))
+                        .foregroundColor(.white)
+                }.padding(.leading, 40)
+                
+                
+                Spacer()
+                //sum
+                ZStack{
+                    RoundedRectangle(cornerRadius: 999)
+                        .frame(width: 105, height: 56)
+                        .foregroundColor(Color("Redish100"))
                     
-                    Image(systemName: "rectangle.dashed.and.paperclip")
-                        .padding(.trailing, 123)
-                        .padding(.leading, 4)
+                    HStack{
+                        ZStack{
+                            Circle()
+                                .frame(width: 48, height: 48)
+                                .foregroundColor(Color("Green200"))
+                            
+                            //TASK : GANTI DENGAN ICON
+                            Image(systemName: "bookmark")
+                                .foregroundColor(.white)
+                        }
+                        
+                        //TASK : DATA
+                        Text("0")
+                            .font(.custom("SFProDisplay-Medium", size: 20))
+                            
+                            
+                    }.padding(.leading, -25)
                     
-                    Text("4")
-                        .font(.custom("SFProDisplay-Medium", size: 20))
-                        .padding(.leading, 25)
-                }
+                    
+                }.padding(.trailing)
+                
                 
                 ZStack{
-                    Rectangle()
-                        .frame(width: 175, height: 56)
-                        .cornerRadius(999)
-                        .foregroundColor(.white)
-                    
-                    Circle()
-                        .frame(width: 48, height: 48)
-                        .foregroundColor(Color("Green200"))
-                        .padding(.trailing, 123)
-                        .padding(.leading, 4)
-                    
-                    Image(systemName: "rectangle.dashed.and.paperclip")
-                        .padding(.trailing, 123)
-                        .padding(.leading, 4)
-                    
-                    Text("4")
-                        .font(.custom("SFProDisplay-Medium", size: 20))
-                        .padding(.leading, 25)
-                }
+                    RoundedRectangle(cornerRadius: 999)
+                        .frame(width: 105, height: 56)
+                        .foregroundColor(Color("Redish100"))
+                    HStack{
+                        ZStack{
+                            Circle()
+                                .frame(width: 48, height: 48)
+                                .foregroundColor(Color("Green200"))
+                            
+                            //TASK : GANTI DENGAN ICON
+                            Image(systemName: "bookmark")
+                                .foregroundColor(.white)
+                        }
+                        
+                        //TASK : DATA
+                        Text("0")
+                            .font(.custom("SFProDisplay-Medium", size: 20))
+                            
+                            
+                    }.padding(.leading, -25)
+                        
+                   
+                }.padding(.trailing, 30)
+            }
+            
+            Text("Your Current Location")
+                .font(.custom("SFProDisplay-Regular", size: 22))
+                .padding(.leading, -150)
+                .padding(.top, 10)
+            
+            
+            //checkin
+            ZStack{
+                Rectangle()
+                    .frame(width: 358, height: 163)
+                    .cornerRadius(30)
+                    .foregroundColor(Color("Redish100"))
+                    .padding(.horizontal, 16)
                 
+                VStack{
+                    
+                    HStack (spacing: 50){
+                        
+                        //TASK : NAMA TEMPAT
+                        Text("Fanindo")
+                            .font(.custom("SFProDisplay-Medium", size: 28))
+                            .foregroundColor(Color("Black900"))
+                            .padding(.leading, -5)
+                        
+                        VStack{
+                            Text("Misi")
+                                .font(.custom("SFProText-Regular", size: 16))
+                                .foregroundColor(Color("Black900"))
+                            //TASK : JUMLAH MISI
+                            Text("3")
+                                .font(.custom("SFProDisplay-Medium", size: 20))
+                                .foregroundColor(Color("Black900"))
+                        }.padding(.leading, 50)
+                        
+                        VStack{
+                            Text("Jarak")
+                                .font(.custom("SFProText-Regular", size: 16))
+                                .foregroundColor(Color("Black900"))
+                            
+                            //TASK : JARAK
+                            Text("1.8 km")
+                                .font(.custom("SFProDisplay-Medium", size: 20))
+                                .foregroundColor(Color("Black900"))
+                        }
+                        
+                        
+                    }
+                    
+                    //TASK : ANIMASI SLIDE TO CHECKIN
+                    ZStack{
+                        RoundedRectangle(cornerRadius: 999)
+                            .fill(Color.white)
+                            .frame(width: 325, height: 64)
+                        
+                        Group{
+                            Circle()
+                                .frame(width: 56, height: 56)
+                                .foregroundColor(Color("Redish400"))
+                            
+                            Image(systemName: "arrow.right")
+                                .foregroundColor(Color.white)
+                            
+                        }.padding(.trailing, 250)
+                        
+                        Text("Slide to capture momen")
+                            .padding(.leading, 30)
+                    }
+                    
+                    
+
+                }
+            }
+            
+            //popular group
+            Group{
+                
+                HStack{
+                    Text("Popular")
+                        .font(.custom("SFProDisplay-Regular", size: 22))
+                        
+                    
+                    Spacer()
+                    Button(action: {}, label: {
+                        Text("See all")
+                            .font(.custom("SFProText-Regular", size: 15))
+                            .foregroundColor(Color("Redish400"))
+                            .underline()
+                    })
+                }.padding(.horizontal, 40)
+                    .padding(.top, 24)
+                
+                HStack (spacing: 30){
+                    ZStack{
+                        Rectangle()
+                            .frame(width: 171, height: 226)
+                            .cornerRadius(30)
+                            .foregroundColor(Color("Redish100"))
+                        
+                        VStack{
+                            Button(action:{
+                                isAddTowishList.toggle()
+                            }){
+                                ZStack{
+                                    Image("explore1")
+                                    
+                                    Circle()
+                                        .frame(width: 48, height: 48)
+                                        .foregroundColor(.white)
+                                    
+                                    Image(systemName: isAddTowishList ? "bookmark" : "bookmark.fill")
+                                        .foregroundColor( isAddTowishList ? .black : Color("Redish400"))
+                                }
+                                
+                                
+                                
+                            }
+                            //TASK: NAMA TEMPAT --> maksimal jadi 2 line
+                            Text("Welcome to\nBatam")
+                                .font(.custom("SFProDisplay-Regular", size: 20))
+                                .padding(.leading, -30)
+                        }
+                        
+                        
+                        
+                    }
+                    
+                    ZStack{
+                        Rectangle()
+                            .frame(width: 171, height: 226)
+                            .cornerRadius(30)
+                            .foregroundColor(Color("Redish100"))
+                        
+                        VStack{
+                            Button(action:{
+                                isAddTowishList.toggle()
+                            }){
+                                ZStack{
+                                    Image("explore1")
+                                    
+                                    Circle()
+                                        .frame(width: 48, height: 48)
+                                        .foregroundColor(.white)
+                                    
+                                    Image(systemName: isAddTowishList ? "bookmark" : "bookmark.fill")
+                                        .foregroundColor( isAddTowishList ? .black : Color("Redish400"))
+                                }
+                                
+                                
+                                
+                            }
+                            //TASK: NAMA TEMPAT --> maksimal jadi 2 line
+                            Text("Welcome to\nBatam")
+                                .font(.custom("SFProDisplay-Regular", size: 20))
+                                .padding(.leading, -30)
+                        }
+                        
+                        
+                        
+                    }
+                    
+                }
                 
             }
+            
+            Group{
+                HStack{
+                    Text("Popular")
+                        .font(.custom("SFProDisplay-Regular", size: 22))
+                        
+                    
+                    Spacer()
+                    Button(action: {}, label: {
+                        Text("See all")
+                            .font(.custom("SFProText-Regular", size: 15))
+                            .foregroundColor(Color("Redish400"))
+                            .underline()
+                    })
+                }.padding(.horizontal, 40)
+                    .padding(.top, 24)
+                
+                ScrollView{
+                    
+                    ZStack{
+                        Rectangle()
+                            .frame(width: 358, height: 284)
+                            .cornerRadius(30)
+                            //TASK : WARNA SESUAI TAG
+                            .foregroundColor(Color("Red100"))
+                        
+                        VStack{
+                            ZStack{
+                                HStack (spacing:0){
+                                    ZStack{
+                                        Image("place1")
+                                        Button(action:{
+                                            isAddTowishList.toggle()
+                                        }){
+                                            ZStack{
+                                                Circle()
+                                                    .frame(width: 48, height: 48)
+                                                    .foregroundColor(.white)
+                                                
+                                                Image(systemName: isAddTowishList ? "bookmark" : "bookmark.fill")
+                                                    .foregroundColor( isAddTowishList ? .black : Color("Redish400"))
+                                            }
+                                        }
+                                        
+                                    }
+                                    
+                                    ZStack{
+                                        Image("place2")
+                                        Button(action:{
+                                            isAddTowishList.toggle()
+                                        }){
+                                            ZStack{
+                                                Circle()
+                                                    .frame(width: 48, height: 48)
+                                                    .foregroundColor(.white)
+                                                
+                                                Image(systemName: isAddTowishList ? "bookmark" : "bookmark.fill")
+                                                    .foregroundColor( isAddTowishList ? .black : Color("Redish400"))
+                                            }
+                                        }
+                                        
+                                    }
+                                    
+                                }
+                            }
+                            
+                            //TASK : TAG
+                            
+                            ZStack{
+                                RoundedRectangle(cornerRadius: 999)
+                                    .fill(Color.clear)
+                                    .frame(width: 181, height: 48)
+                                
+                                RoundedRectangle(cornerRadius: 999)
+                                    .stroke(Color.white, lineWidth: 1)
+                                    .frame(width: 181, height: 48)
+                                
+                                //TASK: TAG
+                                Text("Artificial Attraction")
+                                    .font(.custom("SFProText-Medium", size: 15))
+                                    .foregroundColor(.white)
+                                
+                                
+                            }.padding(.leading, -150)
+                                
+                            
+                            HStack (spacing : 40){
+                                //TASK : NAMA TEMPAT
+                                Text("Nuvasa \nBay")
+                                    .font(.custom("SFProDisplay-Medium", size: 28))
+                                    .foregroundColor(.white)
+                                
+                                VStack{
+                                    Text("Misi")
+                                        .font(.custom("SFProText-Regular", size: 16))
+                                        .foregroundColor(.white)
+                                    //TASK : JUMLAH MISI
+                                    Text("3")
+                                        .font(.custom("SFProDisplay-Medium", size: 20))
+                                        .foregroundColor(.white)
+                                }.padding(.leading, 50)
+                                
+                                VStack{
+                                    Text("Jarak")
+                                        .font(.custom("SFProText-Regular", size: 16))
+                                        .foregroundColor(.white)
+                                    
+                                    //TASK : JARAK
+                                    Text("1.8 km")
+                                        .font(.custom("SFProDisplay-Medium", size: 20))
+                                        .foregroundColor(.white)
+                                }
+                                
+                                    
+                            }
+                        }
+                        
+                        
+                    }
+                   
+                }
+                
+            }
+           
+            
             
             Spacer()
             
-            ZStack{
-                Rectangle()
-                    .frame(width: 341, height: 152)
-                    .cornerRadius(25)
-                    .foregroundColor(.white)
-                HStack{
-                    Image("exampleimage")
-                    
-                    VStack (alignment: .leading){
-                        Text("Jembatan\nBalerang")
-                            .font(.system(size: 22))
-                            .padding(.bottom, 2)
-                        Text("1.8 km")
-                            .font(.system(size: 12))
-                            .foregroundColor(Color("Black400"))
-                            .padding(.bottom, 22)
-                        
-                        ZStack{
-                            RoundedRectangle(cornerRadius: 20)
-                                .frame(width: 66, height: 32)
-                                .foregroundColor(.white)
-                                .overlay(RoundedRectangle(cornerRadius: 20).stroke(Color("Black400"), lineWidth: 2))
-                            Text("3 misi")
-                                .font(.system(size: 12))
-                                .foregroundColor(Color("Black400"))
-                        }
-                        
-                    }.padding(.leading, 16)
-                    
-                    
-                    ZStack{
-                        Circle()
-                            .frame(width: 64, height: 64)
-                            .foregroundColor(Color("Redish400"))
-                            
-                        Image(systemName: "arrow.up.right")
-                            .foregroundColor(.white)
-                    }.padding(.top, 72)
-                    
-                    
-                }
-            }
-            
             
         }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Image("Map")
-            .resizable()
-            .scaledToFill()
-            .edgesIgnoringSafeArea(.all)
-        )
+        
     }
 }
 
