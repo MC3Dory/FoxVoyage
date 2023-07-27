@@ -82,8 +82,6 @@
 		D7A7621C2A715E4800DE143C /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A7621B2A715E4800DE143C /* View.swift */; };
 		D7A7621E2A71666600DE143C /* WeeklyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A7621D2A71666600DE143C /* WeeklyView.swift */; };
 		D7A762202A7225F800DE143C /* ProfileMemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A7621F2A7225F800DE143C /* ProfileMemoView.swift */; };
-		D7D888B82A68F919004F984E /* test.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D888B72A68F919004F984E /* test.swift */; };
-		D7D888BA2A68F921004F984E /* testttt.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D888B92A68F921004F984E /* testttt.swift */; };
 		D7D888BC2A68F92A004F984E /* testtttt.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D888BB2A68F92A004F984E /* testtttt.swift */; };
 		D7D888C02A6D07F0004F984E /* MissionCards.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D888BF2A6D07F0004F984E /* MissionCards.swift */; };
 		D7D888C22A6D150E004F984E /* HexColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D888C12A6D150E004F984E /* HexColor.swift */; };
@@ -168,8 +166,6 @@
 		D7A7621B2A715E4800DE143C /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		D7A7621D2A71666600DE143C /* WeeklyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyView.swift; sourceTree = "<group>"; };
 		D7A7621F2A7225F800DE143C /* ProfileMemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileMemoView.swift; sourceTree = "<group>"; };
-		D7D888B72A68F919004F984E /* test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test.swift; sourceTree = "<group>"; };
-		D7D888B92A68F921004F984E /* testttt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testttt.swift; sourceTree = "<group>"; };
 		D7D888BB2A68F92A004F984E /* testtttt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testtttt.swift; sourceTree = "<group>"; };
 		D7D888BF2A6D07F0004F984E /* MissionCards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionCards.swift; sourceTree = "<group>"; };
 		D7D888C12A6D150E004F984E /* HexColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexColor.swift; sourceTree = "<group>"; };
@@ -330,7 +326,6 @@
 				166BD6742A720593002ED78D /* PlaceModel.xcdatamodeld */,
 				166BD6772A7207F2002ED78D /* DataController.swift */,
 				166BD67B2A722836002ED78D /* PlaceModel.swift */,
-				D7D888B92A68F921004F984E /* testttt.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -349,7 +344,6 @@
 			children = (
 				D7D888C12A6D150E004F984E /* HexColor.swift */,
 				D7A7621B2A715E4800DE143C /* View.swift */,
-				D7D888B72A68F919004F984E /* test.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -481,7 +475,6 @@
 			files = (
 				16D764AD2A6FB2F60079917C /* CheckinView.swift in Sources */,
 				D7D888C02A6D07F0004F984E /* MissionCards.swift in Sources */,
-				D7D888BA2A68F921004F984E /* testttt.swift in Sources */,
 				16AF69F52A68F08700A3C891 /* ContentView.swift in Sources */,
 				165EED4C2A702856005EC89B /* AddphotoView.swift in Sources */,
 				16CDA83C2A712CC700BBD9CF /* JorneyfilledView.swift in Sources */,
@@ -526,7 +519,6 @@
 				166A06EF2A6A2690004D6E4B /* PlacedetailView.swift in Sources */,
 				D71CF3A72A68F427006CE47D /* OnboardingView.swift in Sources */,
 				16AF6A132A68F38400A3C891 /* Views.swift in Sources */,
-				D7D888B82A68F919004F984E /* test.swift in Sources */,
 				D7D888BC2A68F92A004F984E /* testtttt.swift in Sources */,
 				D71CF3A92A68F4B3006CE47D /* HexColor.swift in Sources */,
 				16AF69F32A68F08700A3C891 /* FoxVoyageApp.swift in Sources */,
