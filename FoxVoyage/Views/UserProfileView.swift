@@ -34,7 +34,7 @@ struct UserProfileView: View {
                 }
                 
                 if currentTab == 0 {
-                    Spacer()
+                    ProfileMemoView()
                 } else {
                     WeeklyView()
                     Spacer()
