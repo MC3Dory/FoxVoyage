@@ -28,6 +28,7 @@ struct ExploreView: View {
                 
                 
                 Spacer()
+                
                 //sum
                 ZStack{
                     RoundedRectangle(cornerRadius: 999)
@@ -228,9 +229,6 @@ struct ExploreView: View {
                                     Image(systemName: isAddTowishList ? "bookmark" : "bookmark.fill")
                                         .foregroundColor( isAddTowishList ? .black : Color("Redish400"))
                                 }
-                                
-                                
-                                
                             }
                             //TASK: NAMA TEMPAT --> maksimal jadi 2 line
                             Text("Welcome to\nBatam")
@@ -365,6 +363,108 @@ struct ExploreView: View {
                         
                     }
                    
+                    
+                    ZStack{
+                        Rectangle()
+                            .frame(width: 358, height: 284)
+                            .cornerRadius(30)
+                            //TASK : WARNA SESUAI TAG
+                            .foregroundColor(Color("Red100"))
+                        
+                        VStack{
+                            ZStack{
+                                HStack (spacing:0){
+                                    ZStack{
+                                        Image("place1")
+                                        Button(action:{
+                                            isAddTowishList.toggle()
+                                        }){
+                                            ZStack{
+                                                Circle()
+                                                    .frame(width: 48, height: 48)
+                                                    .foregroundColor(.white)
+                                                
+                                                Image(systemName: isAddTowishList ? "bookmark" : "bookmark.fill")
+                                                    .foregroundColor( isAddTowishList ? .black : Color("Redish400"))
+                                            }
+                                        }
+                                        
+                                    }
+                                    
+                                    ZStack{
+                                        Image("place2")
+                                        Button(action:{
+                                            isAddTowishList.toggle()
+                                        }){
+                                            ZStack{
+                                                Circle()
+                                                    .frame(width: 48, height: 48)
+                                                    .foregroundColor(.white)
+                                                
+                                                Image(systemName: isAddTowishList ? "bookmark" : "bookmark.fill")
+                                                    .foregroundColor( isAddTowishList ? .black : Color("Redish400"))
+                                            }
+                                        }
+                                        
+                                    }
+                                    
+                                }
+                            }
+                            
+                            //TASK : TAG
+                            
+                            ZStack{
+                                RoundedRectangle(cornerRadius: 999)
+                                    .fill(Color.clear)
+                                    .frame(width: 181, height: 48)
+                                
+                                RoundedRectangle(cornerRadius: 999)
+                                    .stroke(Color.white, lineWidth: 1)
+                                    .frame(width: 181, height: 48)
+                                
+                                //TASK: TAG
+                                Text("Artificial Attraction")
+                                    .font(.custom("SFProText-Medium", size: 15))
+                                    .foregroundColor(.white)
+                                
+                                
+                            }.padding(.leading, -150)
+                                
+                            
+                            HStack (spacing : 40){
+                                //TASK : NAMA TEMPAT
+                                Text("Nuvasa \nBay")
+                                    .font(.custom("SFProDisplay-Medium", size: 28))
+                                    .foregroundColor(.white)
+                                
+                                VStack{
+                                    Text("Misi")
+                                        .font(.custom("SFProText-Regular", size: 16))
+                                        .foregroundColor(.white)
+                                    //TASK : JUMLAH MISI
+                                    Text("3")
+                                        .font(.custom("SFProDisplay-Medium", size: 20))
+                                        .foregroundColor(.white)
+                                }.padding(.leading, 50)
+                                
+                                VStack{
+                                    Text("Jarak")
+                                        .font(.custom("SFProText-Regular", size: 16))
+                                        .foregroundColor(.white)
+                                    
+                                    //TASK : JARAK
+                                    Text("1.8 km")
+                                        .font(.custom("SFProDisplay-Medium", size: 20))
+                                        .foregroundColor(.white)
+                                }
+                                
+                                    
+                            }
+                        }
+                        
+                        
+                    }
+                    
                 }
                 
             }

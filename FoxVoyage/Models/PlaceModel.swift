@@ -2,32 +2,50 @@
 //  PlaceModel.swift
 //  FoxVoyage
 //
-//  Created by Nindya Alita Rosalia on 23/07/23.
+//  Created by Nindya Alita Rosalia on 27/07/23.
 //
 
 import Foundation
-import SwiftUI
 
-struct PlaceModel : Equatable, Identifiable{
-    let id: String
-    let name : String
-    let imageName1: String
-    let imageName2: String
-    let tag: String
-    let totalMission: Int
-    let totalDistance: Double
-    let color: String
+struct PlaceModel: Codable {
+    let id: Int
+        let longitude: String
+        let latitude: String
+        let name: String
+        let tag: String
+        let address: String
+        let district: String
+        let operationalHour: String
+        let desc: String
+        let activities: String
     
+    enum CodingKeys: String, CodingKey {
+        case id = "id"
+        case longitude = "Longitude"
+        case latitude = "Latitude"
+        case name = "Nama"
+        case tag = "Class"
+        case address = "Address"
+        case district = "Disctrict"
+        case operationalHour = "Operational Hour"
+        case desc = "Desc."
+        case activities = "Activity"
+    }
     
-    init(id: String, name: String, imageName1: String, imageName2: String, tag: String, totalMission: Int, totalDistance: Double, color: String) {
-        self.id = id
-        self.name = name
-        self.imageName1 = imageName1
-        self.imageName2 = imageName2
-        self.tag = tag
-        self.totalMission = totalMission
-        self.totalDistance = totalDistance
-        self.color = color
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        self.id = try container.decode(Int.self, forKey: .id)
+        self.longitude = try container.decode(String.self, forKey: .longitude)
+        self.latitude = try container.decode(String.self, forKey: .latitude)
+        self.name = try container.decode(String.self, forKey: .name)
+        self.tag = try container.decode(String.self, forKey: .tag)
+        self.address = try container.decode(String.self, forKey: .address)
+        self.district = try container.decode(String.self, forKey: .district)
+        self.operationalHour = try container.decode(String.self, forKey: .operationalHour)
+        self.desc = try container.decode(String.self, forKey: .desc)
+        self.activities = try container.decode(String.self, forKey: .activities)
     }
     
 }
+
+
