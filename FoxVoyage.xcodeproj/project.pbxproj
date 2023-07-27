@@ -67,6 +67,7 @@
 		D7A762002A70C91200DE143C /* UserProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A761FF2A70C91200DE143C /* UserProfileView.swift */; };
 		D7A7621C2A715E4800DE143C /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A7621B2A715E4800DE143C /* View.swift */; };
 		D7A7621E2A71666600DE143C /* WeeklyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A7621D2A71666600DE143C /* WeeklyView.swift */; };
+		D7A762202A7225F800DE143C /* ProfileMemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A7621F2A7225F800DE143C /* ProfileMemoView.swift */; };
 		D7D888C02A6D07F0004F984E /* MissionCards.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D888BF2A6D07F0004F984E /* MissionCards.swift */; };
 		D7D888C22A6D150E004F984E /* HexColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D888C12A6D150E004F984E /* HexColor.swift */; };
 /* End PBXBuildFile section */
@@ -135,6 +136,7 @@
 		D7A761FF2A70C91200DE143C /* UserProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileView.swift; sourceTree = "<group>"; };
 		D7A7621B2A715E4800DE143C /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		D7A7621D2A71666600DE143C /* WeeklyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyView.swift; sourceTree = "<group>"; };
+		D7A7621F2A7225F800DE143C /* ProfileMemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileMemoView.swift; sourceTree = "<group>"; };
 		D7D888BF2A6D07F0004F984E /* MissionCards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionCards.swift; sourceTree = "<group>"; };
 		D7D888C12A6D150E004F984E /* HexColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexColor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -262,6 +264,7 @@
 				16BC610A2A6D3B6C002C6859 /* WishlistView.swift */,
 				D7A761FF2A70C91200DE143C /* UserProfileView.swift */,
 				D7A7621D2A71666600DE143C /* WeeklyView.swift */,
+				D7A7621F2A7225F800DE143C /* ProfileMemoView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -418,6 +421,7 @@
 			files = (
 				D7D888C02A6D07F0004F984E /* MissionCards.swift in Sources */,
 				16AF69F52A68F08700A3C891 /* ContentView.swift in Sources */,
+				D7A762202A7225F800DE143C /* ProfileMemoView.swift in Sources */,
 				16BC610B2A6D3B6C002C6859 /* WishlistView.swift in Sources */,
 				1696421D2A69A1C9000EAE19 /* MainView.swift in Sources */,
 				216051FB2A6B882200301D1E /* InformationNameView.swift in Sources */,
