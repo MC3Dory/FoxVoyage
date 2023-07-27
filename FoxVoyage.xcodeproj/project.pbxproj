@@ -15,6 +15,8 @@
 		166BD67E2A722C87002ED78D /* JsonManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 166BD67D2A722C87002ED78D /* JsonManager.swift */; };
 		166BD6802A722C91002ED78D /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = 166BD67F2A722C91002ED78D /* data.json */; };
 		166BD6A02A72B13F002ED78D /* CoreDataRequestViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 166BD69F2A72B13F002ED78D /* CoreDataRequestViews.swift */; };
+		1674CE2F2A72C35100D7349E /* LocationAccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216051F82A6A2B6600301D1E /* LocationAccessView.swift */; };
+		1674CE302A72C44500D7349E /* InformationNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216051FA2A6B882200301D1E /* InformationNameView.swift */; };
 		1685E4CC2A6A1D87008F5FE7 /* SF-Pro-Text-Ultralight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1685E4BA2A6A1D84008F5FE7 /* SF-Pro-Text-Ultralight.otf */; };
 		1685E4CD2A6A1D87008F5FE7 /* SF-Pro-Text-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1685E4BB2A6A1D84008F5FE7 /* SF-Pro-Text-Black.otf */; };
 		1685E4CE2A6A1D87008F5FE7 /* SF-Pro-Text-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1685E4BC2A6A1D84008F5FE7 /* SF-Pro-Text-Thin.otf */; };
@@ -57,6 +59,8 @@
 		16AF69FA2A68F08800A3C891 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16AF69F92A68F08800A3C891 /* Preview Assets.xcassets */; };
 		16AF6A012A68F09C00A3C891 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 16AF6A002A68F09C00A3C891 /* .gitignore */; };
 		16AF6A0F2A68F37900A3C891 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16AF6A0E2A68F37900A3C891 /* Test.swift */; };
+		16B7E0AB2A72B73C00102B5E /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B7E0AA2A72B73C00102B5E /* OnboardingView.swift */; };
+		16B7E0AC2A72BC0900102B5E /* GalleryAccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A1C00B2A68F91200561254 /* GalleryAccessView.swift */; };
 		16BC610B2A6D3B6C002C6859 /* WishlistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BC610A2A6D3B6C002C6859 /* WishlistView.swift */; };
 		16CDA83C2A712CC700BBD9CF /* JorneyfilledView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16CDA83B2A712CC700BBD9CF /* JorneyfilledView.swift */; };
 		16CDA85A2A716B1E00BBD9CF /* AddplacetowlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16CDA8592A716B1E00BBD9CF /* AddplacetowlView.swift */; };
@@ -137,6 +141,7 @@
 		16AF6A102A68F37F00A3C891 /* TestV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestV.swift; sourceTree = "<group>"; };
 		16AF6A122A68F38400A3C891 /* Views.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views.swift; sourceTree = "<group>"; };
 		16AF6A142A68F39800A3C891 /* filefile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = filefile.swift; sourceTree = "<group>"; };
+		16B7E0AA2A72B73C00102B5E /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		16BC610A2A6D3B6C002C6859 /* WishlistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishlistView.swift; sourceTree = "<group>"; };
 		16CDA83B2A712CC700BBD9CF /* JorneyfilledView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JorneyfilledView.swift; sourceTree = "<group>"; };
 		16CDA8592A716B1E00BBD9CF /* AddplacetowlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddplacetowlView.swift; sourceTree = "<group>"; };
@@ -300,6 +305,7 @@
 				D7A7621D2A71666600DE143C /* WeeklyView.swift */,
 				D7A7621F2A7225F800DE143C /* ProfileMemoView.swift */,
 				166BD69F2A72B13F002ED78D /* CoreDataRequestViews.swift */,
+				16B7E0AA2A72B73C00102B5E /* OnboardingView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -467,6 +473,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1674CE302A72C44500D7349E /* InformationNameView.swift in Sources */,
+				1674CE2F2A72C35100D7349E /* LocationAccessView.swift in Sources */,
+				16B7E0AC2A72BC0900102B5E /* GalleryAccessView.swift in Sources */,
 				16D764AD2A6FB2F60079917C /* CheckinView.swift in Sources */,
 				166BD6A02A72B13F002ED78D /* CoreDataRequestViews.swift in Sources */,
 				D7D888C02A6D07F0004F984E /* MissionCards.swift in Sources */,
@@ -480,6 +489,7 @@
 				166BD67C2A722836002ED78D /* PlaceModel.swift in Sources */,
 				16EE195F2A71DAF300309BDA /* AddphotomissionView.swift in Sources */,
 				16E0BF612A6D014E00B7FBC8 /* EmptywishlistView.swift in Sources */,
+				16B7E0AB2A72B73C00102B5E /* OnboardingView.swift in Sources */,
 				21DCD2102A71967000F55FC8 /* MomentCardModel.swift in Sources */,
 				21DCD2082A71422600F55FC8 /* DetailedView.swift in Sources */,
 				166BD6782A7207F2002ED78D /* DataController.swift in Sources */,

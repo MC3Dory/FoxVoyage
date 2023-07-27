@@ -29,7 +29,7 @@ struct FoxVoyageApp: App {
     
     var body: some Scene {
         WindowGroup {
-           CoreDataRequestViews()
+           OnboardingView()
                 .onAppear{
                     saveToCoreDataForFirstTime()
                     

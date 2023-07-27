@@ -6,9 +6,13 @@
 //
 
 import SwiftUI
+import CoreLocation
 
 struct locationAccessView: View {
-    @State private var showAlert = false
+//    @State private var showAlert = false
+    
+    @State private var locationManager = CLLocationManager()
+    @State private var locationPermissionStatus: CLAuthorizationStatus = .notDetermined
     
     var body: some View {
         VStack{
