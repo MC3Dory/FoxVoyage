@@ -15,11 +15,12 @@ struct FoxVoyageApp: App {
     func saveToCoreDataForFirstTime(){
         if savePlacesToCoreData{
             do{
-                let placemodels = try JSONManager.sharedInstance.loadData(path: "data", type: PlaceModel.self)
+                let placemodels = try JSONManager.sharedInstance.loadData(path: "place", type: PlaceModel.self)
                 for place in placemodels {
                     CoreDataController.sharedInstance.savePlaceModel(place)
                 }
                 savePlacesToCoreData = false
+                print(placemodels)
             }catch{
                 print(error.localizedDescription)
             }

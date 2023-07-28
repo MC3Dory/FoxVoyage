@@ -25,7 +25,7 @@ struct ExploreView: View {
                         Image(systemName: "person.fill")
                             .font(.system(size: 60))
                             .foregroundColor(.white)
-                    }.padding(.leading, 40)
+                    }.padding(.leading, 30)
                     
                     
                     Spacer()
@@ -169,11 +169,11 @@ struct ExploreView: View {
                     if !places.isEmpty{
                         HStack (spacing: 30){
                             PopularPlaceCard(place: places[0])
-                            PopularPlaceCard(place: places[1])
+                            PopularPlaceCard(place: places[8])
                             
-                            //                        ForEach(places){ place in
-                            //                            PopularPlaceCard(place: place)
-                            //                        }
+//                                                    ForEach(places){ place in
+//                                                        PopularPlaceCard(place: place)
+//                                                    }
                         }
                     } else{
                         ProgressView()
@@ -205,13 +205,9 @@ struct ExploreView: View {
                     
                     if !places.isEmpty{
                         VStack (spacing: 30){
-                            NearPlaceCardView(place: places[41])
-                            NearPlaceCardView(place: places[8])
+                            NearPlaceCardView(place: places[0])
+                            NearPlaceCardView(place: places[4])
                             
-                            
-//                                                    ForEach(places){ place in
-//                                                        PopularPlaceCard(place: place)
-//                                                    }
                         }
                     } else{
                         ProgressView()

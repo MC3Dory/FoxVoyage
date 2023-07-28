@@ -111,7 +111,7 @@ struct TabProfile: View {
     var body: some View {
         VStack (alignment: .center, spacing: 0) {
             Text(text)
-                .font(.system(size: 20))
+                .font(.custom("SFProText-Regular", size: 17))
                 .foregroundColor(isActive ? Color("Redish400"): Color.black.opacity(0.4))
             
             if (isActive) {
