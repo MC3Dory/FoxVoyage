@@ -169,7 +169,7 @@ struct ExploreView: View {
                     if !places.isEmpty{
                         HStack (spacing: 30){
                             PopularPlaceCard(place: places[0])
-                            PopularPlaceCard(place: places[8])
+                            PopularPlaceCard(place: places[1])
                             
 //                                                    ForEach(places){ place in
 //                                                        PopularPlaceCard(place: place)

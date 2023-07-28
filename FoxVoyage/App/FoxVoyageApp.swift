@@ -16,6 +16,7 @@ struct FoxVoyageApp: App {
         if savePlacesToCoreData{
             do{
                 let placemodels = try JSONManager.sharedInstance.loadData(path: "place", type: PlaceModel.self)
+                
                 for place in placemodels {
                     CoreDataController.sharedInstance.savePlaceModel(place)
                 }
@@ -30,7 +31,7 @@ struct FoxVoyageApp: App {
     
     var body: some Scene {
         WindowGroup {
-           WishlistView()
+           ExploreView()
                 .onAppear{
                     saveToCoreDataForFirstTime()
                     

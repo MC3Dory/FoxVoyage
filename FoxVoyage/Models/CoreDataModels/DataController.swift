@@ -35,6 +35,7 @@ class CoreDataController {
         placeEntity.setValue(placeModel.district, forKey: "district")
         placeEntity.setValue(placeModel.operationalHour, forKey: "operationalHour")
         placeEntity.setValue(placeModel.desc, forKey: "desc")
+        placeEntity.setValue(placeModel.image, forKey: "image")
         
         for activityModel in placeModel.activities {
             let activityEntity = NSEntityDescription.insertNewObject(forEntityName: "Activity", into: managedObjectContext)
@@ -71,7 +72,8 @@ class CoreDataController {
                     district: placeEntity.district ?? "",
                     operationalHour: placeEntity.operationalHour ?? "",
                     desc: placeEntity.desc ?? "",
-                    activities: activities
+                    activities: activities,
+                    image: placeEntity.image ?? ""
                 )
             }
         } catch {

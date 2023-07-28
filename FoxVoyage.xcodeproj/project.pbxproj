@@ -65,6 +65,8 @@
 		16B13ED32A7403D30074B60A /* WishlistcardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B13ED22A7403D30074B60A /* WishlistcardView.swift */; };
 		16B13ED62A7410900074B60A /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B13ED52A7410900074B60A /* UserModel.swift */; };
 		16B13ED82A74109E0074B60A /* AddressModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B13ED72A74109E0074B60A /* AddressModel.swift */; };
+		16B13EDA2A7423CC0074B60A /* MissionCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B13ED92A7423CC0074B60A /* MissionCardView.swift */; };
+		16B13EDC2A74280C0074B60A /* AchivmentlistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B13EDB2A74280C0074B60A /* AchivmentlistView.swift */; };
 		16B7E0AB2A72B73C00102B5E /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B7E0AA2A72B73C00102B5E /* OnboardingView.swift */; };
 		16B7E0AC2A72BC0900102B5E /* GalleryAccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A1C00B2A68F91200561254 /* GalleryAccessView.swift */; };
 		16BC610B2A6D3B6C002C6859 /* WishlistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BC610A2A6D3B6C002C6859 /* WishlistView.swift */; };
@@ -152,6 +154,8 @@
 		16B13ED22A7403D30074B60A /* WishlistcardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishlistcardView.swift; sourceTree = "<group>"; };
 		16B13ED52A7410900074B60A /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		16B13ED72A74109E0074B60A /* AddressModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressModel.swift; sourceTree = "<group>"; };
+		16B13ED92A7423CC0074B60A /* MissionCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionCardView.swift; sourceTree = "<group>"; };
+		16B13EDB2A74280C0074B60A /* AchivmentlistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchivmentlistView.swift; sourceTree = "<group>"; };
 		16B7E0AA2A72B73C00102B5E /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		16BC610A2A6D3B6C002C6859 /* WishlistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishlistView.swift; sourceTree = "<group>"; };
 		16CDA83B2A712CC700BBD9CF /* JorneyfilledView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JorneyfilledView.swift; sourceTree = "<group>"; };
@@ -195,6 +199,7 @@
 			isa = PBXGroup;
 			children = (
 				1674CE332A72CA6300D7349E /* PopularPlaceCard.swift */,
+				16B13ED92A7423CC0074B60A /* MissionCardView.swift */,
 				16B13ECA2A735E210074B60A /* NearPlaceCardView.swift */,
 				16B13ED22A7403D30074B60A /* WishlistcardView.swift */,
 			);
@@ -319,6 +324,7 @@
 				216051F82A6A2B6600301D1E /* LocationAccessView.swift */,
 				D7D888BF2A6D07F0004F984E /* MissionCards.swift */,
 				16E0BF5E2A6CE50400B7FBC8 /* MissiondetailView.swift */,
+				16B13EDB2A74280C0074B60A /* AchivmentlistView.swift */,
 				21DCD20F2A71967000F55FC8 /* MomentCardModel.swift */,
 				21DCD20D2A71961B00F55FC8 /* MomentCardView.swift */,
 				21DCD20B2A71726400F55FC8 /* MomentsCapturedView.swift */,
@@ -540,6 +546,8 @@
 				16B13ECF2A7362C10074B60A /* ExploreallView.swift in Sources */,
 				16AF69F32A68F08700A3C891 /* FoxVoyageApp.swift in Sources */,
 				16D764AF2A6FB33F0079917C /* CardView.swift in Sources */,
+				16B13EDC2A74280C0074B60A /* AchivmentlistView.swift in Sources */,
+				16B13EDA2A7423CC0074B60A /* MissionCardView.swift in Sources */,
 				D7D888C22A6D150E004F984E /* HexColor.swift in Sources */,
 				21DCD20C2A71726400F55FC8 /* MomentsCapturedView.swift in Sources */,
 				16E0BF5F2A6CE50400B7FBC8 /* MissiondetailView.swift in Sources */,

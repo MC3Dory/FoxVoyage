@@ -20,6 +20,7 @@ struct PlaceModel: Decodable, Identifiable {
     var isCheckin: Bool = false
     var isAddedToWishList: Bool =  false
     var activities: [ActivityModel] = []
+    let image: String
     
     enum CodingKeys: String, CodingKey {
         case id = "id"
@@ -32,9 +33,10 @@ struct PlaceModel: Decodable, Identifiable {
         case operationalHour = "Operational Hour"
         case desc = "Desc."
         case activities = "Activity"
+        case image = "image"
     }
     
-    init(id: UUID, longitude: String, latitude: String, name: String, tag: String, address: String, district: String, operationalHour: String, desc: String, activities: [ActivityModel] = []) {
+    init(id: UUID, longitude: String, latitude: String, name: String, tag: String, address: String, district: String, operationalHour: String, desc: String, activities: [ActivityModel] = [], image: String) {
             self.id = id ?? UUID()
             self.longitude = longitude
             self.latitude = latitude
@@ -45,6 +47,7 @@ struct PlaceModel: Decodable, Identifiable {
             self.operationalHour = operationalHour
             self.desc = desc
             self.activities = activities
+            self.image = image
         }
     
     init(from decoder: Decoder) throws {
@@ -58,9 +61,9 @@ struct PlaceModel: Decodable, Identifiable {
         self.district = try container.decode(String.self, forKey: .district)
         self.operationalHour = try container.decode(String.self, forKey: .operationalHour)
         self.desc = try container.decode(String.self, forKey: .desc)
-        
         let activitiesText = try container.decode(String.self, forKey: .activities)
         self.activities = PlaceModel.decodeActivities(from: activitiesText)
+        self.image = try container.decode(String.self, forKey: .image)
     }
     
     static func decodeActivities(from text: String) -> [ActivityModel] {
@@ -82,8 +85,6 @@ struct PlaceModel: Decodable, Identifiable {
                         let activity = ActivityModel(title: title.first ?? "", desc: description)
                         activities.append(activity)
                     }
-                    
-                    
                 }
             }
         }
@@ -93,7 +94,7 @@ struct PlaceModel: Decodable, Identifiable {
 }
 
 extension PlaceModel{
-    static let example = PlaceModel(id: UUID(), longitude: "1020314", latitude: "1.2012310", name: "Test Place", tag: "Atraksi", address: "Nongsa", district: "Batu Besar", operationalHour: "09.00 - 21.00", desc: "deskripsi disini")
+    static let example = PlaceModel(id: UUID(), longitude: "1020314", latitude: "1.2012310", name: "Test Place", tag: "Atraksi", address: "Nongsa", district: "Batu Besar", operationalHour: "09.00 - 21.00", desc: "deskripsi disini", image: "0")
 }
 
 
