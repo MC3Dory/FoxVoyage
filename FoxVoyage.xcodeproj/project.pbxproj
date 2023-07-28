@@ -63,6 +63,7 @@
 		16B13ECB2A735E210074B60A /* NearPlaceCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B13ECA2A735E210074B60A /* NearPlaceCardView.swift */; };
 		16B13ECF2A7362C10074B60A /* ExploreallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B13ECE2A7362C10074B60A /* ExploreallView.swift */; };
 		16B13ED12A73E0AD0074B60A /* place.json in Resources */ = {isa = PBXBuildFile; fileRef = 16B13ED02A73E0AD0074B60A /* place.json */; };
+		16B13ED32A7403D30074B60A /* WishlistcardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B13ED22A7403D30074B60A /* WishlistcardView.swift */; };
 		16B7E0AB2A72B73C00102B5E /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B7E0AA2A72B73C00102B5E /* OnboardingView.swift */; };
 		16B7E0AC2A72BC0900102B5E /* GalleryAccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A1C00B2A68F91200561254 /* GalleryAccessView.swift */; };
 		16BC610B2A6D3B6C002C6859 /* WishlistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BC610A2A6D3B6C002C6859 /* WishlistView.swift */; };
@@ -148,6 +149,7 @@
 		16B13ECA2A735E210074B60A /* NearPlaceCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearPlaceCardView.swift; sourceTree = "<group>"; };
 		16B13ECE2A7362C10074B60A /* ExploreallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ExploreallView.swift; path = FoxVoyage/Views/ExploreallView.swift; sourceTree = SOURCE_ROOT; };
 		16B13ED02A73E0AD0074B60A /* place.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = place.json; path = ../../../../../../Downloads/place.json; sourceTree = "<group>"; };
+		16B13ED22A7403D30074B60A /* WishlistcardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishlistcardView.swift; sourceTree = "<group>"; };
 		16B7E0AA2A72B73C00102B5E /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		16BC610A2A6D3B6C002C6859 /* WishlistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishlistView.swift; sourceTree = "<group>"; };
 		16CDA83B2A712CC700BBD9CF /* JorneyfilledView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JorneyfilledView.swift; sourceTree = "<group>"; };
@@ -192,6 +194,7 @@
 			children = (
 				1674CE332A72CA6300D7349E /* PopularPlaceCard.swift */,
 				16B13ECA2A735E210074B60A /* NearPlaceCardView.swift */,
+				16B13ED22A7403D30074B60A /* WishlistcardView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -514,6 +517,7 @@
 				21DCD2102A71967000F55FC8 /* MomentCardModel.swift in Sources */,
 				21DCD2082A71422600F55FC8 /* DetailedView.swift in Sources */,
 				166BD6782A7207F2002ED78D /* DataController.swift in Sources */,
+				16B13ED32A7403D30074B60A /* WishlistcardView.swift in Sources */,
 				16CDA85A2A716B1E00BBD9CF /* AddplacetowlView.swift in Sources */,
 				16D764AB2A6FAF420079917C /* JourneyView.swift in Sources */,
 				D7A762002A70C91200DE143C /* UserProfileView.swift in Sources */,

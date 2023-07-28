@@ -30,7 +30,7 @@ struct FoxVoyageApp: App {
     
     var body: some Scene {
         WindowGroup {
-           ExploreallView()
+           WishlistView()
                 .onAppear{
                     saveToCoreDataForFirstTime()
                     

@@ -9,6 +9,8 @@ import SwiftUI
 
 struct WishlistView: View {
     
+    @State var places: [PlaceModel] = []
+    
     @State private var activeTabIndex = 0
     
     private let tabItems: [TabItem] = [
@@ -40,7 +42,18 @@ struct WishlistView: View {
                 .foregroundColor(Color("Black900"))
                 .padding(.trailing, 50)
             
-            WishListCard()
+            //wishlist card
+            //TASK : MASUKIN WISHLIST USER
+            if !places.isEmpty{
+                VStack (spacing: 50){
+                    WishlistcardView(place : places[0])
+                    WishlistcardView(place : places[21])
+                    WishlistcardView(place : places[2])
+        
+                }.padding(.top, 40)
+            } else{
+                ProgressView()
+            }
             
             Spacer()
             
@@ -72,74 +85,22 @@ struct WishlistView: View {
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color("Redish100"))
-    }
-    
-
-    
-    
-}
-
-
-
-
-struct WishListCard : View{
-    let text = "Mega Wisata Ocarina"
-    var body: some View{
-        ZStack{
-            
-            Rectangle()
-                .frame(width: 358, height: 100)
-                .cornerRadius(30)
-                .foregroundColor(Color("Red100"))
-            
-            VStack (spacing: 0){
-                
-                HStack(spacing: 40){
-                    VStack (alignment: .leading){
-                        ForEach(splitText(text: text, maxWords: 2), id: \.self) { chunk in
-                            Text(chunk.joined(separator: " "))
-                                .foregroundColor(.white)
-                                .font(.custom("SFProDisplay-Medium", size: 28))
-                        }
-                        
-                    }
-                    
-                    Text("Misi")
-                        .foregroundColor(.white)
-                        .font(.custom("SFProText-Regular", size: 16))
-                    Text("Jarak")
-                        .foregroundColor(.white)
-                        .font(.custom("SFProText-Regular", size: 16))
-                }
-                HStack (spacing: 40){
-                    Text("3")
-                        .foregroundColor(.white)
-                        .font(.custom("SFProText-Display", size: 20))
-                    Text("1.8 km")
-                        .foregroundColor(.white)
-                        .font(.custom("SFProText-Display", size: 20))
-                }.padding(.leading, 190)
-            }
-            
+        
+        .onAppear{
+            fetchPlaces()
         }
     }
-    // Fungsi untuk membagi teks menjadi bagian-bagian dengan dua kata dalam setiap bagian
-    func splitText(text: String, maxWords: Int) -> [[String]] {
-        var chunks: [[String]] = []
-        let words = text.split(separator: " ")
-        
-        for index in stride(from: 0, to: words.count, by: maxWords) {
-            let endIndex = min(index + maxWords, words.count)
-            let chunk = Array(words[index..<endIndex])
-            chunks.append(chunk.map { String($0) })
-        }
-        
-        return chunks
+    func fetchPlaces(){
+        //taruh isloading
+        places = CoreDataController.sharedInstance.fetchPlaceModels()
+        //
     }
+    
 }
 
-struct WishlistView_Previews: PreviewProvider {
-    static var previews: some View {
-        WishlistView()
-    }
-}
+
+//struct WishlistView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        WishlistView()
+//    }
+//}
