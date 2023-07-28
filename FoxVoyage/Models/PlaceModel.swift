@@ -17,6 +17,8 @@ struct PlaceModel: Decodable, Identifiable {
     let district: String
     let operationalHour: String
     let desc: String
+    var isCheckin: Bool = false
+    var isAddedToWishList: Bool =  false
     var activities: [ActivityModel] = []
     
     enum CodingKeys: String, CodingKey {
@@ -44,7 +46,6 @@ struct PlaceModel: Decodable, Identifiable {
             self.desc = desc
             self.activities = activities
         }
-    
     
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)

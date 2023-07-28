@@ -9,13 +9,7 @@ import SwiftUI
 import AVFoundation
 
 struct AddphotomissionView: View {
-    
-//    @Environment(\.managedObjectContext) var managedObjContext
-//    @Environment(.\dismiss) var dismiss
-//    
-//    @State private var photobyuser = ""
-    
-    
+            
     var body: some View {
         TakeMomentsView()
     }

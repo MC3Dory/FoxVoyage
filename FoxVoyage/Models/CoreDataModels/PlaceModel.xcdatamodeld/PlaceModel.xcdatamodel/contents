@@ -6,6 +6,11 @@
         <attribute name="title" optional="YES" attributeType="String"/>
         <relationship name="place" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Place" inverseName="activities" inverseEntity="Place"/>
     </entity>
+    <entity name="Address" representedClassName="Address" syncable="YES" codeGenerationType="class">
+        <attribute name="latitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="longitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="adress" inverseEntity="User"/>
+    </entity>
     <entity name="Place" representedClassName="Place" syncable="YES" codeGenerationType="class">
         <attribute name="address" optional="YES" attributeType="String"/>
         <attribute name="desc" optional="YES" attributeType="String"/>
@@ -17,5 +22,11 @@
         <attribute name="operationalHour" optional="YES" attributeType="String"/>
         <attribute name="tag" optional="YES" attributeType="String"/>
         <relationship name="activities" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Activity" inverseName="place" inverseEntity="Activity"/>
+    </entity>
+    <entity name="Test" representedClassName="Test" syncable="YES" codeGenerationType="class"/>
+    <entity name="User" representedClassName="User" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="adress" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Address" inverseName="user" inverseEntity="Address"/>
     </entity>
 </model>
