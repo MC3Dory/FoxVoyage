@@ -23,13 +23,13 @@ struct NearPlaceCardView: View {
             
             VStack(alignment: .leading, spacing: 0){
                 HStack (spacing:0){
-                    Image(place.image)
+                    Image("forest")
                         .resizable()
                         .scaledToFill()
                         .frame(height: 136)
                         .cornerRadius(30, corners: [.topLeft, .bottomLeft])
                         
-                    Image(place.image)
+                    Image("cafe")
                         .resizable()
                         .scaledToFill()
                         .frame(height: 136)

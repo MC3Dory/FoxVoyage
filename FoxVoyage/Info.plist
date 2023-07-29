@@ -4,6 +4,10 @@
 <dict>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string></string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string></string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string></string>
 	<key>NSCameraUsageDescription</key>
 	<string>Take Photo</string>
 	<key>UIAppFonts</key>
@@ -16,6 +20,7 @@
 		<string>SF-Pro-Display-Regular.otf</string>
 		<string>SF-Pro-Display-Semibold.otf</string>
 		<string>SF-Pro-Text-Bold.otf</string>
+		<string></string>
 	</array>
 </dict>
 </plist>

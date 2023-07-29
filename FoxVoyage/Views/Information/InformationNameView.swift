@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct InformationNameView: View {
-    @State var name: String = ""
+    
+    @EnvironmentObject var viewModel : InformationViewModel
+    
     var body: some View {
         VStack{
             VStack{
@@ -26,40 +28,42 @@ struct InformationNameView: View {
                     .frame(maxWidth: 355, alignment: .leading)
                 
             }
-               
-            TextField("Your name....", text: $name)
+            
+            TextField("Your name....", text: $viewModel.name)
                 .font(.custom("SFProDisplay-Regular", size: 34))
                 .frame(maxWidth: 355, alignment: .leading)
                 .foregroundColor(Color("Redish400"))
-         
-           
+            
+            
             Spacer()
             
+            NavigationLink(destination: InformationLocationView(), isActive: $viewModel.isNavigateToInformationLocationView){
+                
+            }.hidden()
             Button{
+                viewModel.isNavigateToInformationLocationView = true
+            } label: {
+                HStack{
+                    Text("Next")
+                        .font(.custom("SFProText-Regular", size: 17))
+                        .foregroundColor(.white)
+                    Image(systemName: "arrow.up.forward")
+                        .foregroundColor(.white)
+                }
+                .frame(maxWidth: 358, maxHeight: 64)
+                .background(viewModel.name.isEmpty ? Color.gray : Color("Redish400")).background(Color("Redish400"))
+                .cornerRadius(999)
                 
             }
-        label: {
-            HStack{
-                Text("Next")
-                    .font(.custom("SFProText-Regular", size: 17))
-                    .foregroundColor(.white)
-                Image(systemName: "arrow.up.forward")
-                    .foregroundColor(.white)
-            }
-                .frame(maxWidth: 358, maxHeight: 64)
-                .background(name.isEmpty ? Color.gray : Color("Redish400")).background(Color("Redish400"))
-                .cornerRadius(999)
-              
+            .disabled(viewModel.name.isEmpty)
         }
-        .disabled(name.isEmpty)
-       
-        }
-
+        
     }
 }
 
 struct InformationNameView_Previews: PreviewProvider {
     static var previews: some View {
         InformationNameView()
+            .environmentObject(InformationViewModel())
     }
 }

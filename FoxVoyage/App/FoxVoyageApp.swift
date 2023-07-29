@@ -11,6 +11,8 @@ import SwiftUI
 struct FoxVoyageApp: App {
     @AppStorage("savePlacesToCoreData") var savePlacesToCoreData: Bool = true
 //    @State private var dataController = DataContoller()
+    @StateObject var locationManager = LocationManager()
+    @StateObject var informationViewModel = InformationViewModel()
     
     func saveToCoreDataForFirstTime(){
         if savePlacesToCoreData{
@@ -31,7 +33,9 @@ struct FoxVoyageApp: App {
     
     var body: some Scene {
         WindowGroup {
-           ExploreView()
+           ContentView()
+                .environmentObject(locationManager)
+                .environmentObject(informationViewModel)
                 .onAppear{
                     saveToCoreDataForFirstTime()
                     
