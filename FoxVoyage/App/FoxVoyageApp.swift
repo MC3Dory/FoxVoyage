@@ -7,12 +7,17 @@
 
 import SwiftUI
 
+
+
+
 @main
 struct FoxVoyageApp: App {
+    
     @AppStorage("savePlacesToCoreData") var savePlacesToCoreData: Bool = true
-//    @State private var dataController = DataContoller()
-    @StateObject var locationManager = LocationManager()
+    @AppStorage("showOnboarding") var showOnboarding: Bool = true
     @StateObject var informationViewModel = InformationViewModel()
+    @StateObject var router = Router()
+    
     
     func saveToCoreDataForFirstTime(){
         if savePlacesToCoreData{
@@ -33,14 +38,33 @@ struct FoxVoyageApp: App {
     
     var body: some Scene {
         WindowGroup {
-           ContentView()
-                .environmentObject(locationManager)
-                .environmentObject(informationViewModel)
-                .onAppear{
-                    saveToCoreDataForFirstTime()
-                    
-                }
-            
+            NavigationStack(path: $router.path){
+                ContentView()
+                    .navigationDestination(for: Int.self){ number in
+                        Text("number \(number)")
+                    }
+                    .navigationDestination(for: Route.self) { route in
+                        switch(route){
+                        case .explore:
+                            ExploreView()
+                        case .onboarding:
+                            OnboardingView()
+                        case .galleryAccess:
+                            GalleryAccessView()
+                        case .infoLocation:
+                            InformationLocationView()
+                        case .infoLocationSearch(let locationManager):
+                            InformationLocationSearchView(locationManager: locationManager)
+//                        case .detailView(let place):
+//                            PlacedetailView(place: place)
+                        }
+                    }
+            }
+            .environmentObject(router)
+            .environmentObject(informationViewModel)
+            .onAppear{
+                saveToCoreDataForFirstTime()
+            }
         }
     }
 }

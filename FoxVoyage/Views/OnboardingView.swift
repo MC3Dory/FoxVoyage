@@ -20,91 +20,98 @@ private var onboardingSteps = [
 ]
 
 struct OnboardingView: View {
+    @EnvironmentObject var router: Router
     @State private var currentStep = 0
+    @State var backToRoot: Bool = false
     var orangeButton = 0xffC5593A
     var bgColor = 0xff141736
     
     var body: some View {
-        
-        NavigationStack{
-            TabView(selection: $currentStep) {
-                ForEach(0..<onboardingSteps.count,id:\.self) { it in
-                    
+        TabView(selection: $currentStep) {
+            ForEach(0..<onboardingSteps.count,id:\.self) { it in
+                
+                VStack {
                     VStack {
-                        VStack {
-                            Rectangle()
-                                .fill(.white)
-                                .opacity(0.0)
-                                .frame(maxWidth: .infinity, maxHeight: 550)
-                                .overlay {
-                                    Image(onboardingSteps[it].image)
-                                        .resizable()
-                                        .aspectRatio(contentMode: currentStep == 1 ? .fit : .fill)
-                                        .frame(maxWidth: .infinity)
-                                }
-                            
-                            VStack (alignment: .leading) {
-                                
-                                Text (onboardingSteps[it].title)
-                                    .font(.system(size: 32))
-                                    .fontWeight(.semibold)
-                                    .foregroundColor (currentStep < onboardingSteps.count - 1 ? .black : .white)
-                                    .multilineTextAlignment(.leading)
-                                
-                                Spacer()
-                                    .frame(maxHeight: 10)
-                                
-                                Text (onboardingSteps[it].description)
-                                    .font(.system(size:17))
-                                    .foregroundColor (currentStep < onboardingSteps.count - 1 ? .black : .white)
-                                    .multilineTextAlignment(.leading)
-                                
+                        Rectangle()
+                            .fill(.white)
+                            .opacity(0.0)
+                            .frame(maxWidth: .infinity, maxHeight: 550)
+                            .overlay {
+                                Image(onboardingSteps[it].image)
+                                    .resizable()
+                                    .aspectRatio(contentMode: currentStep == 1 ? .fit : .fill)
+                                    .frame(maxWidth: .infinity)
                             }
-                            .tag(it)
-                            
-                            .padding(16)
-                            
-                            Spacer(minLength: 25)
-                            
-                        }
-                        .background (currentStep < onboardingSteps.count - 1 ? .white : Color(hex: bgColor))
-                        .ignoresSafeArea()
                         
-                        Button (action: {
-                            if currentStep < onboardingSteps.count - 1 {
-                                currentStep += 1
-                            }
-                        }) {
-                            if currentStep < onboardingSteps.count - 1 {
-                                Text("Next")
-                                    .fontWeight(.semibold)
-                                    .foregroundColor(.white)
-                                    .frame(width: 350, height: 50)
-                                    .background (
-                                        Capsule()
-                                            .fill(Color(hex: orangeButton))
-                                    )
-                            } else {
-                                NavigationLink(destination: GalleryAccessView()){
-                                    HStack {
-                                        Text("Get Started")
-                                            .foregroundColor(.black)
-                                    }
-                                    .frame(width: 350, height: 50)
-                                    .background (
-                                        Capsule()
-                                            .fill(Color.white)
-                                    )
-                                }
-                            }
+                        VStack (alignment: .leading) {
+                            
+                            Text (onboardingSteps[it].title)
+                                .font(.system(size: 32))
+                                .fontWeight(.semibold)
+                                .foregroundColor (currentStep < onboardingSteps.count - 1 ? .black : .white)
+                                .multilineTextAlignment(.leading)
+                            
+                            Spacer()
+                                .frame(maxHeight: 10)
+                            
+                            Text (onboardingSteps[it].description)
+                                .font(.system(size:17))
+                                .foregroundColor (currentStep < onboardingSteps.count - 1 ? .black : .white)
+                                .multilineTextAlignment(.leading)
+                            
                         }
-                    }.background(currentStep == 2 ? Color(hex: bgColor) : .white)
-                }
-                .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
-                
-                
+                        .tag(it)
+                        
+                        .padding(16)
+                        
+                        Spacer(minLength: 25)
+                        
+                    }
+                    .background (currentStep < onboardingSteps.count - 1 ? .white : Color(hex: bgColor))
+                    .ignoresSafeArea()
+                    
+                    Button (action: {
+                        if currentStep < onboardingSteps.count - 1 {
+                            currentStep += 1
+                        }
+                    }) {
+                        if currentStep < onboardingSteps.count - 1 {
+                            Text("Next")
+                                .fontWeight(.semibold)
+                                .foregroundColor(.white)
+                                .frame(width: 350, height: 50)
+                                .background (
+                                    Capsule()
+                                        .fill(Color(hex: orangeButton))
+                                )
+                            
+                        } else {
+                            Button{
+                                router.push(.galleryAccess)
+                            } label: {
+                                HStack {
+                                    Text("Get Started")
+                                        .foregroundColor(.black)
+                                }
+                                .frame(width: 350, height: 50)
+                                .background (
+                                    Capsule()
+                                        .fill(Color.white)
+                                )
+                            }
+                            
+                            
+                            
+                            
+                        }
+                    }
+                }.background(currentStep == 2 ? Color(hex: bgColor) : .white)
             }
+            .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
+            
+            
         }
+        
         .navigationBarBackButtonHidden(true)
         
         

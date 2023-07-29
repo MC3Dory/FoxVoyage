@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 @MainActor final class InformationViewModel: ObservableObject {
 
@@ -15,5 +16,14 @@ import Foundation
     @Published var isNavigateToInformationLocationView = false
     @Published var presentNavigationView: Bool = false
     @Published var navigationTag: String?
+    
+    
+    func saveUserData(longitude: Double, latitude: Double){
+        CoreDataController.sharedInstance.saveUserData(name: name, longitude: longitude, latitude: latitude)
+    }
+    
+    func fetchUsers() -> [User]{
+        return CoreDataController.sharedInstance.fetchUserModels()
+    }
 }
 

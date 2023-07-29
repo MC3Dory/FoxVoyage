@@ -8,8 +8,9 @@
 import SwiftUI
 
 struct InformationNameView: View {
-    
     @EnvironmentObject var viewModel : InformationViewModel
+    @EnvironmentObject var router : Router
+
     
     var body: some View {
         VStack{
@@ -37,11 +38,9 @@ struct InformationNameView: View {
             
             Spacer()
             
-            NavigationLink(destination: InformationLocationView(), isActive: $viewModel.isNavigateToInformationLocationView){
-                
-            }.hidden()
+            
             Button{
-                viewModel.isNavigateToInformationLocationView = true
+                router.push(.infoLocation)
             } label: {
                 HStack{
                     Text("Next")
@@ -57,6 +56,8 @@ struct InformationNameView: View {
             }
             .disabled(viewModel.name.isEmpty)
         }
+        
+        .navigationBarBackButtonHidden(true)
         
     }
 }

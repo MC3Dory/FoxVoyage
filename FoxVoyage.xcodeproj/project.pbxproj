@@ -14,11 +14,12 @@
 		163A59F02A74DD0000A861DA /* InformationLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163A59EC2A74DD0000A861DA /* InformationLocationView.swift */; };
 		165EED4C2A702856005EC89B /* AddphotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165EED4B2A702856005EC89B /* AddphotoView.swift */; };
 		166A06EF2A6A2690004D6E4B /* PlacedetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 166A06EE2A6A2690004D6E4B /* PlacedetailView.swift */; };
-		166BD6762A720593002ED78D /* PlaceModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 166BD6742A720593002ED78D /* PlaceModel.xcdatamodeld */; };
 		166BD6782A7207F2002ED78D /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 166BD6772A7207F2002ED78D /* DataController.swift */; };
 		166BD67C2A722836002ED78D /* PlaceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 166BD67B2A722836002ED78D /* PlaceModel.swift */; };
 		166BD67E2A722C87002ED78D /* JsonManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 166BD67D2A722C87002ED78D /* JsonManager.swift */; };
 		166BD6A02A72B13F002ED78D /* CoreDataRequestViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 166BD69F2A72B13F002ED78D /* CoreDataRequestViews.swift */; };
+		166C3C1F2A7572B400720782 /* PlaceModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 166BD6742A720593002ED78D /* PlaceModel.xcdatamodeld */; };
+		166C3C232A7585CB00720782 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 166C3C222A7585CB00720782 /* Router.swift */; };
 		1674CE2F2A72C35100D7349E /* LocationAccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216051F82A6A2B6600301D1E /* LocationAccessView.swift */; };
 		1674CE302A72C44500D7349E /* InformationNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216051FA2A6B882200301D1E /* InformationNameView.swift */; };
 		1674CE312A72C5E400D7349E /* ExploreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1685E4B82A6A18EA008F5FE7 /* ExploreView.swift */; };
@@ -68,7 +69,6 @@
 		16B13ECF2A7362C10074B60A /* ExploreallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B13ECE2A7362C10074B60A /* ExploreallView.swift */; };
 		16B13ED12A73E0AD0074B60A /* place.json in Resources */ = {isa = PBXBuildFile; fileRef = 16B13ED02A73E0AD0074B60A /* place.json */; };
 		16B13ED32A7403D30074B60A /* WishlistcardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B13ED22A7403D30074B60A /* WishlistcardView.swift */; };
-		16B13ED62A7410900074B60A /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B13ED52A7410900074B60A /* UserModel.swift */; };
 		16B13ED82A74109E0074B60A /* AddressModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B13ED72A74109E0074B60A /* AddressModel.swift */; };
 		16B13EDA2A7423CC0074B60A /* MissionCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B13ED92A7423CC0074B60A /* MissionCardView.swift */; };
 		16B13EDC2A74280C0074B60A /* AchivmentlistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B13EDB2A74280C0074B60A /* AchivmentlistView.swift */; };
@@ -109,6 +109,7 @@
 		166BD67B2A722836002ED78D /* PlaceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceModel.swift; sourceTree = "<group>"; };
 		166BD67D2A722C87002ED78D /* JsonManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonManager.swift; sourceTree = "<group>"; };
 		166BD69F2A72B13F002ED78D /* CoreDataRequestViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataRequestViews.swift; sourceTree = "<group>"; };
+		166C3C222A7585CB00720782 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		1674CE332A72CA6300D7349E /* PopularPlaceCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularPlaceCard.swift; sourceTree = "<group>"; };
 		1685E4B82A6A18EA008F5FE7 /* ExploreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreView.swift; sourceTree = "<group>"; };
 		1685E4BA2A6A1D84008F5FE7 /* SF-Pro-Text-Ultralight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Ultralight.otf"; sourceTree = "<group>"; };
@@ -162,7 +163,6 @@
 		16B13ECE2A7362C10074B60A /* ExploreallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ExploreallView.swift; path = FoxVoyage/Views/ExploreallView.swift; sourceTree = SOURCE_ROOT; };
 		16B13ED02A73E0AD0074B60A /* place.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = place.json; path = ../../../../../../Downloads/place.json; sourceTree = "<group>"; };
 		16B13ED22A7403D30074B60A /* WishlistcardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishlistcardView.swift; sourceTree = "<group>"; };
-		16B13ED52A7410900074B60A /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		16B13ED72A74109E0074B60A /* AddressModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressModel.swift; sourceTree = "<group>"; };
 		16B13ED92A7423CC0074B60A /* MissionCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionCardView.swift; sourceTree = "<group>"; };
 		16B13EDB2A74280C0074B60A /* AchivmentlistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchivmentlistView.swift; sourceTree = "<group>"; };
@@ -215,6 +215,14 @@
 				163A59EA2A74DD0000A861DA /* LocationManager.swift */,
 			);
 			path = Information;
+			sourceTree = "<group>";
+		};
+		166C3C0C2A75682200720782 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				166BD6772A7207F2002ED78D /* DataController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		1674CE322A72CA4D00D7349E /* Components */ = {
@@ -293,13 +301,13 @@
 		16AF69F12A68F08700A3C891 /* FoxVoyage */ = {
 			isa = PBXGroup;
 			children = (
-				16AF6A092A68F12000A3C891 /* App */,
 				16AF69F62A68F08800A3C891 /* Assets.xcassets */,
+				1696421E2A69A386000EAE19 /* Info.plist */,
+				16AF6A092A68F12000A3C891 /* App */,
 				1674CE322A72CA4D00D7349E /* Components */,
 				16AF6A082A68F11A00A3C891 /* Extensions */,
 				1696421F2A69A38E000EAE19 /* Fonts */,
 				16AF6A072A68F10600A3C891 /* Helpers */,
-				1696421E2A69A386000EAE19 /* Info.plist */,
 				16AF6A062A68F10100A3C891 /* Models */,
 				16AF69F82A68F08800A3C891 /* Preview Content */,
 				16AF6A052A68F0ED00A3C891 /* Services */,
@@ -375,7 +383,6 @@
 			children = (
 				16B13ED42A7410610074B60A /* CoreDataModels */,
 				166BD67B2A722836002ED78D /* PlaceModel.swift */,
-				16B13ED52A7410900074B60A /* UserModel.swift */,
 				16B13ED72A74109E0074B60A /* AddressModel.swift */,
 			);
 			path = Models;
@@ -387,6 +394,7 @@
 				16AF6A0C2A68F37300A3C891 /* Testtt.swift */,
 				166BD67D2A722C87002ED78D /* JsonManager.swift */,
 				16B13ED02A73E0AD0074B60A /* place.json */,
+				166C3C222A7585CB00720782 /* Router.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -412,7 +420,7 @@
 		16B13ED42A7410610074B60A /* CoreDataModels */ = {
 			isa = PBXGroup;
 			children = (
-				166BD6772A7207F2002ED78D /* DataController.swift */,
+				166C3C0C2A75682200720782 /* Controller */,
 				166BD6742A720593002ED78D /* PlaceModel.xcdatamodeld */,
 			);
 			path = CoreDataModels;
@@ -534,6 +542,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				166C3C1F2A7572B400720782 /* PlaceModel.xcdatamodeld in Sources */,
 				1674CE312A72C5E400D7349E /* ExploreView.swift in Sources */,
 				1674CE302A72C44500D7349E /* InformationNameView.swift in Sources */,
 				1674CE2F2A72C35100D7349E /* LocationAccessView.swift in Sources */,
@@ -544,7 +553,6 @@
 				16AF69F52A68F08700A3C891 /* ContentView.swift in Sources */,
 				165EED4C2A702856005EC89B /* AddphotoView.swift in Sources */,
 				16CDA83C2A712CC700BBD9CF /* JorneyfilledView.swift in Sources */,
-				166BD6762A720593002ED78D /* PlaceModel.xcdatamodeld in Sources */,
 				D7A762202A7225F800DE143C /* ProfileMemoView.swift in Sources */,
 				16286A882A74DF85005A4A81 /* JourneyView.swift in Sources */,
 				16BC610B2A6D3B6C002C6859 /* WishlistView.swift in Sources */,
@@ -565,7 +573,6 @@
 				D7A762002A70C91200DE143C /* UserProfileView.swift in Sources */,
 				D7A7621E2A71666600DE143C /* WeeklyView.swift in Sources */,
 				163A59EE2A74DD0000A861DA /* LocationManager.swift in Sources */,
-				16B13ED62A7410900074B60A /* UserModel.swift in Sources */,
 				21DCD20E2A71961B00F55FC8 /* MomentCardView.swift in Sources */,
 				163A59E52A74D8CB00A861DA /* InformationViewModel.swift in Sources */,
 				16B13EE02A74A5ED0074B60A /* PopoverView.swift in Sources */,
@@ -575,6 +582,7 @@
 				16D764AF2A6FB33F0079917C /* CardView.swift in Sources */,
 				16B13EDC2A74280C0074B60A /* AchivmentlistView.swift in Sources */,
 				16B13EDA2A7423CC0074B60A /* MissionCardView.swift in Sources */,
+				166C3C232A7585CB00720782 /* Router.swift in Sources */,
 				D7D888C22A6D150E004F984E /* HexColor.swift in Sources */,
 				21DCD20C2A71726400F55FC8 /* MomentsCapturedView.swift in Sources */,
 				16E0BF5F2A6CE50400B7FBC8 /* MissiondetailView.swift in Sources */,

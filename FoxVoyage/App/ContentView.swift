@@ -10,22 +10,12 @@ import SwiftUI
 
 
 struct ContentView: View {
-    
+    @AppStorage("showOnboarding") var showOnboarding: Bool = true
     var body: some View {
-        
-        
-        if #available(iOS 16, *){
-            NavigationStack{
-                InformationNameView()
-            }
-            
-            
+        if showOnboarding {
+            OnboardingView()
         }else{
-            NavigationView{
-                InformationNameView()
-            }
-            
-            
+            ExploreView()
         }
     }
     

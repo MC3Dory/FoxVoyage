@@ -9,7 +9,6 @@ import SwiftUI
 import Photos
 
 struct GalleryAccessView: View {
-    
     @State private var isGalleryAccessGranted = false
     
     var body: some View {
@@ -73,6 +72,7 @@ struct GalleryAccessView: View {
         }
         .navigationBarTitle("", displayMode: .inline)
         .navigationBarHidden(true)
+        
         
     }
     

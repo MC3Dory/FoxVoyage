@@ -81,50 +81,39 @@ class CoreDataController {
         }
     }
     
-    
     // USER
-    func saveUserModel(_ userModel: UserModel) {
+    func saveUserData(name: String, longitude: Double, latitude: Double){
         let entity = NSEntityDescription.entity(forEntityName: "User", in: managedObjectContext)!
         let userEntity = NSManagedObject(entity: entity, insertInto: managedObjectContext)
+        userEntity.setValue(UUID(), forKey: "id")
+        userEntity.setValue(name, forKey: "name")
         
-        userEntity.setValue(userModel.name, forKey: "name")
         
-        let addressEntity = NSEntityDescription.entity(forEntityName: "Address", in: managedObjectContext)!
-        let addressManagedObject = NSManagedObject(entity: addressEntity, insertInto: managedObjectContext)
+        let address = NSEntityDescription.entity(forEntityName: "Address", in: managedObjectContext)!
+        let addressEntity = NSManagedObject(entity: address, insertInto: managedObjectContext)
         
-        addressManagedObject.setValue(userModel.address.longitude, forKey: "longitude")
-        addressManagedObject.setValue(userModel.address.latitude, forKey: "latitude")
+        addressEntity.setValue(longitude, forKey: "longitude")
+        addressEntity.setValue(latitude, forKey: "latitude")
         
-        userEntity.setValue(addressManagedObject, forKey: "address")
-        
+        userEntity.setValue(addressEntity, forKey: "address")
         do {
+            // Save the context to persist the changes
             try managedObjectContext.save()
-            print("User data saved successfully.")
+            print("Data saved successfully.")
         } catch {
-            fatalError("Failed to save user data: \(error)")
+            print("Failed to save data: \(error)")
         }
     }
     
-    func fetchUserModels() -> [UserModel] {
+    
+    func fetchUserModels() -> [User] {
         let fetchRequest = NSFetchRequest<User>(entityName: "User")
-
+        
         do {
             let userEntities = try managedObjectContext.fetch(fetchRequest)
-            return userEntities.map { userEntity in
-                if let addressEntity = userEntity.adress, let address = addressEntity as? Address {
-                    let userModel = UserModel(name: userEntity.name ?? "", address: AddressModel(longitude: address.longitude, latitude: address.latitude))
-                    return userModel
-                } else {
-                    // Handle the case where address is nil or not in the correct format
-                    // Return a default UserModel or throw an error as needed.
-                    // For simplicity, we'll return a default UserModel here:
-                    return UserModel(name: userEntity.name ?? "", address: AddressModel(longitude: 0, latitude: 0))
-                }
-            }
+            return userEntities
         } catch {
             fatalError("Failed to fetch user data: \(error)")
         }
     }
-
-    
 }
