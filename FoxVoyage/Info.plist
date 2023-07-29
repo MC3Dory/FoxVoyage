@@ -17,5 +17,9 @@
 		<string>SF-Pro-Display-Semibold.otf</string>
 		<string>SF-Pro-Text-Bold.otf</string>
 	</array>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>This app requires to always access your device location to notify when the user enters and/or exits a geofence.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>This app requires to always access your device location to notify when the user enters and/or exits a geofence.</string>
 </dict>
 </plist>

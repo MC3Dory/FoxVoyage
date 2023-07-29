@@ -79,6 +79,12 @@
 		21DCD20C2A71726400F55FC8 /* MomentsCapturedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21DCD20B2A71726400F55FC8 /* MomentsCapturedView.swift */; };
 		21DCD20E2A71961B00F55FC8 /* MomentCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21DCD20D2A71961B00F55FC8 /* MomentCardView.swift */; };
 		21DCD2102A71967000F55FC8 /* MomentCardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21DCD20F2A71967000F55FC8 /* MomentCardModel.swift */; };
+		7217F78E2A7371F80008E750 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7217F78D2A7371F80008E750 /* LocationManager.swift */; };
+		7217F7912A74A3490008E750 /* LocalSearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7217F7902A74A3490008E750 /* LocalSearchService.swift */; };
+		7217F7932A74A3C50008E750 /* MKCoordinateRegion+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7217F7922A74A3C50008E750 /* MKCoordinateRegion+Extension.swift */; };
+		7217F7952A74C5EB0008E750 /* NongsaDigitalPark.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 7217F7942A74C5EB0008E750 /* NongsaDigitalPark.gpx */; };
+		7217F7972A74D3410008E750 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7217F7962A74D3410008E750 /* AppDelegate.swift */; };
+		725C71082A736CA7008C39F5 /* InformationLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216052002A6D514E00301D1E /* InformationLocationView.swift */; };
 		D7A762002A70C91200DE143C /* UserProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A761FF2A70C91200DE143C /* UserProfileView.swift */; };
 		D7A7621C2A715E4800DE143C /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A7621B2A715E4800DE143C /* View.swift */; };
 		D7A7621E2A71666600DE143C /* WeeklyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A7621D2A71666600DE143C /* WeeklyView.swift */; };
@@ -168,6 +174,11 @@
 		21DCD20B2A71726400F55FC8 /* MomentsCapturedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentsCapturedView.swift; sourceTree = "<group>"; };
 		21DCD20D2A71961B00F55FC8 /* MomentCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentCardView.swift; sourceTree = "<group>"; };
 		21DCD20F2A71967000F55FC8 /* MomentCardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentCardModel.swift; sourceTree = "<group>"; };
+		7217F78D2A7371F80008E750 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		7217F7902A74A3490008E750 /* LocalSearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalSearchService.swift; sourceTree = "<group>"; };
+		7217F7922A74A3C50008E750 /* MKCoordinateRegion+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MKCoordinateRegion+Extension.swift"; sourceTree = "<group>"; };
+		7217F7942A74C5EB0008E750 /* NongsaDigitalPark.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = NongsaDigitalPark.gpx; sourceTree = "<group>"; };
+		7217F7962A74D3410008E750 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D7A761FF2A70C91200DE143C /* UserProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileView.swift; sourceTree = "<group>"; };
 		D7A7621B2A715E4800DE143C /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		D7A7621D2A71666600DE143C /* WeeklyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyView.swift; sourceTree = "<group>"; };
@@ -260,6 +271,7 @@
 		16AF69F12A68F08700A3C891 /* FoxVoyage */ = {
 			isa = PBXGroup;
 			children = (
+				7217F7942A74C5EB0008E750 /* NongsaDigitalPark.gpx */,
 				16AF6A092A68F12000A3C891 /* App */,
 				16AF69F62A68F08800A3C891 /* Assets.xcassets */,
 				1674CE322A72CA4D00D7349E /* Components */,
@@ -288,6 +300,8 @@
 			isa = PBXGroup;
 			children = (
 				16AF6A142A68F39800A3C891 /* filefile.swift */,
+				7217F7962A74D3410008E750 /* AppDelegate.swift */,
+				7217F78D2A7371F80008E750 /* LocationManager.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -332,6 +346,7 @@
 			isa = PBXGroup;
 			children = (
 				16AF6A102A68F37F00A3C891 /* TestV.swift */,
+				7217F7902A74A3490008E750 /* LocalSearchService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -361,6 +376,7 @@
 			isa = PBXGroup;
 			children = (
 				D7D888C12A6D150E004F984E /* HexColor.swift */,
+				7217F7922A74A3C50008E750 /* MKCoordinateRegion+Extension.swift */,
 				D7A7621B2A715E4800DE143C /* View.swift */,
 			);
 			path = Extensions;
@@ -465,6 +481,7 @@
 				169642372A69A3A6000EAE19 /* SF-Pro-Display-MediumItalic.otf in Resources */,
 				1685E4CD2A6A1D87008F5FE7 /* SF-Pro-Text-Black.otf in Resources */,
 				1696423C2A69A3A6000EAE19 /* SF-Pro-Display-UltralightItalic.otf in Resources */,
+				7217F7952A74C5EB0008E750 /* NongsaDigitalPark.gpx in Resources */,
 				1685E4D32A6A1D87008F5FE7 /* SF-Pro-Text-Regular.otf in Resources */,
 				1685E4DC2A6A1D87008F5FE7 /* SF-Pro-Text-UltralightItalic.otf in Resources */,
 				169642422A69A3A6000EAE19 /* SF-Pro-Display-Heavy.otf in Resources */,
@@ -491,6 +508,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7217F7972A74D3410008E750 /* AppDelegate.swift in Sources */,
 				1674CE312A72C5E400D7349E /* ExploreView.swift in Sources */,
 				1674CE302A72C44500D7349E /* InformationNameView.swift in Sources */,
 				1674CE2F2A72C35100D7349E /* LocationAccessView.swift in Sources */,
@@ -499,8 +517,10 @@
 				166BD6A02A72B13F002ED78D /* CoreDataRequestViews.swift in Sources */,
 				D7D888C02A6D07F0004F984E /* MissionCards.swift in Sources */,
 				16AF69F52A68F08700A3C891 /* ContentView.swift in Sources */,
+				7217F7932A74A3C50008E750 /* MKCoordinateRegion+Extension.swift in Sources */,
 				165EED4C2A702856005EC89B /* AddphotoView.swift in Sources */,
 				16CDA83C2A712CC700BBD9CF /* JorneyfilledView.swift in Sources */,
+				725C71082A736CA7008C39F5 /* InformationLocationView.swift in Sources */,
 				166BD6762A720593002ED78D /* PlaceModel.xcdatamodeld in Sources */,
 				D7A762202A7225F800DE143C /* ProfileMemoView.swift in Sources */,
 				16BC610B2A6D3B6C002C6859 /* WishlistView.swift in Sources */,
@@ -515,6 +535,8 @@
 				21DCD2082A71422600F55FC8 /* DetailedView.swift in Sources */,
 				166BD6782A7207F2002ED78D /* DataController.swift in Sources */,
 				16CDA85A2A716B1E00BBD9CF /* AddplacetowlView.swift in Sources */,
+				7217F7912A74A3490008E750 /* LocalSearchService.swift in Sources */,
+				7217F78E2A7371F80008E750 /* LocationManager.swift in Sources */,
 				16D764AB2A6FAF420079917C /* JourneyView.swift in Sources */,
 				D7A762002A70C91200DE143C /* UserProfileView.swift in Sources */,
 				D7A7621E2A71666600DE143C /* WeeklyView.swift in Sources */,

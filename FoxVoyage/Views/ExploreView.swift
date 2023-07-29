@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ExploreView: View {
+    @StateObject var locationManager: LocationManager = .init()
     @State var places: [PlaceModel] = []
     //addwishlist
     @State private var isAddTowishList = false
@@ -103,7 +104,7 @@ struct ExploreView: View {
                         HStack (spacing: 50){
                             
                             //TASK : NAMA TEMPAT
-                            Text("Fanindo")
+                            Text(locationManager.placeToCheckIn)
                                 .font(.custom("SFProDisplay-Medium", size: 28))
                                 .foregroundColor(Color("Black900"))
                                 .padding(.leading, -5)

@@ -6,6 +6,10 @@
 //
 
 import SwiftUI
+import MapKit
+import CoreLocationUI
+import CoreLocation
+
 
 struct TabItem: Identifiable {
     let id = UUID()
@@ -15,7 +19,12 @@ struct TabItem: Identifiable {
 
 
 struct JourneyView: View {
+    @StateObject var locationManager: LocationManager = .init()
+    @EnvironmentObject var localSearchService: LocalSearchService
+    @State var places: [PlaceModel] = []
     @State private var activeTabIndex = 0
+    
+    
     
     private let tabItems: [TabItem] = [
         TabItem(systemImageName: "map.fill", isActive: true),
@@ -26,49 +35,28 @@ struct JourneyView: View {
     
     var body: some View {
         VStack{
-            HStack{
-                ZStack{
-                    Rectangle()
-                        .frame(width: 175, height: 56)
-                        .cornerRadius(999)
-                        .foregroundColor(.white)
-                    
-                    Circle()
-                        .frame(width: 48, height: 48)
-                        .foregroundColor(Color("Green200"))
-                        .padding(.trailing, 123)
-                        .padding(.leading, 4)
-                    
-                    Image(systemName: "rectangle.dashed.and.paperclip")
-                        .padding(.trailing, 123)
-                        .padding(.leading, 4)
-                    
-                    Text("4")
-                        .font(.custom("SFProDisplay-Medium", size: 20))
-                        .padding(.leading, 25)
+            Map(
+              coordinateRegion: $locationManager.region,
+              showsUserLocation: true,
+              annotationItems: places
+            )
+            { place in
+              MapAnnotation(
+                coordinate: CLLocationCoordinate2D(latitude: Double(place.longitude) ?? 0.0, longitude: Double(place.latitude) ?? 0.0)
+              ) {
+//                  LocationMapAnnotationView()
+                VStack {
+                  Text(place.name)
+                    .font(.caption2)
+                    .bold()
+                  Image(systemName: "star.fill")
+                    .font(.title2)
+                    .foregroundColor(.red)
+                    .shadow(radius: 1)
                 }
-                
-                ZStack{
-                    Rectangle()
-                        .frame(width: 175, height: 56)
-                        .cornerRadius(999)
-                        .foregroundColor(.white)
-                    
-                    Circle()
-                        .frame(width: 48, height: 48)
-                        .foregroundColor(Color("Green200"))
-                        .padding(.trailing, 123)
-                        .padding(.leading, 4)
-                    
-                    Image(systemName: "rectangle.dashed.and.paperclip")
-                        .padding(.trailing, 123)
-                        .padding(.leading, 4)
-                    
-                    Text("4")
-                        .font(.custom("SFProDisplay-Medium", size: 20))
-                        .padding(.leading, 25)
-                }
+              }
             }
+            .ignoresSafeArea()
             
             Spacer()
             
@@ -102,6 +90,15 @@ struct JourneyView: View {
             
             
             
+        
+//        LocationButton(.currentLocation) {
+//            locationManager.manager.requestLocation()
+//            print("location requested")
+//        }
+        }
+        .onAppear{
+            locationManager.fetchPlaces()
+            locationManager.manager.requestLocation()
         }
         
         .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -111,10 +108,11 @@ struct JourneyView: View {
             .edgesIgnoringSafeArea(.all)
         )
     }
+    
 }
 
 struct JourneyView_Previews: PreviewProvider {
     static var previews: some View {
-        JourneyView()
+        JourneyView().environmentObject(LocalSearchService())
     }
 }

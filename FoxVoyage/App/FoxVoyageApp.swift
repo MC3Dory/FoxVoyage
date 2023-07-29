@@ -10,6 +10,8 @@ import SwiftUI
 @main
 struct FoxVoyageApp: App {
     @AppStorage("savePlacesToCoreData") var savePlacesToCoreData: Bool = true
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+
 //    @State private var dataController = DataContoller()
     
     func saveToCoreDataForFirstTime(){
@@ -18,6 +20,7 @@ struct FoxVoyageApp: App {
                 let placemodels = try JSONManager.sharedInstance.loadData(path: "data", type: PlaceModel.self)
                 for place in placemodels {
                     CoreDataController.sharedInstance.savePlaceModel(place)
+                    print("place \(place)")
                 }
                 savePlacesToCoreData = false
             }catch{
@@ -29,9 +32,10 @@ struct FoxVoyageApp: App {
     
     var body: some Scene {
         WindowGroup {
-           ExploreallView()
+           ExploreView()
                 .onAppear{
                     saveToCoreDataForFirstTime()
+                    print("berhasil")
                     
                 }
             
