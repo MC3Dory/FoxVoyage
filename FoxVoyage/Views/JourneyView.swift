@@ -34,6 +34,7 @@ struct JourneyView: View {
     ]
     
     var body: some View {
+//        let _ = print([places])
         VStack{
             Map(
               coordinateRegion: $locationManager.region,
@@ -91,14 +92,16 @@ struct JourneyView: View {
             
             
         
-//        LocationButton(.currentLocation) {
-//            locationManager.manager.requestLocation()
-//            print("location requested")
-//        }
+        LocationButton(.currentLocation) {
+            locationManager.manager.requestLocation()
+            print("location requested")
+        }
         }
         .onAppear{
-            locationManager.fetchPlaces()
+//            locationManager.fetchPlacesData()
             locationManager.manager.requestLocation()
+            fetchPlaces()
+            
         }
         
         .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -107,6 +110,12 @@ struct JourneyView: View {
             .scaledToFill()
             .edgesIgnoringSafeArea(.all)
         )
+    }
+    
+    func fetchPlaces(){
+        //taruh isloading
+        places = CoreDataController.sharedInstance.fetchPlaceModels()
+        //
     }
     
 }

@@ -84,6 +84,10 @@
 		7217F7932A74A3C50008E750 /* MKCoordinateRegion+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7217F7922A74A3C50008E750 /* MKCoordinateRegion+Extension.swift */; };
 		7217F7952A74C5EB0008E750 /* NongsaDigitalPark.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 7217F7942A74C5EB0008E750 /* NongsaDigitalPark.gpx */; };
 		7217F7972A74D3410008E750 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7217F7962A74D3410008E750 /* AppDelegate.swift */; };
+		7217F79B2A74D5830008E750 /* ShimmerEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7217F7982A74D5830008E750 /* ShimmerEffect.swift */; };
+		7217F79C2A74D5830008E750 /* MTSlideToOpen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7217F7992A74D5830008E750 /* MTSlideToOpen.swift */; };
+		7217F79D2A74D5830008E750 /* SlideButtonStyling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7217F79A2A74D5830008E750 /* SlideButtonStyling.swift */; };
+		7217F79F2A74D5F40008E750 /* SlideButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7217F79E2A74D5F40008E750 /* SlideButton.swift */; };
 		725C71082A736CA7008C39F5 /* InformationLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216052002A6D514E00301D1E /* InformationLocationView.swift */; };
 		D7A762002A70C91200DE143C /* UserProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A761FF2A70C91200DE143C /* UserProfileView.swift */; };
 		D7A7621C2A715E4800DE143C /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A7621B2A715E4800DE143C /* View.swift */; };
@@ -179,6 +183,13 @@
 		7217F7922A74A3C50008E750 /* MKCoordinateRegion+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MKCoordinateRegion+Extension.swift"; sourceTree = "<group>"; };
 		7217F7942A74C5EB0008E750 /* NongsaDigitalPark.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = NongsaDigitalPark.gpx; sourceTree = "<group>"; };
 		7217F7962A74D3410008E750 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		7217F7982A74D5830008E750 /* ShimmerEffect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShimmerEffect.swift; sourceTree = "<group>"; };
+		7217F7992A74D5830008E750 /* MTSlideToOpen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MTSlideToOpen.swift; sourceTree = "<group>"; };
+		7217F79A2A74D5830008E750 /* SlideButtonStyling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideButtonStyling.swift; sourceTree = "<group>"; };
+		7217F79E2A74D5F40008E750 /* SlideButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideButton.swift; sourceTree = "<group>"; };
+		7217F7A42A74F19D0008E750 /* NuvasaBay.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = NuvasaBay.gpx; sourceTree = "<group>"; };
+		7217F7A52A74F1AC0008E750 /* KampungTerih.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = KampungTerih.gpx; sourceTree = "<group>"; };
+		7217F7A62A74F1BE0008E750 /* TebingLangit.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = TebingLangit.gpx; sourceTree = "<group>"; };
 		D7A761FF2A70C91200DE143C /* UserProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileView.swift; sourceTree = "<group>"; };
 		D7A7621B2A715E4800DE143C /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		D7A7621D2A71666600DE143C /* WeeklyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyView.swift; sourceTree = "<group>"; };
@@ -272,6 +283,9 @@
 			isa = PBXGroup;
 			children = (
 				7217F7942A74C5EB0008E750 /* NongsaDigitalPark.gpx */,
+				7217F7A42A74F19D0008E750 /* NuvasaBay.gpx */,
+				7217F7A52A74F1AC0008E750 /* KampungTerih.gpx */,
+				7217F7A62A74F1BE0008E750 /* TebingLangit.gpx */,
 				16AF6A092A68F12000A3C891 /* App */,
 				16AF69F62A68F08800A3C891 /* Assets.xcassets */,
 				1674CE322A72CA4D00D7349E /* Components */,
@@ -309,6 +323,7 @@
 		16AF6A032A68F0E000A3C891 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				7217F79E2A74D5F40008E750 /* SlideButton.swift */,
 				16EE195E2A71DAF300309BDA /* AddphotomissionView.swift */,
 				165EED4B2A702856005EC89B /* AddphotoView.swift */,
 				16CDA8592A716B1E00BBD9CF /* AddplacetowlView.swift */,
@@ -365,6 +380,9 @@
 		16AF6A072A68F10600A3C891 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				7217F7992A74D5830008E750 /* MTSlideToOpen.swift */,
+				7217F7982A74D5830008E750 /* ShimmerEffect.swift */,
+				7217F79A2A74D5830008E750 /* SlideButtonStyling.swift */,
 				16AF6A0C2A68F37300A3C891 /* Testtt.swift */,
 				166BD67D2A722C87002ED78D /* JsonManager.swift */,
 				166BD67F2A722C91002ED78D /* data.json */,
@@ -511,6 +529,7 @@
 				7217F7972A74D3410008E750 /* AppDelegate.swift in Sources */,
 				1674CE312A72C5E400D7349E /* ExploreView.swift in Sources */,
 				1674CE302A72C44500D7349E /* InformationNameView.swift in Sources */,
+				7217F79D2A74D5830008E750 /* SlideButtonStyling.swift in Sources */,
 				1674CE2F2A72C35100D7349E /* LocationAccessView.swift in Sources */,
 				16B7E0AC2A72BC0900102B5E /* GalleryAccessView.swift in Sources */,
 				16D764AD2A6FB2F60079917C /* CheckinView.swift in Sources */,
@@ -525,6 +544,7 @@
 				D7A762202A7225F800DE143C /* ProfileMemoView.swift in Sources */,
 				16BC610B2A6D3B6C002C6859 /* WishlistView.swift in Sources */,
 				166BD67E2A722C87002ED78D /* JsonManager.swift in Sources */,
+				7217F79C2A74D5830008E750 /* MTSlideToOpen.swift in Sources */,
 				166BD67C2A722836002ED78D /* PlaceModel.swift in Sources */,
 				16EE195F2A71DAF300309BDA /* AddphotomissionView.swift in Sources */,
 				1674CE342A72CA6300D7349E /* PopularPlaceCard.swift in Sources */,
@@ -542,10 +562,12 @@
 				D7A7621E2A71666600DE143C /* WeeklyView.swift in Sources */,
 				21DCD20E2A71961B00F55FC8 /* MomentCardView.swift in Sources */,
 				16AF6A0F2A68F37900A3C891 /* Test.swift in Sources */,
+				7217F79B2A74D5830008E750 /* ShimmerEffect.swift in Sources */,
 				21DCD2042A70C5ED00F55FC8 /* InformationLocationSearchView.swift in Sources */,
 				16B13ECF2A7362C10074B60A /* ExploreallView.swift in Sources */,
 				16AF69F32A68F08700A3C891 /* FoxVoyageApp.swift in Sources */,
 				16D764AF2A6FB33F0079917C /* CardView.swift in Sources */,
+				7217F79F2A74D5F40008E750 /* SlideButton.swift in Sources */,
 				D7D888C22A6D150E004F984E /* HexColor.swift in Sources */,
 				21DCD20C2A71726400F55FC8 /* MomentsCapturedView.swift in Sources */,
 				16E0BF5F2A6CE50400B7FBC8 /* MissiondetailView.swift in Sources */,

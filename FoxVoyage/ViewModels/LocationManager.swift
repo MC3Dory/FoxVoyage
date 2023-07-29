@@ -38,6 +38,7 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate, MK
     @State var places: [PlaceModel] = []
     
     @Published var placeToCheckIn: String = ""
+    @Published var isCheckedIn: Bool = false
     
     
     var locationCoordinatesArray: [CLLocationCoordinate2D]  = []
@@ -161,7 +162,7 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate, MK
         region = MKCoordinateRegion(center: location.coordinate, latitudinalMeters: 1000, longitudinalMeters: 1000)
         self.userLocation = location
         
-//        fetchedDataLocation()
+        fetchedDataLocation()
 //        Task {
 //            await readFileJSONdata()
 //        }
@@ -169,16 +170,12 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate, MK
     }
     
     func fetchedDataLocation() {
-        locationCoordinatesArray = [
-            //            CLLocationCoordinate2D(latitude: 1.185307, longitude: 104.102234),
-            CLLocationCoordinate2D(latitude: 40.7579747, longitude: -73.9855426),
-            CLLocationCoordinate2D(latitude: 1.126091, longitude: 104.098618),
+//        places = CoreDataController.sharedInstance.fetchPlaceModels()
+        print(" fetchedDataLocation jalan")
+        locationCoordinatesArray = [CLLocationCoordinate2D(latitude: 1.1924597737473719, longitude: 104.08920451777048), CLLocationCoordinate2D(latitude: 1.156321233032294, longitude: 104.08426367123171), CLLocationCoordinate2D(latitude: 1.118394, longitude: 103.952007), CLLocationCoordinate2D(latitude: 1.123827, longitude: 103.935072), CLLocationCoordinate2D(latitude: 1.1273917960632145, longitude: 103.92923507769095), CLLocationCoordinate2D(latitude: 1.11883, longitude: 103.954134), CLLocationCoordinate2D(latitude: 1.145068, longitude: 103.948013), CLLocationCoordinate2D(latitude: 1.122202, longitude: 104.054331), CLLocationCoordinate2D(latitude: 1.150647, longitude: 104.050455), CLLocationCoordinate2D(latitude: 1.1629277932466477, longitude: 104.04598854579676), CLLocationCoordinate2D(latitude: 1.162062, longitude: 104.041073), CLLocationCoordinate2D(latitude: 1.17331, longitude: 104.070875), CLLocationCoordinate2D(latitude: 1.170018, longitude: 104.081643), CLLocationCoordinate2D(latitude: 5.195169, longitude: 97.075943), CLLocationCoordinate2D(latitude: 1.0875467227428972, longitude: 103.94280425832288), CLLocationCoordinate2D(latitude: 1.085002, longitude: 103.97251), CLLocationCoordinate2D(latitude: 1.0842931200610917, longitude: 103.94953845606284), CLLocationCoordinate2D(latitude: 0.939987336901875, longitude: 104.06481815287042), CLLocationCoordinate2D(latitude: 0.0, longitude: 0.0), CLLocationCoordinate2D(latitude: 0.0, longitude: 0.0), CLLocationCoordinate2D(latitude: 0.0, longitude: 0.0), CLLocationCoordinate2D(latitude: 1.188364, longitude: 104.077354), CLLocationCoordinate2D(latitude: 1.1893046882057359, longitude: 104.11062956451119), CLLocationCoordinate2D(latitude: 1.204200095156528, longitude: 104.07715651425261), CLLocationCoordinate2D(latitude: 1.1713605081427432, longitude: 104.06996421153927), CLLocationCoordinate2D(latitude: 1.14246, longitude: 104.147489), CLLocationCoordinate2D(latitude: 1.1489806090070427, longitude: 104.14075445795682), CLLocationCoordinate2D(latitude: 1.146395, longitude: 104.141837), CLLocationCoordinate2D(latitude: 1.145179, longitude: 104.143144), CLLocationCoordinate2D(latitude: 1.1444940650400677, longitude: 104.14435736424663), CLLocationCoordinate2D(latitude: 1.1912065336750406, longitude: 104.0836251155722), CLLocationCoordinate2D(latitude: 1.0888, longitude: 104.135199), CLLocationCoordinate2D(latitude: 1.1477308735911975, longitude: 104.1421067365945), CLLocationCoordinate2D(latitude: 0.8591841215307142, longitude: 104.1459034939578), CLLocationCoordinate2D(latitude: 0.7567330153332622, longitude: 104.18607202715529), CLLocationCoordinate2D(latitude: 0.583485, longitude: 104.197831), CLLocationCoordinate2D(latitude: 0.773336, longitude: 104.173366), CLLocationCoordinate2D(latitude: 0.7513682552872534, longitude: 104.19068602606477), CLLocationCoordinate2D(latitude: 0.0, longitude: 0.0), CLLocationCoordinate2D(latitude: 0.6248673884725112, longitude: 104.28490267905522), CLLocationCoordinate2D(latitude: 0.6428505942500103, longitude: 104.28807360083346), CLLocationCoordinate2D(latitude: 0.6507126168604905, longitude: 104.28419913674782), CLLocationCoordinate2D(latitude: 1.1484703512166674, longitude: 103.89148321451437), CLLocationCoordinate2D(latitude: 1.1442266595056825, longitude: 103.92339979662295), CLLocationCoordinate2D(latitude: 0.9837221996045635, longitude: 104.09980881538735), CLLocationCoordinate2D(latitude: 1.152839, longitude: 104.056425)
         ]
         
-        locationCoordinatesArray.append(CLLocationCoordinate2D(latitude: 1.185307, longitude: 104.102234))
-        
-        identifiersArray = ["Times Square", "Mall Botania 1"]
-        identifiersArray.append("NDP")
+        identifiersArray = ["Nuvasa Bay", "Kampung Terih", "Tebing Langit", "Taman Rusa", "Taman Kolam", "Batam Forest Top", "Tangga Seribu", "Welcome To Batam", "Coastarina", "Dino\'s Gate", "Miniatur House Indonesia", "MAngrove Pandang Tak Jemu", "Kebun Raya Batam", "Agro Wisata Buah NAga", "Agro Wisata Jambu MArina", "Hutan Wisata Mata Kucing", "Kampung Sawah by Jambu Madu Edufarm", "Agro Mulyo Eco Adventures", "Panbil Nature Reserve", "Tanjung Memban", "Pantai Melayu", "Pantai Nongsa", "Teluk Mata Ikan", "Pulau Putri Nongsa", "Pantai Bale-Bale", "Sekilak", "Pantai Lagorap", "Pantai Ketapang", "Pantai Boneta", "Pantai Tanda Pesona", "Nuvasa Bay", "Pantai Panau", "Pantai Payung", "Pantai Melayu Barelang", "Pantai Melur Barelang", "Pulau Abang", "Pantai Mirota", "Pantai Vio-Vio", "Pantai Dendang Melayu", "Pantai Elyora", "Tegar Bahari", "Reviola", "Pantai Pasir Putih", "Pantai Tanjung Pinggir", "Pantai Tanjung Piayu", "Mega Wisata Ocarina"]
         
 //        ForEach(places) { place in
 //            monitorRegionsAtLocations(locations: [CLLocationCoordinate2D(latitude: Double(place.longitude) ?? 0.0, longitude: Double(place.latitude) ?? 0.0]), identifiers: [place.name])
@@ -190,6 +187,8 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate, MK
         //        ForEach(locationData) { loc in
         //            locationCoordinatesArray.append(CLLocationCoordinate2D(latitude: loc.latitude, longitude: loc.longitude))
         //        }
+        
+        
         monitorRegionsAtLocations(locations: locationCoordinatesArray, identifiers: identifiersArray)
     }
     
@@ -243,11 +242,39 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate, MK
             }
             
             self.placeToCheckIn = region.identifier
+            self.isCheckedIn = true
         }
         
     }
     
-    func fetchPlaces(){
+    func locationManager(_ manager: CLLocationManager, didExitRegion region: CLRegion) {
+            settings.showAlert = false
+    
+            if UIApplication.shared.applicationState == .active {
+    
+            } else {
+                print("You left \(region.identifier)")
+//              let body = "You left " + region.identifier
+//              let notificationContent = UNMutableNotificationContent()
+//              notificationContent.body = body
+//              notificationContent.sound = .default
+//              notificationContent.badge = UIApplication.shared.applicationIconBadgeNumber + 1 as NSNumber
+//              let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
+//              let request = UNNotificationRequest(
+//                identifier: "location_change",
+//                content: notificationContent,
+//                trigger: trigger)
+//              UNUserNotificationCenter.current().add(request) { error in
+//                if let error = error {
+//                  print("Error: \(error)")
+//                }
+//              }
+                self.placeToCheckIn = "No Where"
+                self.isCheckedIn = false
+            }
+        }
+    
+    func fetchPlacesData(){
         places = CoreDataController.sharedInstance.fetchPlaceModels()
     }
 }

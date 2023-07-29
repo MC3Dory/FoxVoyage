@@ -35,10 +35,7 @@ struct FoxVoyageApp: App {
            ExploreView()
                 .onAppear{
                     saveToCoreDataForFirstTime()
-                    print("berhasil")
-                    
                 }
-            
         }
     }
 }
