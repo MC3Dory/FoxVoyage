@@ -266,32 +266,38 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate, MK
         if UIApplication.shared.applicationState == .active {
             
         } else {
-            manager.startMonitoringVisits()
-//            print("You arrived at \(region.identifier)")
-            print("You arrived at \(getPlace[0].name)")
-//            let body = "You arrived at " + region.identifier
-            let title = "You are in " + getPlace[0].name
-            let body = "This seems a nice place, want to capture a moment here? 🦊"
-            let notificationContent = UNMutableNotificationContent()
-            notificationContent.title = title
-            notificationContent.body = body
-            notificationContent.sound = .default
-            notificationContent.badge = UIApplication.shared.applicationIconBadgeNumber + 1 as NSNumber
-            notificationContent.userInfo = ["name": getPlace[0].name]
-            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
-            let request = UNNotificationRequest(
-                identifier: "location_change",
-                content: notificationContent,
-                trigger: trigger)
-            UNUserNotificationCenter.current().add(request) { error in
-                if let error = error {
-                    print("Error: \(error)")
+            
+            
+//            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                //            print("Dispatch")
+                
+                //        }
+                manager.startMonitoringVisits()
+                //            print("You arrived at \(region.identifier)")
+                print("You arrived at \(getPlace[0].name)")
+                //            let body = "You arrived at " + region.identifier
+                let title = "You are in " + getPlace[0].name
+                let body = "This seems a nice place, want to capture a moment here? 🦊"
+                let notificationContent = UNMutableNotificationContent()
+                notificationContent.title = title
+                notificationContent.body = body
+                notificationContent.sound = .default
+                notificationContent.badge = UIApplication.shared.applicationIconBadgeNumber + 1 as NSNumber
+                notificationContent.userInfo = ["name": getPlace[0].name]
+                let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
+                let request = UNNotificationRequest(
+                    identifier: "location_change",
+                    content: notificationContent,
+                    trigger: trigger)
+                UNUserNotificationCenter.current().add(request) { error in
+                    if let error = error {
+                        print("Error: \(error)")
+                    }
                 }
-            }
-            
-            self.placeToCheckIn = region.identifier
-            self.isCheckedIn = true
-            
+                
+                self.placeToCheckIn = region.identifier
+                self.isCheckedIn = true
+//            }
         }
         
     }

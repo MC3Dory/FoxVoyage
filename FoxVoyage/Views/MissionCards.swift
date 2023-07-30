@@ -64,6 +64,7 @@ func getQuest(tipe: String) -> DestinationCategory? {
 }
 
 struct MissionCards: View {
+    @State var nameOfLocation: String = "Coastarina"
     @State var typeOfLocation : String = "nature"
     @State private var showSheet: Bool = false
     @State private var showImagePicker: Bool = false
@@ -72,40 +73,71 @@ struct MissionCards: View {
     @State private var image: UIImage?
     
     var body: some View {
+        
         VStack {
-            
-            VStack (alignment: .leading) {
-                Text ("Fox Quests")
-                    .font(.system(size: 41))
-                    .foregroundColor(Color.black)
-                    .fontWeight(.semibold)
-                    .padding(.leading, 25)
-                    .padding(.top, 30)
-                
-                Text ("A series of captivating challenges designed to ignite your wanderlust and preserve every cherished moment along the way.")
-                    .font(.system(size: 16))
-                    .padding(.leading, 25)
-                    .padding(.trailing, 25)
-                    .multilineTextAlignment(.leading)
-                    .foregroundColor(Color.gray)
-                    .padding(.bottom)
+            VStack {
+                HStack {
+                    VStack (alignment: .leading) {
+                        Text (nameOfLocation)
+                            .font(.system(size: 29))
+                            .padding(.leading, 20)
+                            .padding(.trailing, 25)
+                            .foregroundColor(Color.black)
+                            .fontWeight(.semibold)
+                            .padding(.top, 10)
+                        
+                        Text ("Finish the quest to earn a FoxStamp.")
+                            .font(.system(size: 16))
+                            .padding(.leading, 20)
+                            .padding(.trailing, 25)
+                            .multilineTextAlignment(.leading)
+                            .foregroundColor(Color.gray)
+                        
+                        ZStack {
+                            
+                            Button{
+                                
+                            }
+                        label: {
+                            HStack{
+                                Text("Claim")
+                                    .font(.custom("SFProDisplay-Medium", size: 17))
+                                    .foregroundColor(.white)
+                                
+                                Image(systemName: "arrow.up.right")
+                                    .foregroundColor(.white)
+                            }
+                            .frame(maxWidth: 150, maxHeight: 60)
+                            .background(Color("Redish400"))
+                            .cornerRadius(50)
+                            .padding(.leading, 15)
+                            
+                        }
+                            
+                        }
+                        
+                    }
                     
+                    Image ("stamp")
+                        .offset(x:30, y: 0)
+                }
+                
                 ScrollView {
                     VStack {
-//                        ForEach(questList.filter{ $0.type == getQuest(tipe: typeOfLocation)}) {
-                        ForEach(questList) {
+                        ForEach(questList.filter{ $0.type == getQuest(tipe: typeOfLocation)}) {
+//                        ForEach(questList) {
                             quest in
                             ZStack {
-                                Color(hex: quest.type.rawValue)
-                                    .frame(width: 350, height: 200, alignment: .center)
+                                Color(.white)
+                                    .frame(width: 350, height: 150, alignment: .center)
                                     .cornerRadius(15)
-                                    
+                                
                                 HStack {
                                     VStack (alignment: .leading) {
-                                        Text ("Quest:")
+                                        
                                         Text(quest.title)
-                                            .font(.system(size: 22))
-                                            .foregroundColor(.white)
+                                            .font(.system(size: 20))
+                                            .foregroundColor(.gray)
                                             .padding(.bottom, 5)
                                         
                                         Text("Description:")
@@ -113,8 +145,8 @@ struct MissionCards: View {
                                         
                                         Text(quest.description)
                                             .font(.system(size: 10))
-                                            .foregroundColor(.white)
-
+                                            .foregroundColor(.gray)
+                                        
                                         Button("Add your photo here") {
                                             self.showSheet = true
                                         }.padding()
@@ -131,46 +163,32 @@ struct MissionCards: View {
                                                     },
                                                     .cancel()
                                                 ])
-                                        }
+                                            }
                                         
                                     }
-                                
+                                    
                                     Spacer()
                                     ZStack {
-                                        Image ("sticker")
+                                        Image(uiImage: image ?? UIImage(named: "locked")!)
                                             .resizable()
                                             .scaledToFit()
-                                            .frame(width: 180, height: 180)
-                                        
-                                        Image(uiImage: image ?? UIImage(named: "Fox")!)
-                                            .resizable()
-                                            .scaledToFit()
-                                            .frame(width: 110, height: 110)
+                                            .frame(width: 100, height: 100)
                                         
                                     }
-                        
+                                    
                                 }.padding(.horizontal)
-                                
-                                Circle ()
-                                    .frame(width: 115)
-                                    .foregroundColor(Color.gray)
-                                    .opacity(0.6)
-                                
-                                Image(systemName: "lock.fill")
-                                    .resizable()
-                                    .scaledToFit()
-                                    .frame(width: 50, height: 50)
-                                    .foregroundColor(.white)
                                 
                             }
                             .padding(.horizontal)
                         }
                     }
-                    .sheet(isPresented: $showImagePicker) {
-                        ImagePicker(image: self.$image, isShown: self.$showImagePicker, sourceType: self.sourceType)
-                    }
                 }
             }
+        }
+        .background(Color("Redish100"))
+        
+        .sheet(isPresented: $showImagePicker) {
+            ImagePicker(image: self.$image, isShown: self.$showImagePicker, sourceType: self.sourceType)
         }
     }
 }
