@@ -25,7 +25,6 @@ struct AddNoteToPhotoView: View {
                         .scaledToFill()
                         .ignoresSafeArea()
                 }
-                
                 VStack{
                     HStack{
                         Spacer()

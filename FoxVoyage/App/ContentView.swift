@@ -19,7 +19,7 @@ struct ContentView: View {
             OnboardingView()
             
         }else{
-            JourneyView()
+            MainView()
         }
             
 
