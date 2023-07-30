@@ -12,13 +12,11 @@ import SwiftUI
 struct ContentView: View {
     @AppStorage("showOnboarding") var showOnboarding: Bool = true
     var body: some View {
-        
-        AddPhotoView()
-//        if showOnboarding {
-//            OnboardingView()
-//        }else{
-//            ExploreView()
-//        }
+        if showOnboarding {
+            OnboardingView()
+        }else{
+            AddphotoView()
+        }
     }
     
 }
