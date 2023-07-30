@@ -13,6 +13,8 @@ enum Route: Hashable{
     case explore
     case infoLocation
     case infoLocationSearch(locationManager: LocationManager)
+    case test(picData: Data)
+    case addNotePhoto(picData: Data)
 //    case detailView(place: PlaceModel)
 }
 
