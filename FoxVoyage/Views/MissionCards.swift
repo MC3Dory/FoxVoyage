@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+
+
 struct questsCards : Identifiable{
     var id = UUID()
     var title: String
@@ -47,7 +49,27 @@ enum DestinationCategory: Int {
     case park = 0xffFD9380
 }
 
+func getQuest(tipe: String) -> DestinationCategory? {
+    if tipe == "Natural Attraction" {
+        return .nature
+    } else if tipe == "Artificial Attraction" {
+        return .artificial
+    } else if tipe == "Beach" {
+        return .beach
+    } else if tipe == "Park" {
+        return .park
+    } else {
+        return nil // Handle the case when input tipe is not a valid category
+    }
+}
+
 struct MissionCards: View {
+    @State var typeOfLocation : String = "nature"
+    @State private var showSheet: Bool = false
+    @State private var showImagePicker: Bool = false
+    @State private var sourceType: UIImagePickerController.SourceType = .camera
+    
+    @State private var image: UIImage?
     
     var body: some View {
         VStack {
@@ -70,6 +92,7 @@ struct MissionCards: View {
                     
                 ScrollView {
                     VStack {
+//                        ForEach(questList.filter{ $0.type == getQuest(tipe: typeOfLocation)}) {
                         ForEach(questList) {
                             quest in
                             ZStack {
@@ -91,6 +114,24 @@ struct MissionCards: View {
                                         Text(quest.description)
                                             .font(.system(size: 10))
                                             .foregroundColor(.white)
+
+                                        Button("Add your photo here") {
+                                            self.showSheet = true
+                                        }.padding()
+                                            .font(.system(size: 10))
+                                            .actionSheet(isPresented: $showSheet) {
+                                                ActionSheet(title: Text("Select Photo"), message: Text("Choose"), buttons: [
+                                                    .default(Text("Photo Library")) {
+                                                        self.showImagePicker = true
+                                                        self.sourceType = .photoLibrary
+                                                    },
+                                                    .default(Text("Camera")) {
+                                                        self.showImagePicker = true
+                                                        self.sourceType = .camera
+                                                    },
+                                                    .cancel()
+                                                ])
+                                        }
                                         
                                     }
                                 
@@ -101,7 +142,7 @@ struct MissionCards: View {
                                             .scaledToFit()
                                             .frame(width: 180, height: 180)
                                         
-                                        Image ("Fox")
+                                        Image(uiImage: image ?? UIImage(named: "Fox")!)
                                             .resizable()
                                             .scaledToFit()
                                             .frame(width: 110, height: 110)
@@ -124,6 +165,9 @@ struct MissionCards: View {
                             }
                             .padding(.horizontal)
                         }
+                    }
+                    .sheet(isPresented: $showImagePicker) {
+                        ImagePicker(image: self.$image, isShown: self.$showImagePicker, sourceType: self.sourceType)
                     }
                 }
             }

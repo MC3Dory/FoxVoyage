@@ -8,7 +8,11 @@
 import SwiftUI
 
 struct PlacedetailView: View {
-    
+    @StateObject var locationManager: LocationManager = .init()
+    @State var places: [PlaceModel] = []
+    @State private var showModal = false
+    @State var name: String = ""
+    var placeName : String
     //carousel
     @State private var index = 0
     
@@ -18,23 +22,23 @@ struct PlacedetailView: View {
                 // Carousel - Background Screen
                 TabView(selection: $index) {
                     ZStack{
-                        Image("forest")
-                            .resizable()
-                            .aspectRatio(contentMode: .fill)
-                            .edgesIgnoringSafeArea(.all)
-                            .scaledToFill()
-                            .frame(width: geometry.size.width, height: geometry.size.height)
-                            
-                        
+                        if !places.isEmpty{
+//                            Image(places[0].image)
+                            Image("forest")
+                                .resizable()
+                                .aspectRatio(contentMode: .fill)
+                                .edgesIgnoringSafeArea(.all)
+                                .scaledToFill()
+                                .frame(width: geometry.size.width, height: geometry.size.height)
+                        }
+
                         VStack {
                             //TASK : MAKSIMAL 2 LINE
-                            Text("Nuvasa")
+                            Text(name)
+                            Text(placeName)
                                 .font(.custom("SFProDisplay-Bold", size: 64))
                                 .foregroundColor(.white)
                                 .padding(.top, 50)
-                            Text("Bay")
-                                .font(.custom("SFProDisplay-Bold", size: 64))
-                                .foregroundColor(.white)
                             
                             Spacer()
                             
@@ -49,37 +53,53 @@ struct PlacedetailView: View {
                                     .frame(width: 181, height: 48)
                                 
                                 //TASK: TAG
-                                Text("Artificial Attraction")
-                                    .font(.custom("SFProText-Medium", size: 15))
-                                    .foregroundColor(.white)
+                                if !places.isEmpty{
+                                    Text(places[0].tag)
+                                        .font(.custom("SFProText-Medium", size: 15))
+                                        .foregroundColor(.white)
+                                }
                             }.padding(.bottom, 16)
                                 .padding(.trailing, 170)
                             
                             //TASK: ALAMAT
-                            Text("Sambau, Kecamatan Nongsa, Kota Batam, Kepulauan Riau 29465")
-                                .font(.custom("SFProText-Regular", size: 16))
-                                .foregroundColor(.white)
-                                .padding(.horizontal, 16)
-                                .padding(.trailing, 30)
-                                .padding(.bottom, 50)
+                            if !places.isEmpty{
+                                Text(places[0].address)
+                                    .font(.custom("SFProText-Regular", size: 16))
+                                    .foregroundColor(.white)
+                                    .padding(.horizontal, 16)
+                                    .padding(.trailing, 30)
+                                    .padding(.bottom, 100)
+                            }
+                            
+                            
                             
                             //TASK: SLIDE ANIMATION FOR CHECKIN
-                            ZStack{
-                                RoundedRectangle(cornerRadius: 999)
-                                    .fill(Color.white)
-                                    .frame(width: 358, height: 64)
-                                
-                                Group{
-                                    Circle()
-                                        .frame(width: 56, height: 56)
-                                        .foregroundColor(Color("Redish400"))
-                                    
-                                    Image(systemName: "arrow.right")
-                                        .foregroundColor(Color.white)
-                                    
-                                }.padding(.trailing, 290)
-                                
-                                Text("Slide to Checkin")
+                            if !places.isEmpty{
+                                if places[0].isCheckin == false {
+                                    SlideButton("Slide to capture momen", styling: .init(indicatorColor: Color("Redish400"), backgroundColor: .white, textColor: .black, indicatorSystemName: "arrow.right", textHiddenBehindIndicator: false, textShimmers: true), callback: sliderCallback)
+                                }
+//                            }
+//
+//                            if locationManager.isCheckedIn {
+//                                SlideButton("Slide to capture momen", styling: .init(indicatorColor: Color("Redish400"), backgroundColor: .white, textColor: .black, indicatorSystemName: "arrow.right", textHiddenBehindIndicator: false, textShimmers: true), callback: sliderCallback)
+                            } else {
+                                ZStack{
+                                    RoundedRectangle(cornerRadius: 999)
+                                        .fill(Color.white)
+                                        .frame(width: 325, height: 64)
+    //                                Group{
+    //                                    Circle()
+    //                                        .frame(width: 56, height: 56)
+    //                                        .foregroundColor(Color("Redish400"))
+    //
+    //                                    Image(systemName: "arrow.right")
+    //                                        .foregroundColor(Color.white)
+    //
+    //                                }.padding(.trailing, 250)
+    //
+                                    Text("You Already Checked In")
+                                        .padding(.leading, 30)
+                                }
                             }
                         }
                         
@@ -98,10 +118,12 @@ struct PlacedetailView: View {
                                 .foregroundColor(.white)
                             
                             //TASK: NAMA TEMPAT
-                            Text("Nuvasa Bay")
-                                .font(.custom("SFProDisplay-SemiBold", size: 34))
-                                .foregroundColor(.white)
-                                .padding(.bottom, 25)
+                            if !places.isEmpty{
+                                Text(places[0].name)
+                                    .font(.custom("SFProDisplay-SemiBold", size: 34))
+                                    .foregroundColor(.white)
+                                    .padding(.bottom, 25)
+                            }
                             
                             HStack{
                                 ZStack{
@@ -115,9 +137,11 @@ struct PlacedetailView: View {
                                         .frame(width: 102, height: 48)
                                     
                                     //TASK: TAG
-                                    Text("Nongsa")
-                                        .font(.custom("SFProText-Medium", size: 15))
-                                        .foregroundColor(.white)
+                                    if !places.isEmpty{
+                                        Text(places[0].district)
+                                            .font(.custom("SFProText-Medium", size: 15))
+                                            .foregroundColor(.white)
+                                    }
                                 }
                                 
                                 VStack{
@@ -126,9 +150,11 @@ struct PlacedetailView: View {
                                         .foregroundColor(.white)
                                     
                                     //TASK : JAM OPERASIONAL TEMPAT
-                                    Text("09:00 - 17:00")
-                                        .font(.custom("SFProDisplay-Regular", size: 20))
-                                        .foregroundColor(.white)
+                                    if !places.isEmpty{
+                                        Text(places[0].operationalHour)
+                                            .font(.custom("SFProDisplay-Regular", size: 20))
+                                            .foregroundColor(.white)
+                                    }
                                 }.padding(.leading, 120)
                             }
                             
@@ -140,29 +166,35 @@ struct PlacedetailView: View {
                                 
                             
                             //TASK : DESRICTION
-                            Text("Nuvasa Bay is a beautiful and vibrant integrated resort destination located on the island of Batam, in the Riau Islands Province of Indonesia.Nestled along the sparkling coastline of the South China Sea, Nuvasa Bay offers a perfect blend of modern facilities, natural beauty, and exciting activities, making it an ideal getaway for travelers seeking a mix of relaxation and adventure")
-                                .frame(width: 358, height: 336)
-                                .font(.custom("SFProDisplay-Regular", size: 22))
-                                .foregroundColor(.white)
+                                    if !places.isEmpty{
+                                        Text(places[0].desc)
+                                            .frame(width: 358, height: 336)
+                                            .font(.custom("SFProDisplay-Regular", size: 22))
+                                            .foregroundColor(.white)
+                                    }
                             
                             Spacer()
                             //TASK: SLIDE ANIMATION FOR CHECKIN
-                            ZStack{
-                                RoundedRectangle(cornerRadius: 999)
-                                    .fill(Color.white)
-                                    .frame(width: 358, height: 64)
-                                
-                                Group{
-                                    Circle()
-                                        .frame(width: 56, height: 56)
-                                        .foregroundColor(Color("Redish400"))
-                                    
-                                    Image(systemName: "arrow.right")
-                                        .foregroundColor(Color.white)
-                                    
-                                }.padding(.trailing, 290)
-                                
-                                Text("Slide to capture momen")
+                            if locationManager.isCheckedIn {
+                                SlideButton("Slide to capture momen", styling: .init(indicatorColor: Color("Redish400"), backgroundColor: .white, textColor: .black, indicatorSystemName: "arrow.right", textHiddenBehindIndicator: false, textShimmers: true), callback: sliderCallback)
+                            } else {
+                                ZStack{
+                                    RoundedRectangle(cornerRadius: 999)
+                                        .fill(Color.white)
+                                        .frame(width: 325, height: 64)
+    //                                Group{
+    //                                    Circle()
+    //                                        .frame(width: 56, height: 56)
+    //                                        .foregroundColor(Color("Redish400"))
+    //
+    //                                    Image(systemName: "arrow.right")
+    //                                        .foregroundColor(Color.white)
+    //
+    //                                }.padding(.trailing, 250)
+    //
+                                    Text("You Already Checked In")
+                                        .padding(.leading, 30)
+                                }
                             }
                         }
                         
@@ -171,15 +203,17 @@ struct PlacedetailView: View {
                     }.tag(1)
                     
                     ZStack{
-                        Color("Redish100")
-                            .aspectRatio(contentMode: .fill)
-                            .edgesIgnoringSafeArea(.all)
+                        if !places.isEmpty{
+                            MissionCards(typeOfLocation: places[0].tag)
+                        }
+//                        Color("Redish100")
+//                            .aspectRatio(contentMode: .fill)
+//                            .edgesIgnoringSafeArea(.all)
                             
                     }.tag(2)
                     
                 }
                 .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
-                .edgesIgnoringSafeArea(.all)
                 .frame(width: geometry.size.width, height: geometry.size.height)
                 .zIndex(-1) // Set carousel to the backgroundp
                 
@@ -197,14 +231,40 @@ struct PlacedetailView: View {
             .padding(.top, 650)
             .padding(.horizontal, 164)
         }
+        .onAppear{
+            locationManager.manager.requestLocation()
+            getPlace()
+            
+        }
         
     }
+    
+    private func sliderCallback() async {
+        try? await Task.sleep(for: .seconds(2))
+        print("checkin")
+        
+        showModal = true
+        locationManager.isCheckedIn.toggle()
+    }
+    
+    func getPlace() {
+        places = CoreDataController.sharedInstance.fetchGetPlace(location: placeName)
+        print("halooooo \(places[0].name)")
+        
+        name = places[0].name ?? ""
+    }
+    
+//    func fetchPlaces(){
+//        //taruh isloading
+//        places = CoreDataController.sharedInstance.fetchPlaceModels()
+//        //
+//    }
     
 }
 
 
 struct PlacedetailView_Previews: PreviewProvider {
     static var previews: some View {
-        PlacedetailView()
+        PlacedetailView(placeName: "String")
     }
 }

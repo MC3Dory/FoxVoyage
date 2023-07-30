@@ -11,7 +11,8 @@ import UIKit
 
 class AppState: ObservableObject {
     static let shared = AppState()
-    @Published var pageToNavigationTo : String?
+    @Published var namaToNavigationTo : String?
+    @Published var isCheckedInToNavigationTo : Bool?
 }
 
 class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
@@ -54,12 +55,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         
         print("didreceive")
         
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-//            print("Dispatch")
-            AppState.shared.pageToNavigationTo = "test"
-//        }
-        
+       let userInfo = response.notification.request.content.userInfo
+        if let nama = userInfo["nama"] as? String {
+            AppState.shared.namaToNavigationTo = nama
+        }
         completionHandler()
+        
+        
+        print("finich didreceive")
     }
     
     

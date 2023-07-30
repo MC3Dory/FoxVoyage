@@ -41,6 +41,8 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate, MK
     @Published var isCheckedIn: Bool = false
     
     
+    
+    
     var locationCoordinatesArray: [CLLocationCoordinate2D]  = []
     var identifiersArray: [String] = []
     
@@ -268,12 +270,14 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate, MK
 //            print("You arrived at \(region.identifier)")
             print("You arrived at \(getPlace[0].name)")
 //            let body = "You arrived at " + region.identifier
-            let body = "You arrived at " + getPlace[0].name
+            let title = "You are in " + getPlace[0].name
+            let body = "This seems a nice place, want to capture a moment here? 🦊"
             let notificationContent = UNMutableNotificationContent()
+            notificationContent.title = title
             notificationContent.body = body
             notificationContent.sound = .default
             notificationContent.badge = UIApplication.shared.applicationIconBadgeNumber + 1 as NSNumber
-            notificationContent.userInfo = ["region": region.identifier]
+            notificationContent.userInfo = ["name": getPlace[0].name]
             let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
             let request = UNNotificationRequest(
                 identifier: "location_change",
