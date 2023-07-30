@@ -59,6 +59,12 @@ struct FoxVoyageApp: App {
 //                            PlacedetailView(place: place)
                         case .exploreAll:
                             ExploreallView()
+                        case .takepic:
+                            AddphotoView()
+                        case .listMission :
+                            PlacedetailView(placeName: "Kampung Terih")
+                        case .popOver:
+                            PopoverView()
                         }
                     }
             }

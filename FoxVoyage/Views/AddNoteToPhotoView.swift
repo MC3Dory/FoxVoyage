@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct AddNoteToPhotoView: View {
+    @EnvironmentObject var router: Router
+    
     let picData: Data
     @State private var textInput: String = ""
     @State private var textColor: Color = Color("Black400")
@@ -92,7 +94,9 @@ struct AddNoteToPhotoView: View {
                     
                 }
                 
-                Button(action: {}, label: {
+                Button{
+                    router.push(.listMission)
+                }label: {
                     Text("Create Memories 􀄯")
                         .font(.custom("SFProText-Medium", size: 17))
                         .foregroundColor(Color.white)
@@ -100,7 +104,10 @@ struct AddNoteToPhotoView: View {
                         .background(Color("Redish400"))
                         .clipShape(Capsule())
                     
-                }).padding(.horizontal, 16)
+                }
+                .padding(.horizontal, 16)
+                
+               
             }
             .background(.white)
         }

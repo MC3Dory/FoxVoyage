@@ -15,6 +15,9 @@ enum Route: Hashable{
     case infoLocationSearch(locationManager: LocationManager)
     case addPhoto(picData: Data)
     case exploreAll
+    case takepic
+    case listMission
+    case popOver
 //    case detailView(place: PlaceModel)
 }
 

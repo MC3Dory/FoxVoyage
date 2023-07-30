@@ -64,6 +64,8 @@ func getQuest(tipe: String) -> DestinationCategory? {
 }
 
 struct MissionCards: View {
+    
+    @EnvironmentObject var router: Router
     @State var nameOfLocation: String = "Coastarina"
     @State var typeOfLocation : String = "nature"
     @State private var showSheet: Bool = false
@@ -96,7 +98,7 @@ struct MissionCards: View {
                         ZStack {
                             
                             Button{
-                                
+                                router.push(.popOver)
                             }
                         label: {
                             HStack{
@@ -169,7 +171,8 @@ struct MissionCards: View {
                                     
                                     Spacer()
                                     ZStack {
-                                        Image(uiImage: image ?? UIImage(named: "locked")!)
+//                                        Image(uiImage: image ?? UIImage(named: "locked")!)
+                                        Image("locked")
                                             .resizable()
                                             .scaledToFit()
                                             .frame(width: 100, height: 100)

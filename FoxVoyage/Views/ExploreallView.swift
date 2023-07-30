@@ -97,7 +97,7 @@ struct ExploreallView: View {
                         .padding(.horizontal, 16)
                         .padding(.top, 30)
                     }
-                }.navigationBarBackButtonHidden(true)
+                }
                 
                     .scrollIndicators(.hidden)
                 
