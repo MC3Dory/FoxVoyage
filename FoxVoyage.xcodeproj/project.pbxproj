@@ -66,7 +66,6 @@
 		169642422A69A3A6000EAE19 /* SF-Pro-Display-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = 169642302A69A3A6000EAE19 /* SF-Pro-Display-Heavy.otf */; };
 		169642432A69A3A6000EAE19 /* SF-Pro-Display-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 169642312A69A3A6000EAE19 /* SF-Pro-Display-BoldItalic.otf */; };
 		16AF69F32A68F08700A3C891 /* FoxVoyageApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16AF69F22A68F08700A3C891 /* FoxVoyageApp.swift */; };
-		16AF69F52A68F08700A3C891 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16AF69F42A68F08700A3C891 /* ContentView.swift */; };
 		16AF69F72A68F08800A3C891 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16AF69F62A68F08800A3C891 /* Assets.xcassets */; };
 		16AF69FA2A68F08800A3C891 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16AF69F92A68F08800A3C891 /* Preview Assets.xcassets */; };
 		16AF6A012A68F09C00A3C891 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 16AF6A002A68F09C00A3C891 /* .gitignore */; };
@@ -103,6 +102,7 @@
 		727427302A764DB100D06821 /* TebingLangit.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 7274272E2A764DB100D06821 /* TebingLangit.gpx */; };
 		727427322A7675F800D06821 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727427312A7675F800D06821 /* ImagePicker.swift */; };
 		727427342A767A7500D06821 /* LocationMapAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727427332A767A7500D06821 /* LocationMapAnnotationView.swift */; };
+		727427352A768B9C00D06821 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16AF69F42A68F08700A3C891 /* ContentView.swift */; };
 		D7A762002A70C91200DE143C /* UserProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A761FF2A70C91200DE143C /* UserProfileView.swift */; };
 		D7A7621C2A715E4800DE143C /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A7621B2A715E4800DE143C /* View.swift */; };
 		D7A7621E2A71666600DE143C /* WeeklyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A7621D2A71666600DE143C /* WeeklyView.swift */; };
@@ -595,10 +595,10 @@
 				16D764AD2A6FB2F60079917C /* CheckinView.swift in Sources */,
 				166BD6A02A72B13F002ED78D /* CoreDataRequestViews.swift in Sources */,
 				D7D888C02A6D07F0004F984E /* MissionCards.swift in Sources */,
-				16AF69F52A68F08700A3C891 /* ContentView.swift in Sources */,
 				165EED4C2A702856005EC89B /* AddphotoView.swift in Sources */,
 				16CDA83C2A712CC700BBD9CF /* JorneyfilledView.swift in Sources */,
 				7217F7AD2A76314F0008E750 /* AppDelegate.swift in Sources */,
+				727427352A768B9C00D06821 /* ContentView.swift in Sources */,
 				D7A762202A7225F800DE143C /* ProfileMemoView.swift in Sources */,
 				16286A882A74DF85005A4A81 /* JourneyView.swift in Sources */,
 				1625223A2A76669D0047CC27 /* MainView.swift in Sources */,

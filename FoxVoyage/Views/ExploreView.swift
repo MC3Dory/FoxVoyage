@@ -23,9 +23,9 @@ struct ExploreView: View {
     
     var pushNavigationBinding : Binding<Bool> {
         .init { () -> Bool in
-            appState.namaToNavigationTo != nil;
+            appState.pageToNavigationTo != nil
         } set: { (newValue) in
-            if !newValue { appState.namaToNavigationTo = nil }
+            if !newValue { appState.pageToNavigationTo = nil }
         }
     }
     
@@ -105,11 +105,6 @@ struct ExploreView: View {
                         .font(.custom("SFProDisplay-Regular", size: 22))
                         .padding(.leading, -150)
                         .padding(.top, 10)
-                        .overlay(NavigationLink(destination: PlacedetailView(placeName: appState.namaToNavigationTo ?? ""),
-                                                isActive: pushNavigationBinding) {
-                            EmptyView()
-                        })
-                    
                     
                     //checkin
                     ZStack{
@@ -285,6 +280,10 @@ struct ExploreView: View {
                 
                 
             }
+            .overlay(NavigationLink(destination: PlacedetailView(placeName: appState.pageToNavigationTo ?? ""),
+                                    isActive: pushNavigationBinding) {
+                EmptyView()
+            })
             
                 
         }
@@ -293,6 +292,7 @@ struct ExploreView: View {
         
         
         .onAppear{
+            locationManager.manager.requestLocation()
             fetchPlaces()
         }
     }

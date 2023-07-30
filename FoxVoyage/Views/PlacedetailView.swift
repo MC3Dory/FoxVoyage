@@ -23,8 +23,8 @@ struct PlacedetailView: View {
                 TabView(selection: $index) {
                     ZStack{
                         if !places.isEmpty{
-//                            Image(places[0].image)
-                            Image("forest")
+                            Image(places[0].image)
+//                            Image("forest")
                                 .resizable()
                                 .aspectRatio(contentMode: .fill)
                                 .edgesIgnoringSafeArea(.all)
@@ -204,7 +204,7 @@ struct PlacedetailView: View {
                     
                     ZStack{
                         if !places.isEmpty{
-                            MissionCards(typeOfLocation: places[0].tag)
+                            MissionCards(nameOfLocation: placeName,  typeOfLocation: places[0].tag)
                         }
 //                        Color("Redish100")
 //                            .aspectRatio(contentMode: .fill)

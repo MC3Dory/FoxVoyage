@@ -11,7 +11,7 @@ import UIKit
 
 class AppState: ObservableObject {
     static let shared = AppState()
-    @Published var namaToNavigationTo : String?
+    @Published var pageToNavigationTo : String?
     @Published var isCheckedInToNavigationTo : Bool?
 }
 
@@ -57,7 +57,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         
        let userInfo = response.notification.request.content.userInfo
         if let nama = userInfo["nama"] as? String {
-            AppState.shared.namaToNavigationTo = nama
+            AppState.shared.pageToNavigationTo = nama
         }
         completionHandler()
         
