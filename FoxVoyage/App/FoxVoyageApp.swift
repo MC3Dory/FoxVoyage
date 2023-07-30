@@ -55,6 +55,8 @@ struct FoxVoyageApp: App {
                             InformationLocationView()
                         case .infoLocationSearch(let locationManager):
                             InformationLocationSearchView(locationManager: locationManager)
+                        case .addPhoto(let picData):
+                            AddNoteToPhotoView(picData: picData)
 //                        case .detailView(let place):
 //                            PlacedetailView(place: place)
                         }

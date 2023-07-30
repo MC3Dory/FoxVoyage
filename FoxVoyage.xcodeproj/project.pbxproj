@@ -11,6 +11,7 @@
 		1625222C2A761E990047CC27 /* InformationLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1625222B2A761E990047CC27 /* InformationLocationView.swift */; };
 		1625222E2A761EBB0047CC27 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1625222D2A761EBB0047CC27 /* LocationManager.swift */; };
 		162522302A7620390047CC27 /* place.json in Resources */ = {isa = PBXBuildFile; fileRef = 1625222F2A7620390047CC27 /* place.json */; };
+		162522362A7656EF0047CC27 /* AddNoteToPhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162522352A7656EF0047CC27 /* AddNoteToPhotoView.swift */; };
 		16286A882A74DF85005A4A81 /* JourneyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16286A872A74DF85005A4A81 /* JourneyView.swift */; };
 		163A59E52A74D8CB00A861DA /* InformationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163A59E42A74D8CB00A861DA /* InformationViewModel.swift */; };
 		165EED4C2A702856005EC89B /* AddphotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165EED4B2A702856005EC89B /* AddphotoView.swift */; };
@@ -101,6 +102,7 @@
 		1625222B2A761E990047CC27 /* InformationLocationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InformationLocationView.swift; sourceTree = "<group>"; };
 		1625222D2A761EBB0047CC27 /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		1625222F2A7620390047CC27 /* place.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = place.json; sourceTree = "<group>"; };
+		162522352A7656EF0047CC27 /* AddNoteToPhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteToPhotoView.swift; sourceTree = "<group>"; };
 		16286A872A74DF85005A4A81 /* JourneyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JourneyView.swift; sourceTree = "<group>"; };
 		163A59E42A74D8CB00A861DA /* InformationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationViewModel.swift; sourceTree = "<group>"; };
 		165EED4B2A702856005EC89B /* AddphotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddphotoView.swift; sourceTree = "<group>"; };
@@ -366,6 +368,7 @@
 				D7A7621D2A71666600DE143C /* WeeklyView.swift */,
 				16BC610A2A6D3B6C002C6859 /* WishlistView.swift */,
 				16B13EDF2A74A5ED0074B60A /* PopoverView.swift */,
+				162522352A7656EF0047CC27 /* AddNoteToPhotoView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -581,6 +584,7 @@
 				16AF69F32A68F08700A3C891 /* FoxVoyageApp.swift in Sources */,
 				16D764AF2A6FB33F0079917C /* CardView.swift in Sources */,
 				16B13EDC2A74280C0074B60A /* AchivmentlistView.swift in Sources */,
+				162522362A7656EF0047CC27 /* AddNoteToPhotoView.swift in Sources */,
 				16B13EDA2A7423CC0074B60A /* MissionCardView.swift in Sources */,
 				166C3C232A7585CB00720782 /* Router.swift in Sources */,
 				D7D888C22A6D150E004F984E /* HexColor.swift in Sources */,
