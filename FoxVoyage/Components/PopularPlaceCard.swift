@@ -26,19 +26,28 @@ struct PopularPlaceCard : View{
                     isAddTowishList.toggle()
                 }){
                     ZStack{
-                        Image("explore1")
-                        
-                        Circle()
-                            .frame(width: 48, height: 48)
-                            .foregroundColor(.white)
-                        
-                        Image(systemName: isAddTowishList ? "bookmark" : "bookmark.fill")
-                            .foregroundColor( isAddTowishList ? .black : Color("Redish400"))
+                        Image(place.image)
+                            .resizable()
+                            .scaledToFill()
+                            .frame(width: 155, height: 136)
+                            .cornerRadius(30)
+                            .padding(.top, -30)
+                        ZStack{
+                            Circle()
+                                .frame(width: 48, height: 48)
+                                .foregroundColor(.white)
+                            
+                            Image(systemName: isAddTowishList ? "bookmark" : "bookmark.fill")
+                                .foregroundColor( isAddTowishList ? .black : Color("Redish400"))
+                        }.padding(.bottom, 100)
+                            .padding(.leading, 90)
+
+                            
                     }
                     
                 }
                 //TASK: NAMA TEMPAT --> maksimal jadi 2 line
-                Text(place.name ?? "Name Placeholder")
+                Text("\(place.name)􀰾")
                     .font(.custom("SFProDisplay-Regular", size: 20))
                     .padding(.leading, -30)
             }
