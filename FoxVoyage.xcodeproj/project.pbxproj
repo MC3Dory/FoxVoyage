@@ -13,6 +13,8 @@
 		162522302A7620390047CC27 /* place.json in Resources */ = {isa = PBXBuildFile; fileRef = 1625222F2A7620390047CC27 /* place.json */; };
 		162522362A7656EF0047CC27 /* AddNoteToPhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162522352A7656EF0047CC27 /* AddNoteToPhotoView.swift */; };
 		1625223A2A76669D0047CC27 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162522392A76669D0047CC27 /* MainView.swift */; };
+		1625223C2A768B3B0047CC27 /* TestCamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1625223B2A768B3B0047CC27 /* TestCamView.swift */; };
+		1625223E2A7691BB0047CC27 /* FavoriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1625223D2A7691BB0047CC27 /* FavoriteView.swift */; };
 		16286A882A74DF85005A4A81 /* JourneyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16286A872A74DF85005A4A81 /* JourneyView.swift */; };
 		163A59E52A74D8CB00A861DA /* InformationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163A59E42A74D8CB00A861DA /* InformationViewModel.swift */; };
 		165EED4C2A702856005EC89B /* AddphotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165EED4B2A702856005EC89B /* AddphotoView.swift */; };
@@ -116,6 +118,8 @@
 		1625222F2A7620390047CC27 /* place.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = place.json; sourceTree = "<group>"; };
 		162522352A7656EF0047CC27 /* AddNoteToPhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteToPhotoView.swift; sourceTree = "<group>"; };
 		162522392A76669D0047CC27 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		1625223B2A768B3B0047CC27 /* TestCamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCamView.swift; sourceTree = "<group>"; };
+		1625223D2A7691BB0047CC27 /* FavoriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteView.swift; sourceTree = "<group>"; };
 		16286A872A74DF85005A4A81 /* JourneyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JourneyView.swift; sourceTree = "<group>"; };
 		163A59E42A74D8CB00A861DA /* InformationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationViewModel.swift; sourceTree = "<group>"; };
 		165EED4B2A702856005EC89B /* AddphotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddphotoView.swift; sourceTree = "<group>"; };
@@ -373,11 +377,13 @@
 				165EED4B2A702856005EC89B /* AddphotoView.swift */,
 				16CDA8592A716B1E00BBD9CF /* AddplacetowlView.swift */,
 				16D764AE2A6FB33F0079917C /* CardView.swift */,
+				1625223B2A768B3B0047CC27 /* TestCamView.swift */,
 				16D764AC2A6FB2F60079917C /* CheckinView.swift */,
 				166BD69F2A72B13F002ED78D /* CoreDataRequestViews.swift */,
 				21DCD2072A71422600F55FC8 /* DetailedView.swift */,
 				16E0BF602A6D014E00B7FBC8 /* EmptywishlistView.swift */,
 				16B13ECE2A7362C10074B60A /* ExploreallView.swift */,
+				1625223D2A7691BB0047CC27 /* FavoriteView.swift */,
 				1685E4B82A6A18EA008F5FE7 /* ExploreView.swift */,
 				21A1C00B2A68F91200561254 /* GalleryAccessView.swift */,
 				16CDA83B2A712CC700BBD9CF /* JorneyfilledView.swift */,
@@ -615,6 +621,7 @@
 				16B13EDE2A74A5C90074B60A /* PopovercardView.swift in Sources */,
 				16B13ED32A7403D30074B60A /* WishlistcardView.swift in Sources */,
 				16CDA85A2A716B1E00BBD9CF /* AddplacetowlView.swift in Sources */,
+				1625223E2A7691BB0047CC27 /* FavoriteView.swift in Sources */,
 				D7A762002A70C91200DE143C /* UserProfileView.swift in Sources */,
 				1625222A2A761E640047CC27 /* InformationLocationSearchView.swift in Sources */,
 				D7A7621E2A71666600DE143C /* WeeklyView.swift in Sources */,
@@ -629,6 +636,7 @@
 				162522362A7656EF0047CC27 /* AddNoteToPhotoView.swift in Sources */,
 				16B13EDA2A7423CC0074B60A /* MissionCardView.swift in Sources */,
 				727427322A7675F800D06821 /* ImagePicker.swift in Sources */,
+				1625223C2A768B3B0047CC27 /* TestCamView.swift in Sources */,
 				166C3C232A7585CB00720782 /* Router.swift in Sources */,
 				D7D888C22A6D150E004F984E /* HexColor.swift in Sources */,
 				1625222C2A761E990047CC27 /* InformationLocationView.swift in Sources */,
@@ -768,7 +776,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"FoxVoyage/Preview Content\"";
-				DEVELOPMENT_TEAM = 73C269Z63M;
+				DEVELOPMENT_TEAM = X635BWV565;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FoxVoyage/Info.plist;
@@ -786,7 +794,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.rahmi.umarefi;
+				PRODUCT_BUNDLE_IDENTIFIER = com.x.umarefi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

@@ -17,12 +17,13 @@ struct ContentView: View {
     var body: some View {
         if showOnboarding {
             OnboardingView()
-            
+
         }else{
             MainView()
         }
-            
-
+//        PlacedetailView(placeName: "String")
+//        w()
+//           WishlistVie
     }
     
             

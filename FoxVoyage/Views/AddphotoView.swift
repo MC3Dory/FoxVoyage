@@ -149,6 +149,8 @@ class CameraModel : NSObject, ObservableObject, AVCapturePhotoCaptureDelegate{
     
     @Published var picData = Data(count: 0)
     
+    
+    
     @Published var currentCameraPosition: AVCaptureDevice.Position = .back
     
     func Check(){
@@ -266,14 +268,15 @@ class CameraModel : NSObject, ObservableObject, AVCapturePhotoCaptureDelegate{
                 return
             }
             
-             if let image = UIImage(data: self.picData) {
-                 // Saving image
-                 UIImageWriteToSavedPhotosAlbum(image, self, #selector(self.imageSaved(_:didFinishSavingWithError:contextInfo:)), nil)
-
-             } else {
-                 print("Error: Unable to create UIImage from picData.")
-             }
+            if let image = UIImage(data: self.picData) {
+                // Saving image
+                UIImageWriteToSavedPhotosAlbum(image, self, #selector(self.imageSaved(_:didFinishSavingWithError:contextInfo:)), nil)
+                
+            } else {
+                print("Error: Unable to create UIImage from picData.")
+            }
         }
+        
     }
     
     @objc private func imageSaved(_ image: UIImage, didFinishSavingWithError error: Error?, contextInfo: UnsafeMutableRawPointer?) {
@@ -288,32 +291,32 @@ class CameraModel : NSObject, ObservableObject, AVCapturePhotoCaptureDelegate{
     }
     
     func toggleCamera() {
-            // First, remove the current input
-            for input in session.inputs {
-                session.removeInput(input)
-            }
-            
-            // Next, switch between front and rear camera
-            currentCameraPosition = (currentCameraPosition == .back) ? .front : .back
-            
-            // Get the new camera device
-            if let device = AVCaptureDevice.default(.builtInWideAngleCamera, for: .video, position: currentCameraPosition) {
-                do {
-                    // Create a new input with the new device
-                    let input = try AVCaptureDeviceInput(device: device)
-                    if session.canAddInput(input) {
-                        // Add the new input to the session
-                        session.addInput(input)
-                    } else {
-                        print("Failed to add input to session")
-                    }
-                } catch {
-                    print("Error creating device input: \(error)")
-                }
-            } else {
-                print("Failed to get the camera device")
-            }
+        // First, remove the current input
+        for input in session.inputs {
+            session.removeInput(input)
         }
+        
+        // Next, switch between front and rear camera
+        currentCameraPosition = (currentCameraPosition == .back) ? .front : .back
+        
+        // Get the new camera device
+        if let device = AVCaptureDevice.default(.builtInWideAngleCamera, for: .video, position: currentCameraPosition) {
+            do {
+                // Create a new input with the new device
+                let input = try AVCaptureDeviceInput(device: device)
+                if session.canAddInput(input) {
+                    // Add the new input to the session
+                    session.addInput(input)
+                } else {
+                    print("Failed to add input to session")
+                }
+            } catch {
+                print("Error creating device input: \(error)")
+            }
+        } else {
+            print("Failed to get the camera device")
+        }
+    }
     
 }
 //setting view for preview

@@ -14,7 +14,8 @@ struct MainView: View {
             switch (index){
             case 0:
                 ExploreView()
-            case 1: WishlistView()
+            case 1:
+                WishlistView()
             case 2:
                 JourneyView()
             case 3:
@@ -68,7 +69,7 @@ extension MainView{
                 .frame(width: 56, height: 56)
                 .foregroundColor(index == 2 ? Color("Redish400") : .white)
                 .overlay{
-                    Image(systemName: "map.fill")
+                    Image(systemName: "map")
                         .font(.system(size: 18))
                         .foregroundColor(index == 2 ? .white : Color("Black400"))
                 }

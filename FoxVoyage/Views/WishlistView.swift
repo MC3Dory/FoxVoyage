@@ -10,27 +10,18 @@ import SwiftUI
 struct WishlistView: View {
     
     @State var places: [PlaceModel] = []
-    
-    @State private var activeTabIndex = 0
-    
-    private let tabItems: [TabItem] = [
-        TabItem(systemImageName: "map.fill", isActive: true),
-        TabItem(systemImageName: "bookmark", isActive: false),
-        TabItem(systemImageName: "rectangle.dashed.and.paperclip", isActive: false),
-        TabItem(systemImageName: "person", isActive: false)
-    ]
-    
-    let text = "Mega Wisata Ocarina"
+    @EnvironmentObject var viewModel : InformationViewModel
+    @StateObject var locationManager: LocationManager = .init()
     
     var body: some View {
         VStack{
             //user
             HStack{
-                Text("Hi,")
+                Text("Hi, \(viewModel.name)")
                     .font(.custom("SFProDisplay-Regular", size: 20))
                     .foregroundColor(Color("Black600"))
                 
-                Text("Kelly")
+                Text(viewModel.name)
                     .font(.custom("SFProDisplay-Regular", size: 20))
                     .foregroundColor(Color("Redish400"))
             }.padding(.trailing, 290)
@@ -56,7 +47,7 @@ struct WishlistView: View {
             }
             
             
-        }
+        }.padding(.top, -200)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color("Redish100"))
         
@@ -76,5 +67,6 @@ struct WishlistView: View {
 //struct WishlistView_Previews: PreviewProvider {
 //    static var previews: some View {
 //        WishlistView()
+//            .environmentObject(WishlistView())
 //    }
 //}

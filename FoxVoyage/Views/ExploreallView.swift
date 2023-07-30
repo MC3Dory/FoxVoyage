@@ -15,8 +15,10 @@ struct ExploreallView: View {
     @State private var currentTab: Int = 0
     
     @State var places: [PlaceModel] = []
-    //addwishlist
-    @State private var isAddTowishList = false
+    
+    
+    //    //addwishlist
+    //    @State private var isAddTowishList = false
     
     var filteredPlaces: [PlaceModel] {
         
@@ -78,9 +80,9 @@ struct ExploreallView: View {
                         }
                     }
                 }.scrollIndicators(.hidden)
-                .padding(.leading)
-                .padding(.trailing)
-                .padding(.top)
+                    .padding(.leading)
+                    .padding(.trailing)
+                    .padding(.top)
                 
                 Divider()
                 
@@ -97,7 +99,7 @@ struct ExploreallView: View {
                     }
                 }.navigationBarBackButtonHidden(true)
                 
-                .scrollIndicators(.hidden)
+                    .scrollIndicators(.hidden)
                 
                 
             }
@@ -105,6 +107,7 @@ struct ExploreallView: View {
         .onAppear{
             fetchPlaces()
         }
+        
         
         
     }
@@ -115,6 +118,7 @@ struct ExploreallView: View {
         places = CoreDataController.sharedInstance.fetchPlaceModels()
         //
     }
+    
     
 }
 struct ExploreallView_Previews: PreviewProvider {

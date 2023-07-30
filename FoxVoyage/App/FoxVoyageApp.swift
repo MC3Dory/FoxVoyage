@@ -7,9 +7,6 @@
 
 import SwiftUI
 
-
-
-
 @main
 struct FoxVoyageApp: App {
     
