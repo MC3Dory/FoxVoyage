@@ -14,19 +14,29 @@ struct AddphotoView: View {
 }
 
 struct CameraView: View{
-    @EnvironmentObject var router: Router
     
-    @StateObject var camera = TakeMomentsModel()
+    @EnvironmentObject var router: Router
+    @StateObject var camera = CameraModel()
     
     var body: some View{
         
         ZStack{
             
             //to be camera preview
-            TakeMomentsPreview(camera: camera)
+            CameraPreview(camera: camera)
                 .frame(width: 358, height: 568)
                 .cornerRadius(30)
                 .padding(.bottom, 40)
+            
+            // Button to toggle between front and rear camera
+            Button(action: {
+                camera.toggleCamera()
+            }) {
+                Image(systemName: "arrow.triangle.2.circlepath.camera")
+                    .foregroundColor(.white)
+                    .font(.title)
+                    .padding()
+            }
             VStack{
                 
                 if camera.isTaken{
@@ -138,6 +148,8 @@ class CameraModel : NSObject, ObservableObject, AVCapturePhotoCaptureDelegate{
     @Published var isSaved = false
     
     @Published var picData = Data(count: 0)
+    
+    @Published var currentCameraPosition: AVCaptureDevice.Position = .back
     
     func Check(){
         
@@ -275,11 +287,39 @@ class CameraModel : NSObject, ObservableObject, AVCapturePhotoCaptureDelegate{
         }
     }
     
+    func toggleCamera() {
+            // First, remove the current input
+            for input in session.inputs {
+                session.removeInput(input)
+            }
+            
+            // Next, switch between front and rear camera
+            currentCameraPosition = (currentCameraPosition == .back) ? .front : .back
+            
+            // Get the new camera device
+            if let device = AVCaptureDevice.default(.builtInWideAngleCamera, for: .video, position: currentCameraPosition) {
+                do {
+                    // Create a new input with the new device
+                    let input = try AVCaptureDeviceInput(device: device)
+                    if session.canAddInput(input) {
+                        // Add the new input to the session
+                        session.addInput(input)
+                    } else {
+                        print("Failed to add input to session")
+                    }
+                } catch {
+                    print("Error creating device input: \(error)")
+                }
+            } else {
+                print("Failed to get the camera device")
+            }
+        }
+    
 }
 //setting view for preview
 struct CameraPreview: UIViewRepresentable{
     
-    @ObservedObject var camera : TakeMomentsModel
+    @ObservedObject var camera : CameraModel
     
     func makeUIView(context: Context) ->  UIView {
         
