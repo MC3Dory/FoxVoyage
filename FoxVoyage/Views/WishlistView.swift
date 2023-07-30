@@ -55,33 +55,7 @@ struct WishlistView: View {
                 ProgressView()
             }
             
-            Spacer()
             
-            //tabview
-            ZStack {
-                Rectangle()
-                    .frame(width: 359, height: 72)
-                    .cornerRadius(999)
-                    .foregroundColor(.white)
-                
-                HStack (spacing: 40) {
-                    ForEach(tabItems) { item in
-                        Button(action: {
-                            activeTabIndex = tabItems.firstIndex(where: { $0.id == item.id }) ?? 0
-                        }) {
-                            ZStack {
-                                Circle()
-                                    .frame(width: 56, height: 56)
-                                    .foregroundColor(item.isActive ? Color("Redish400") : .white)
-                                
-                                Image(systemName: item.systemImageName)
-                                    .font(.system(size: 18))
-                                    .foregroundColor(item.isActive ? .white : Color("Black400"))
-                            }
-                        }
-                    }
-                }
-            }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color("Redish100"))

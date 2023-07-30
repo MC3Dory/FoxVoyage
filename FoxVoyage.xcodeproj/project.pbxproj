@@ -12,6 +12,7 @@
 		1625222E2A761EBB0047CC27 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1625222D2A761EBB0047CC27 /* LocationManager.swift */; };
 		162522302A7620390047CC27 /* place.json in Resources */ = {isa = PBXBuildFile; fileRef = 1625222F2A7620390047CC27 /* place.json */; };
 		162522362A7656EF0047CC27 /* AddNoteToPhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162522352A7656EF0047CC27 /* AddNoteToPhotoView.swift */; };
+		1625223A2A76669D0047CC27 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162522392A76669D0047CC27 /* MainView.swift */; };
 		16286A882A74DF85005A4A81 /* JourneyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16286A872A74DF85005A4A81 /* JourneyView.swift */; };
 		163A59E52A74D8CB00A861DA /* InformationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163A59E42A74D8CB00A861DA /* InformationViewModel.swift */; };
 		165EED4C2A702856005EC89B /* AddphotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165EED4B2A702856005EC89B /* AddphotoView.swift */; };
@@ -103,6 +104,7 @@
 		1625222D2A761EBB0047CC27 /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		1625222F2A7620390047CC27 /* place.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = place.json; sourceTree = "<group>"; };
 		162522352A7656EF0047CC27 /* AddNoteToPhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteToPhotoView.swift; sourceTree = "<group>"; };
+		162522392A76669D0047CC27 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		16286A872A74DF85005A4A81 /* JourneyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JourneyView.swift; sourceTree = "<group>"; };
 		163A59E42A74D8CB00A861DA /* InformationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationViewModel.swift; sourceTree = "<group>"; };
 		165EED4B2A702856005EC89B /* AddphotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddphotoView.swift; sourceTree = "<group>"; };
@@ -369,6 +371,7 @@
 				16BC610A2A6D3B6C002C6859 /* WishlistView.swift */,
 				16B13EDF2A74A5ED0074B60A /* PopoverView.swift */,
 				162522352A7656EF0047CC27 /* AddNoteToPhotoView.swift */,
+				162522392A76669D0047CC27 /* MainView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -558,6 +561,7 @@
 				16CDA83C2A712CC700BBD9CF /* JorneyfilledView.swift in Sources */,
 				D7A762202A7225F800DE143C /* ProfileMemoView.swift in Sources */,
 				16286A882A74DF85005A4A81 /* JourneyView.swift in Sources */,
+				1625223A2A76669D0047CC27 /* MainView.swift in Sources */,
 				16BC610B2A6D3B6C002C6859 /* WishlistView.swift in Sources */,
 				166BD67E2A722C87002ED78D /* JsonManager.swift in Sources */,
 				166BD67C2A722836002ED78D /* PlaceModel.swift in Sources */,

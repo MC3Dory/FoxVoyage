@@ -12,7 +12,7 @@ import SwiftUI
 struct ContentView: View {
     @AppStorage("showOnboarding") var showOnboarding: Bool = true
     var body: some View {
-        ExploreView()
+        MainView()
 //        if showOnboarding {
 //            OnboardingView()
 //        }else{

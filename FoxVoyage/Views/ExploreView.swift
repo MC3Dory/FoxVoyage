@@ -231,6 +231,7 @@ struct ExploreView: View {
         
         
         
+        
         .onAppear{
             fetchPlaces()
         }
