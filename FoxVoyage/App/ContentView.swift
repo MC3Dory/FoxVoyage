@@ -15,7 +15,7 @@ struct ContentView: View {
         if showOnboarding {
             OnboardingView()
         }else{
-            ExploreView()
+            AddphotoView()
         }
     }
     
