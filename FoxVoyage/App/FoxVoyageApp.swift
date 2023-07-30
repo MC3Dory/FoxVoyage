@@ -17,6 +17,7 @@ struct FoxVoyageApp: App {
     @AppStorage("showOnboarding") var showOnboarding: Bool = true
     @StateObject var informationViewModel = InformationViewModel()
     @StateObject var router = Router()
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     
     
     func saveToCoreDataForFirstTime(){
