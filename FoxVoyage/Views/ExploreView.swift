@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct ExploreView: View {
+    
+    @EnvironmentObject var router: Router
+    
     @State var places: [PlaceModel] = []
     //addwishlist
     @State private var isAddTowishList = false
@@ -191,12 +194,15 @@ struct ExploreView: View {
                         
                         Spacer()
                         
-                        Button(action: {}, label: {
+                        Button{
+                            router.push(.exploreAll)
+                        }label: {
                             Text("See all")
                                 .font(.custom("SFProText-Regular", size: 15))
                                 .foregroundColor(Color("Redish400"))
                                 .underline()
-                        })
+                        }
+                        
                     }.padding(.horizontal, 40)
                         .padding(.top, 24)
                     
@@ -206,7 +212,7 @@ struct ExploreView: View {
                     if !places.isEmpty{
                         VStack (spacing: 30){
                             NearPlaceCardView(place: places[0])
-                            NearPlaceCardView(place: places[4])
+                            NearPlaceCardView(place: places[1])
                             
                         }
                     } else{

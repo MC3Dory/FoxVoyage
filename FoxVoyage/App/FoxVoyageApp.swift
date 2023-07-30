@@ -59,6 +59,8 @@ struct FoxVoyageApp: App {
                             AddNoteToPhotoView(picData: picData)
 //                        case .detailView(let place):
 //                            PlacedetailView(place: place)
+                        case .exploreAll:
+                            ExploreallView()
                         }
                     }
             }

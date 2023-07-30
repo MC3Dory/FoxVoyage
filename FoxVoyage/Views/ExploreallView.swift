@@ -95,7 +95,7 @@ struct ExploreallView: View {
                         .padding(.horizontal, 16)
                         .padding(.top, 30)
                     }
-                }
+                }.navigationBarBackButtonHidden(true)
                 
                 .scrollIndicators(.hidden)
                 
@@ -108,11 +108,14 @@ struct ExploreallView: View {
         
         
     }
+    
+    
     func fetchPlaces(){
         //taruh isloading
         places = CoreDataController.sharedInstance.fetchPlaceModels()
         //
     }
+    
 }
 struct ExploreallView_Previews: PreviewProvider {
     static var previews: some View {

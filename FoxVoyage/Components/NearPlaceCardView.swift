@@ -23,16 +23,16 @@ struct NearPlaceCardView: View {
             
             VStack(alignment: .leading, spacing: 0){
                 HStack (spacing:0){
-                    Image("forest")
+                    Image(place.image)
                         .resizable()
                         .scaledToFill()
-                        .frame(height: 136)
+                        .frame(width: 171, height: 136)
                         .cornerRadius(30, corners: [.topLeft, .bottomLeft])
                         
-                    Image("cafe")
+                    Image(place.image)
                         .resizable()
                         .scaledToFill()
-                        .frame(height: 136)
+                        .frame(width: 171,height: 136)
                         .cornerRadius(30, corners: [.topRight, .bottomRight])
                         .overlay {
                             Button{
