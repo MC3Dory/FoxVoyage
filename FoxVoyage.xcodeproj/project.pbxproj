@@ -88,6 +88,14 @@
 		21DCD20C2A71726400F55FC8 /* MomentsCapturedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21DCD20B2A71726400F55FC8 /* MomentsCapturedView.swift */; };
 		21DCD20E2A71961B00F55FC8 /* MomentCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21DCD20D2A71961B00F55FC8 /* MomentCardView.swift */; };
 		21DCD2102A71967000F55FC8 /* MomentCardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21DCD20F2A71967000F55FC8 /* MomentCardModel.swift */; };
+		7217F7AD2A76314F0008E750 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7217F7AC2A76314F0008E750 /* AppDelegate.swift */; };
+		7217F7AF2A7634E60008E750 /* LocalSearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7217F7AE2A7634E60008E750 /* LocalSearchService.swift */; };
+		7217F7B12A76353A0008E750 /* MKCoordinateRegion+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7217F7B02A76353A0008E750 /* MKCoordinateRegion+Extension.swift */; };
+		7217F7B22A7639800008E750 /* JourneyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D764AA2A6FAF420079917C /* JourneyView.swift */; };
+		7217F7B42A763C710008E750 /* MTSlideToOpen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7217F7B32A763C710008E750 /* MTSlideToOpen.swift */; };
+		7217F7B62A763C8E0008E750 /* ShimmerEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7217F7B52A763C8E0008E750 /* ShimmerEffect.swift */; };
+		7217F7B82A763CA00008E750 /* SlideButtonStyling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7217F7B72A763CA00008E750 /* SlideButtonStyling.swift */; };
+		7217F7BA2A763CB40008E750 /* SlideButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7217F7B92A763CB40008E750 /* SlideButton.swift */; };
 		D7A762002A70C91200DE143C /* UserProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A761FF2A70C91200DE143C /* UserProfileView.swift */; };
 		D7A7621C2A715E4800DE143C /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A7621B2A715E4800DE143C /* View.swift */; };
 		D7A7621E2A71666600DE143C /* WeeklyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A7621D2A71666600DE143C /* WeeklyView.swift */; };
@@ -186,6 +194,13 @@
 		21DCD20B2A71726400F55FC8 /* MomentsCapturedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentsCapturedView.swift; sourceTree = "<group>"; };
 		21DCD20D2A71961B00F55FC8 /* MomentCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentCardView.swift; sourceTree = "<group>"; };
 		21DCD20F2A71967000F55FC8 /* MomentCardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentCardModel.swift; sourceTree = "<group>"; };
+		7217F7AC2A76314F0008E750 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		7217F7AE2A7634E60008E750 /* LocalSearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalSearchService.swift; sourceTree = "<group>"; };
+		7217F7B02A76353A0008E750 /* MKCoordinateRegion+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MKCoordinateRegion+Extension.swift"; sourceTree = "<group>"; };
+		7217F7B32A763C710008E750 /* MTSlideToOpen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MTSlideToOpen.swift; sourceTree = "<group>"; };
+		7217F7B52A763C8E0008E750 /* ShimmerEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShimmerEffect.swift; sourceTree = "<group>"; };
+		7217F7B72A763CA00008E750 /* SlideButtonStyling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideButtonStyling.swift; sourceTree = "<group>"; };
+		7217F7B92A763CB40008E750 /* SlideButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideButton.swift; sourceTree = "<group>"; };
 		D7A761FF2A70C91200DE143C /* UserProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileView.swift; sourceTree = "<group>"; };
 		D7A7621B2A715E4800DE143C /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		D7A7621D2A71666600DE143C /* WeeklyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyView.swift; sourceTree = "<group>"; };
@@ -330,6 +345,7 @@
 			children = (
 				16AF6A142A68F39800A3C891 /* filefile.swift */,
 				163A59E42A74D8CB00A861DA /* InformationViewModel.swift */,
+				7217F7AC2A76314F0008E750 /* AppDelegate.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -339,6 +355,7 @@
 			children = (
 				163A59E82A74DCA400A861DA /* Information */,
 				16EE195E2A71DAF300309BDA /* AddphotomissionView.swift */,
+				7217F7B92A763CB40008E750 /* SlideButton.swift */,
 				165EED4B2A702856005EC89B /* AddphotoView.swift */,
 				16CDA8592A716B1E00BBD9CF /* AddplacetowlView.swift */,
 				16D764AE2A6FB33F0079917C /* CardView.swift */,
@@ -374,6 +391,7 @@
 			isa = PBXGroup;
 			children = (
 				16AF6A102A68F37F00A3C891 /* TestV.swift */,
+				7217F7AE2A7634E60008E750 /* LocalSearchService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -392,6 +410,9 @@
 			isa = PBXGroup;
 			children = (
 				16AF6A0C2A68F37300A3C891 /* Testtt.swift */,
+				7217F7B32A763C710008E750 /* MTSlideToOpen.swift */,
+				7217F7B52A763C8E0008E750 /* ShimmerEffect.swift */,
+				7217F7B72A763CA00008E750 /* SlideButtonStyling.swift */,
 				166BD67D2A722C87002ED78D /* JsonManager.swift */,
 				1625222F2A7620390047CC27 /* place.json */,
 				166C3C222A7585CB00720782 /* Router.swift */,
@@ -404,6 +425,7 @@
 			children = (
 				D7D888C12A6D150E004F984E /* HexColor.swift */,
 				D7A7621B2A715E4800DE143C /* View.swift */,
+				7217F7B02A76353A0008E750 /* MKCoordinateRegion+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -545,6 +567,7 @@
 				166C3C1F2A7572B400720782 /* PlaceModel.xcdatamodeld in Sources */,
 				1674CE312A72C5E400D7349E /* ExploreView.swift in Sources */,
 				1674CE302A72C44500D7349E /* InformationNameView.swift in Sources */,
+				7217F7B22A7639800008E750 /* JourneyView.swift in Sources */,
 				1674CE2F2A72C35100D7349E /* LocationAccessView.swift in Sources */,
 				16B7E0AC2A72BC0900102B5E /* GalleryAccessView.swift in Sources */,
 				16D764AD2A6FB2F60079917C /* CheckinView.swift in Sources */,
@@ -553,16 +576,21 @@
 				16AF69F52A68F08700A3C891 /* ContentView.swift in Sources */,
 				165EED4C2A702856005EC89B /* AddphotoView.swift in Sources */,
 				16CDA83C2A712CC700BBD9CF /* JorneyfilledView.swift in Sources */,
+				7217F7AD2A76314F0008E750 /* AppDelegate.swift in Sources */,
 				D7A762202A7225F800DE143C /* ProfileMemoView.swift in Sources */,
 				16286A882A74DF85005A4A81 /* JourneyView.swift in Sources */,
 				16BC610B2A6D3B6C002C6859 /* WishlistView.swift in Sources */,
+				7217F7B62A763C8E0008E750 /* ShimmerEffect.swift in Sources */,
 				166BD67E2A722C87002ED78D /* JsonManager.swift in Sources */,
 				166BD67C2A722836002ED78D /* PlaceModel.swift in Sources */,
+				7217F7AF2A7634E60008E750 /* LocalSearchService.swift in Sources */,
 				16EE195F2A71DAF300309BDA /* AddphotomissionView.swift in Sources */,
 				1674CE342A72CA6300D7349E /* PopularPlaceCard.swift in Sources */,
 				16E0BF612A6D014E00B7FBC8 /* EmptywishlistView.swift in Sources */,
 				16B13ECB2A735E210074B60A /* NearPlaceCardView.swift in Sources */,
 				16B7E0AB2A72B73C00102B5E /* OnboardingView.swift in Sources */,
+				7217F7B42A763C710008E750 /* MTSlideToOpen.swift in Sources */,
+				7217F7B82A763CA00008E750 /* SlideButtonStyling.swift in Sources */,
 				21DCD2102A71967000F55FC8 /* MomentCardModel.swift in Sources */,
 				16B13ED82A74109E0074B60A /* AddressModel.swift in Sources */,
 				21DCD2082A71422600F55FC8 /* DetailedView.swift in Sources */,
@@ -585,10 +613,12 @@
 				166C3C232A7585CB00720782 /* Router.swift in Sources */,
 				D7D888C22A6D150E004F984E /* HexColor.swift in Sources */,
 				1625222C2A761E990047CC27 /* InformationLocationView.swift in Sources */,
+				7217F7BA2A763CB40008E750 /* SlideButton.swift in Sources */,
 				21DCD20C2A71726400F55FC8 /* MomentsCapturedView.swift in Sources */,
 				16E0BF5F2A6CE50400B7FBC8 /* MissiondetailView.swift in Sources */,
 				D7A7621C2A715E4800DE143C /* View.swift in Sources */,
 				166A06EF2A6A2690004D6E4B /* PlacedetailView.swift in Sources */,
+				7217F7B12A76353A0008E750 /* MKCoordinateRegion+Extension.swift in Sources */,
 				16AF69F32A68F08700A3C891 /* FoxVoyageApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -718,41 +748,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"FoxVoyage/Preview Content\"";
-				DEVELOPMENT_TEAM = X635BWV565;
-				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = FoxVoyage/Info.plist;
-				INFOPLIST_KEY_NSCameraUsageDescription = "Take Photo";
-				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "";
-				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "";
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.x.umarefi;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		16AF69FF2A68F08800A3C891 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"FoxVoyage/Preview Content\"";
-				DEVELOPMENT_TEAM = X635BWV565;
+				DEVELOPMENT_TEAM = 73C269Z63M;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FoxVoyage/Info.plist;
@@ -771,6 +767,40 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.rahmi.umarefi;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		16AF69FF2A68F08800A3C891 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"FoxVoyage/Preview Content\"";
+				DEVELOPMENT_TEAM = 73C269Z63M;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FoxVoyage/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Take Photo";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fufuteam;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

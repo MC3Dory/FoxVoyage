@@ -20,7 +20,7 @@ struct TabItem: Identifiable {
 
 struct JourneyView: View {
     @StateObject var locationManager: LocationManager = .init()
-//    @EnvironmentObject var localSearchService: LocalSearchService
+    @EnvironmentObject var localSearchService: LocalSearchService
     @State var places: [PlaceModel] = []
     @State private var activeTabIndex = 0
     
@@ -97,7 +97,6 @@ struct JourneyView: View {
 //        }
         }
         .onAppear{
-            locationManager.fetchPlaces()
             locationManager.manager.requestLocation()
         }
         

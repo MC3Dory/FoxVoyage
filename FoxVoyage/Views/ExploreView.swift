@@ -8,9 +8,12 @@
 import SwiftUI
 
 struct ExploreView: View {
+    @StateObject var locationManager: LocationManager = .init()
     @State var places: [PlaceModel] = []
     //addwishlist
     @State private var isAddTowishList = false
+    
+    @State private var showModal = false
     
     var body: some View {
         
@@ -133,27 +136,27 @@ struct ExploreView: View {
                         }
                         
                         //TASK : ANIMASI SLIDE TO CHECKIN
-                        ZStack{
-                            RoundedRectangle(cornerRadius: 999)
-                                .fill(Color.white)
-                                .frame(width: 325, height: 64)
-                            
-                            Group{
-                                Circle()
-                                    .frame(width: 56, height: 56)
-                                    .foregroundColor(Color("Redish400"))
-                                
-                                Image(systemName: "arrow.right")
-                                    .foregroundColor(Color.white)
-                                
-                            }.padding(.trailing, 250)
-                            
-                            Text("Slide to capture momen")
-                                .padding(.leading, 30)
+                        if locationManager.isCheckedIn {
+                            SlideButton("Slide to capture momen", styling: .init(indicatorColor: Color("Redish400"), backgroundColor: .white, textColor: .black, indicatorSystemName: "arrow.right", textHiddenBehindIndicator: false, textShimmers: true), callback: sliderCallback)
+                        } else {
+                            ZStack{
+                                RoundedRectangle(cornerRadius: 999)
+                                    .fill(Color.white)
+                                    .frame(width: 325, height: 64)
+//                                Group{
+//                                    Circle()
+//                                        .frame(width: 56, height: 56)
+//                                        .foregroundColor(Color("Redish400"))
+//
+//                                    Image(systemName: "arrow.right")
+//                                        .foregroundColor(Color.white)
+//
+//                                }.padding(.trailing, 250)
+//
+                                Text("You Already Checked In")
+                                    .padding(.leading, 30)
+                            }
                         }
-                        
-                        
-                        
                     }
                 }
                 
@@ -235,10 +238,34 @@ struct ExploreView: View {
         places = CoreDataController.sharedInstance.fetchPlaceModels()
         //
     }
+    
+    private func sliderCallback() async {
+        try? await Task.sleep(for: .seconds(2))
+        print("checkin")
+        
+        showModal = true
+        locationManager.isCheckedIn.toggle()
+    }
 }
 
 struct ExploreView_Previews: PreviewProvider {
     static var previews: some View {
         ExploreView()
+    }
+}
+
+struct ModalView: View {
+    @Environment(\.dismiss) var dismiss
+
+    var body: some View {
+        VStack {
+            Text("This is a modal!")
+                .padding()
+
+            Button("Dismiss") {
+                dismiss()
+            }
+            .padding()
+        }
     }
 }

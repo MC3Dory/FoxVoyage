@@ -116,4 +116,37 @@ class CoreDataController {
             fatalError("Failed to fetch user data: \(error)")
         }
     }
+    
+    //get 1 data
+    func fetchGetPlace(location: String) -> [PlaceModel] {
+        let fetchRequest = NSFetchRequest<Place>(entityName: "Place")
+        let predicate = NSPredicate(format: "name == %@", location)
+        
+        print("fetch place: \(location)")
+        
+        fetchRequest.predicate = predicate
+        do {
+            let placeEntities = try managedObjectContext.fetch(fetchRequest)
+            return placeEntities.map { placeEntity in
+                let activities = (placeEntity.activities?.allObjects as? [Activity] ?? []).map { activityEntity in
+                    ActivityModel(title: activityEntity.title ?? "", desc: activityEntity.desc ?? "")
+                }
+                return PlaceModel(
+                    id: placeEntity.id ?? UUID(),
+                    longitude: placeEntity.longitude ?? "",
+                    latitude: placeEntity.latitude ?? "",
+                    name: placeEntity.name ?? "",
+                    tag: placeEntity.tag ?? "",
+                    address: placeEntity.address ?? "",
+                    district: placeEntity.district ?? "",
+                    operationalHour: placeEntity.operationalHour ?? "",
+                    desc: placeEntity.desc ?? "",
+                    activities: activities,
+                    image: placeEntity.image ?? ""
+                )
+            }
+        } catch {
+            fatalError("Failed to fetch data: \(error)")
+        }
+    }
 }
