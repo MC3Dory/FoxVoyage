@@ -29,17 +29,7 @@ struct TakeMomentsView: View{
                 .frame(width: 358, height: 568)
                 .cornerRadius(30)
                 .padding(.bottom, 40)
-            
-//            //backbutton
-//            Button(action: {}, label: {
-//                Image(systemName: "xmark")
-//                    .foregroundColor(Color("Black900"))
-//                    .padding()
-//                    .background(Color.white)
-//                    .clipShape(Circle())
-//            }).padding(.leading, 320)
-//                .padding(.bottom, 690)
-            
+                        
             
             VStack{
                 

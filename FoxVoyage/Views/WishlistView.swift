@@ -13,11 +13,19 @@ struct WishlistView: View {
     @EnvironmentObject var viewModel : InformationViewModel
     @StateObject var locationManager: LocationManager = .init()
     
+    func fetchUserData (){
+        let data = CoreDataController.sharedInstance.fetchUserModels()
+        
+        let user = data[0]
+        print(user)
+        
+    }
+    
     var body: some View {
         VStack{
             //user
             HStack{
-                Text("Hi, \(viewModel.name)")
+                Text("Hi,")
                     .font(.custom("SFProDisplay-Regular", size: 20))
                     .foregroundColor(Color("Black600"))
                 
@@ -52,7 +60,8 @@ struct WishlistView: View {
         .background(Color("Redish100"))
         
         .onAppear{
-            fetchPlaces()
+            fetchUserData()
+            
         }
     }
     func fetchPlaces(){

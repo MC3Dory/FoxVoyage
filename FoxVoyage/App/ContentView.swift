@@ -15,12 +15,13 @@ struct ContentView: View {
     @StateObject var locationManager: LocationManager = .init()
     
     var body: some View {
-        if showOnboarding {
-            OnboardingView()
-
-        }else{
-            MainView()
-        }
+        AddphotoView()
+//        if showOnboarding {
+//            OnboardingView()
+//
+//        }else{
+//            MainView()
+//        }
 //        PlacedetailView(placeName: "String")
 //        w()
 //           WishlistVie

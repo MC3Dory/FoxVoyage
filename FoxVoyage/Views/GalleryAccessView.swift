@@ -48,6 +48,7 @@ struct GalleryAccessView: View {
                 .padding(.top,15)
             Text("Let's explore your gallery together! Allow access to preserve your travel memories beautifully")
                 .font(.custom("SFProText-Regular", size: 17))
+                .foregroundColor(Color("Black400"))
                 .frame(maxWidth: 360, alignment: .leading)
                 .padding(.top, 20)
             

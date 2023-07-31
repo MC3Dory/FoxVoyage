@@ -64,7 +64,7 @@ struct AddNoteToPhotoView: View {
             
             // Vstack > Text, TextArea, Button
             VStack(alignment: .leading, spacing: 16){
-                Text("Thursday, 27 Jul 16:16 PM")
+                Text("Monday, 31 Juli 2023 ")
                     .font(.custom("SFProText-Regular", size: 17))
                     .foregroundColor(Color("Black400"))
                     .padding(.leading, 16)

@@ -28,7 +28,7 @@ struct InformationNameView: View {
                     .font(.custom("SFProDisplay-Regular", size: 34))
                     .frame(maxWidth: 355, alignment: .leading)
                 
-            }
+            }.padding(.top, 16)
             
             TextField("Your name....", text: $viewModel.name)
                 .font(.custom("SFProDisplay-Regular", size: 34))

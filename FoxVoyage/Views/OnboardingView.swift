@@ -14,8 +14,8 @@ struct onboardingPage {
 }
 
 private var onboardingSteps = [
-    onboardingPage(image: "maps", title: "Welcome to FoxVoyage!", description: "Get ready for an adventure of a lifetime! FoxVoyage gamifies your travels, transforming exploration into an exciting quest."),
-    onboardingPage(image: "badges", title: "Discover Hidden Gems", description: "Complete photo challenges, earn rewards, and uncover hidden gems along the way."),
+    onboardingPage(image: "maps", title: "Welcome to FoxVoyage", description: "Get ready for an adventure of a lifetime! FoxVoyage gamifies your travels, transforming exploration into an exciting quest."),
+    onboardingPage(image: "badgesonboarding", title: "Discover Hidden Gems", description: "Complete photo challenges, earn rewards, and uncover hidden gems along the way."),
     onboardingPage(image: "album", title: "Cherish Your Memories", description: "Never let a precious memory fade away. FoxVoyage's organized picture storage ensures your travel moments are preserved forever. ")
 ]
 
@@ -32,6 +32,7 @@ struct OnboardingView: View {
                 
                 VStack {
                     VStack {
+                        
                         Rectangle()
                             .fill(.white)
                             .opacity(0.0)
@@ -39,15 +40,14 @@ struct OnboardingView: View {
                             .overlay {
                                 Image(onboardingSteps[it].image)
                                     .resizable()
-                                    .aspectRatio(contentMode: currentStep == 1 ? .fit : .fill)
+                                    .aspectRatio(contentMode: currentStep == 1 ? .fill : .fill)
                                     .frame(maxWidth: .infinity)
                             }
                         
                         VStack (alignment: .leading) {
                             
                             Text (onboardingSteps[it].title)
-                                .font(.system(size: 32))
-                                .fontWeight(.semibold)
+                                .font(.custom("SFProDisplay-Regular", size: 28))
                                 .foregroundColor (currentStep < onboardingSteps.count - 1 ? .black : .white)
                                 .multilineTextAlignment(.leading)
                             
@@ -55,8 +55,8 @@ struct OnboardingView: View {
                                 .frame(maxHeight: 10)
                             
                             Text (onboardingSteps[it].description)
-                                .font(.system(size:17))
-                                .foregroundColor (currentStep < onboardingSteps.count - 1 ? .black : .white)
+                                .font(.custom("SFProText-Regular", size: 17))
+                                .foregroundColor (currentStep < onboardingSteps.count - 1 ? Color("Black400") : .white)
                                 .multilineTextAlignment(.leading)
                             
                         }
@@ -70,20 +70,22 @@ struct OnboardingView: View {
                     .background (currentStep < onboardingSteps.count - 1 ? .white : Color(hex: bgColor))
                     .ignoresSafeArea()
                     
-                    Button (action: {
+                    Button{
                         if currentStep < onboardingSteps.count - 1 {
                             currentStep += 1
                         }
-                    }) {
+                    }label : {
                         if currentStep < onboardingSteps.count - 1 {
                             Text("Next")
                                 .fontWeight(.semibold)
                                 .foregroundColor(.white)
                                 .frame(width: 350, height: 50)
+                            
                                 .background (
                                     Capsule()
                                         .fill(Color(hex: orangeButton))
                                 )
+                            
                             
                         } else {
                             Button{
@@ -103,14 +105,16 @@ struct OnboardingView: View {
                             
                             
                             
+                            
                         }
                     }
+                    .ignoresSafeArea(.all)
                 }.background(currentStep == 2 ? Color(hex: bgColor) : .white)
             }
             .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
             
             
-        }
+        }.ignoresSafeArea()
         
         .navigationBarBackButtonHidden(true)
         

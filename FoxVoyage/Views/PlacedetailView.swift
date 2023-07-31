@@ -23,8 +23,7 @@ struct PlacedetailView: View {
                 TabView(selection: $index) {
                     ZStack{
                         if !places.isEmpty{
-                            Image(places[0].image)
-//                            Image("forest")
+                            Image("forest")
                                 .resizable()
                                 .aspectRatio(contentMode: .fill)
                                 .edgesIgnoringSafeArea(.all)
@@ -230,7 +229,7 @@ struct PlacedetailView: View {
             }
             .padding(.top, 650)
             .padding(.horizontal, 164)
-        }
+        }.navigationBarBackButtonHidden(true)
         .onAppear{
             locationManager.manager.requestLocation()
             getPlace()

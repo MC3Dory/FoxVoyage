@@ -28,15 +28,8 @@ struct CameraView: View{
                 .cornerRadius(30)
                 .padding(.bottom, 40)
             
-            // Button to toggle between front and rear camera
-            Button(action: {
-                camera.toggleCamera()
-            }) {
-                Image(systemName: "arrow.triangle.2.circlepath.camera")
-                    .foregroundColor(.white)
-                    .font(.title)
-                    .padding()
-            }
+            
+
             VStack{
                 
                 if camera.isTaken{
@@ -56,6 +49,8 @@ struct CameraView: View{
                     }
                     
                 }
+                
+                
                 
                 
                 Spacer()
@@ -95,23 +90,37 @@ struct CameraView: View{
                             }
                         }
                     }else{
-                        
-                        Button(action: camera.takePic, label: {
+                        HStack{
                             
-                            ZStack{
+                            Button(action: camera.takePic, label: {
                                 
-                                Circle()
-                                    .fill(Color("Black900"))
-                                    .frame(width: 54, height: 54)
+                                ZStack{
+                                    
+                                    Circle()
+                                        .fill(Color("Black900"))
+                                        .frame(width: 54, height: 54)
+                                    
+                                    Circle()
+                                        .stroke(Color.white, lineWidth: 6)
+                                        .frame(width: 64, height: 64)
+                                    
+                                }.padding(.bottom, 30)
+                                    .padding(.leading, 80)
                                 
-                                Circle()
-                                    .stroke(Color.white, lineWidth: 6)
-                                    .frame(width: 64, height: 64)
                                 
-                            }.padding(.bottom, 30)
-                            
-                            
-                        })
+                                
+                                
+                            })
+                            Spacer()
+                            Button(action: {
+                                camera.toggleCamera()
+                            }) {
+                                Image(systemName: "arrow.triangle.2.circlepath.camera")
+                                    .foregroundColor(.white)
+                                    .font(.title)
+                                    
+                            }.padding(.top, -25)
+                        }.padding(.horizontal, 80)
                         
                     }
                 }.frame(height: 75)

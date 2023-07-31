@@ -151,6 +151,7 @@ struct ExploreView: View {
                             //TASK : ANIMASI SLIDE TO CHECKIN
                             if !locationManager.isCheckedIn {
                                 SlideButton("Slide to capture momen", styling: .init(indicatorColor: Color("Redish400"), backgroundColor: .white, textColor: .black, indicatorSystemName: "arrow.right", textHiddenBehindIndicator: false, textShimmers: true), callback: sliderCallback)
+                                    .padding(.horizontal, 16)
                             } else {
                                 ZStack{
                                     RoundedRectangle(cornerRadius: 999)
@@ -168,7 +169,7 @@ struct ExploreView: View {
     //
                                     Text("You Already Checked In")
                                         .padding(.leading, 30)
-                                }
+                                }.padding(.horizontal, 16)
                             }
                         }
                     }
