@@ -14,6 +14,8 @@ struct questsCards : Identifiable{
     var type: DestinationCategory
 }
 
+//separate questlist in different file, improve readability
+
 private var questList = [
     questsCards(title: "Picnic Perfection", description: "Set up a charming picnic spot and capture the joy of sharing a meal with loved ones.", type: .park),
     questsCards(title: "Nature Trailblazer", description: "Explore a scenic nature trail and photograph fascinating flora and fauna along the way.", type: .nature),
@@ -40,49 +42,78 @@ private var questList = [
     questsCards(title: "Journey's End", description: "Capture the jubilant moments as you reach your travel milestones and cherish the experiences forever.", type: .nature)
 ]
 
+//good practice karena kalau ada beberapa type bisa menghindari typo. Kalau pake enum, salah ketik pasti muncul errornyaaahhhhh
+
 enum DestinationCategory: Int {
-    case nature = 0xff45B289
-    case artificial = 0xff515BA2
-    case beach = 0xff53B1C5
-    case park = 0xffFD9380
+    case nature
+    case artificial
+    case beach
+    case park
 }
 
 struct MissionCards: View {
     
     var body: some View {
         VStack {
-            
-            VStack (alignment: .leading) {
-                Text ("Fox Quests")
-                    .font(.system(size: 41))
-                    .foregroundColor(Color.black)
-                    .fontWeight(.semibold)
-                    .padding(.leading, 25)
-                    .padding(.top, 30)
+            VStack {
+                HStack {
+                    VStack (alignment: .leading) {
+                        Text ("Coastarina")
+                            .font(.system(size: 29))
+                            .padding(.leading, 20)
+                            .padding(.trailing, 25)
+                            .foregroundColor(Color.black)
+                            .fontWeight(.semibold)
+                            .padding(.top, 10)
+                        
+                        Text ("Finish the quest to earn a FoxStamp.")
+                            .font(.system(size: 16))
+                            .padding(.leading, 20)
+                            .padding(.trailing, 25)
+                            .multilineTextAlignment(.leading)
+                            .foregroundColor(Color.gray)
+                        
+                        ZStack {
+                            
+                            Rectangle()
+                                .frame(width: 150, height: 60)
+                                .cornerRadius(999)
+                                .foregroundColor(Color("Redish400"))
+                                .padding(.leading, 15)
+                            
+                            HStack (spacing: 12){
+                                Text("Check In")
+                                    .font(.custom("SFProDisplay-Medium", size: 17))
+                                    .foregroundColor(.white)
+                                
+                                Image(systemName: "arrow.up.right")
+                                    .foregroundColor(.white)
+                            }
+                            
+                        }
+                        
+                    }
+                    //improve ini
+                    Image ("stamp")
+                        .offset(x:30, y: 0)
+                }
                 
-                Text ("A series of captivating challenges designed to ignite your wanderlust and preserve every cherished moment along the way.")
-                    .font(.system(size: 16))
-                    .padding(.leading, 25)
-                    .padding(.trailing, 25)
-                    .multilineTextAlignment(.leading)
-                    .foregroundColor(Color.gray)
-                    .padding(.bottom)
-                    
+                //separate scrollview di view lain 
                 ScrollView {
                     VStack {
                         ForEach(questList) {
                             quest in
                             ZStack {
-                                Color(hex: quest.type.rawValue)
-                                    .frame(width: 350, height: 200, alignment: .center)
+                                Color(.white)
+                                    .frame(width: 350, height: 150, alignment: .center)
                                     .cornerRadius(15)
                                     
                                 HStack {
                                     VStack (alignment: .leading) {
-                                        Text ("Quest:")
+                                        
                                         Text(quest.title)
-                                            .font(.system(size: 22))
-                                            .foregroundColor(.white)
+                                            .font(.system(size: 20))
+                                            .foregroundColor(.gray)
                                             .padding(.bottom, 5)
                                         
                                         Text("Description:")
@@ -90,36 +121,20 @@ struct MissionCards: View {
                                         
                                         Text(quest.description)
                                             .font(.system(size: 10))
-                                            .foregroundColor(.white)
+                                            .foregroundColor(.gray)
                                         
                                     }
                                 
                                     Spacer()
                                     ZStack {
-                                        Image ("sticker")
+                                        Image ("locked")
                                             .resizable()
                                             .scaledToFit()
-                                            .frame(width: 180, height: 180)
-                                        
-                                        Image ("Fox")
-                                            .resizable()
-                                            .scaledToFit()
-                                            .frame(width: 110, height: 110)
+                                            .frame(width: 100, height: 100)
                                         
                                     }
                         
                                 }.padding(.horizontal)
-                                
-                                Circle ()
-                                    .frame(width: 115)
-                                    .foregroundColor(Color.gray)
-                                    .opacity(0.6)
-                                
-                                Image(systemName: "lock.fill")
-                                    .resizable()
-                                    .scaledToFit()
-                                    .frame(width: 50, height: 50)
-                                    .foregroundColor(.white)
                                 
                             }
                             .padding(.horizontal)
@@ -131,6 +146,7 @@ struct MissionCards: View {
     }
 }
 
+    
 struct MissionCards_Previews: PreviewProvider {
     static var previews: some View {
         MissionCards()
