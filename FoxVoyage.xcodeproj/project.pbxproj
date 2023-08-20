@@ -13,7 +13,6 @@
 		162522302A7620390047CC27 /* place.json in Resources */ = {isa = PBXBuildFile; fileRef = 1625222F2A7620390047CC27 /* place.json */; };
 		162522362A7656EF0047CC27 /* AddNoteToPhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162522352A7656EF0047CC27 /* AddNoteToPhotoView.swift */; };
 		1625223A2A76669D0047CC27 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162522392A76669D0047CC27 /* MainView.swift */; };
-		1625223C2A768B3B0047CC27 /* TestCamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1625223B2A768B3B0047CC27 /* TestCamView.swift */; };
 		1625223E2A7691BB0047CC27 /* FavoriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1625223D2A7691BB0047CC27 /* FavoriteView.swift */; };
 		16286A882A74DF85005A4A81 /* JourneyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16286A872A74DF85005A4A81 /* JourneyView.swift */; };
 		163A59E52A74D8CB00A861DA /* InformationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163A59E42A74D8CB00A861DA /* InformationViewModel.swift */; };
@@ -118,7 +117,6 @@
 		1625222F2A7620390047CC27 /* place.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = place.json; sourceTree = "<group>"; };
 		162522352A7656EF0047CC27 /* AddNoteToPhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteToPhotoView.swift; sourceTree = "<group>"; };
 		162522392A76669D0047CC27 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
-		1625223B2A768B3B0047CC27 /* TestCamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCamView.swift; sourceTree = "<group>"; };
 		1625223D2A7691BB0047CC27 /* FavoriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteView.swift; sourceTree = "<group>"; };
 		16286A872A74DF85005A4A81 /* JourneyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JourneyView.swift; sourceTree = "<group>"; };
 		163A59E42A74D8CB00A861DA /* InformationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationViewModel.swift; sourceTree = "<group>"; };
@@ -180,7 +178,7 @@
 		16AF6A122A68F38400A3C891 /* Views.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views.swift; sourceTree = "<group>"; };
 		16AF6A142A68F39800A3C891 /* filefile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = filefile.swift; sourceTree = "<group>"; };
 		16B13ECA2A735E210074B60A /* NearPlaceCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearPlaceCardView.swift; sourceTree = "<group>"; };
-		16B13ECE2A7362C10074B60A /* ExploreallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ExploreallView.swift; path = FoxVoyage/Views/ExploreallView.swift; sourceTree = SOURCE_ROOT; };
+		16B13ECE2A7362C10074B60A /* ExploreallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ExploreallView.swift; path = FoxVoyage/Views/TabBar/Explore/ExploreallView.swift; sourceTree = SOURCE_ROOT; };
 		16B13ED22A7403D30074B60A /* WishlistcardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishlistcardView.swift; sourceTree = "<group>"; };
 		16B13ED72A74109E0074B60A /* AddressModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressModel.swift; sourceTree = "<group>"; };
 		16B13ED92A7423CC0074B60A /* MissionCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionCardView.swift; sourceTree = "<group>"; };
@@ -237,11 +235,7 @@
 		163A59E82A74DCA400A861DA /* Information */ = {
 			isa = PBXGroup;
 			children = (
-				1625222B2A761E990047CC27 /* InformationLocationView.swift */,
-				162522292A761E640047CC27 /* InformationLocationSearchView.swift */,
 				16286A872A74DF85005A4A81 /* JourneyView.swift */,
-				216051FA2A6B882200301D1E /* InformationNameView.swift */,
-				1625222D2A761EBB0047CC27 /* LocationManager.swift */,
 			);
 			path = Information;
 			sourceTree = "<group>";
@@ -359,6 +353,7 @@
 		16AF6A022A68F0D400A3C891 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				1625222D2A761EBB0047CC27 /* LocationManager.swift */,
 				16AF6A142A68F39800A3C891 /* filefile.swift */,
 				163A59E42A74D8CB00A861DA /* InformationViewModel.swift */,
 				7217F7AC2A76314F0008E750 /* AppDelegate.swift */,
@@ -369,41 +364,15 @@
 		16AF6A032A68F0E000A3C891 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				72FEC1842A8F2B4600D5F4BE /* CaptureMoment */,
+				72FEC1832A8F2B4000D5F4BE /* CheckIn */,
+				72FEC17E2A8F28E400D5F4BE /* TabBar */,
+				72FEC1782A8F25F400D5F4BE /* OnBoardScreen */,
+				72FEC17C2A8F278C00D5F4BE /* DetailPlace */,
+				72FEC17D2A8F286B00D5F4BE /* Achivement */,
 				163A59E82A74DCA400A861DA /* Information */,
-				16EE195E2A71DAF300309BDA /* AddphotomissionView.swift */,
-				727427312A7675F800D06821 /* ImagePicker.swift */,
-				727427332A767A7500D06821 /* LocationMapAnnotationView.swift */,
-				7217F7B92A763CB40008E750 /* SlideButton.swift */,
-				165EED4B2A702856005EC89B /* AddphotoView.swift */,
-				16CDA8592A716B1E00BBD9CF /* AddplacetowlView.swift */,
-				16D764AE2A6FB33F0079917C /* CardView.swift */,
-				1625223B2A768B3B0047CC27 /* TestCamView.swift */,
-				16D764AC2A6FB2F60079917C /* CheckinView.swift */,
 				166BD69F2A72B13F002ED78D /* CoreDataRequestViews.swift */,
-				21DCD2072A71422600F55FC8 /* DetailedView.swift */,
-				16E0BF602A6D014E00B7FBC8 /* EmptywishlistView.swift */,
-				16B13ECE2A7362C10074B60A /* ExploreallView.swift */,
-				1625223D2A7691BB0047CC27 /* FavoriteView.swift */,
-				1685E4B82A6A18EA008F5FE7 /* ExploreView.swift */,
-				21A1C00B2A68F91200561254 /* GalleryAccessView.swift */,
-				16CDA83B2A712CC700BBD9CF /* JorneyfilledView.swift */,
-				216051F82A6A2B6600301D1E /* LocationAccessView.swift */,
-				D7D888BF2A6D07F0004F984E /* MissionCards.swift */,
-				16E0BF5E2A6CE50400B7FBC8 /* MissiondetailView.swift */,
-				16B13EDB2A74280C0074B60A /* AchivmentlistView.swift */,
-				21DCD20F2A71967000F55FC8 /* MomentCardModel.swift */,
-				21DCD20D2A71961B00F55FC8 /* MomentCardView.swift */,
-				21DCD20B2A71726400F55FC8 /* MomentsCapturedView.swift */,
-				16B7E0AA2A72B73C00102B5E /* OnboardingView.swift */,
-				166A06EE2A6A2690004D6E4B /* PlacedetailView.swift */,
-				D7A7621F2A7225F800DE143C /* ProfileMemoView.swift */,
-				D7A761FF2A70C91200DE143C /* UserProfileView.swift */,
 				16AF6A122A68F38400A3C891 /* Views.swift */,
-				D7A7621D2A71666600DE143C /* WeeklyView.swift */,
-				16BC610A2A6D3B6C002C6859 /* WishlistView.swift */,
-				16B13EDF2A74A5ED0074B60A /* PopoverView.swift */,
-				162522352A7656EF0047CC27 /* AddNoteToPhotoView.swift */,
-				162522392A76669D0047CC27 /* MainView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -437,6 +406,8 @@
 				166BD67D2A722C87002ED78D /* JsonManager.swift */,
 				1625222F2A7620390047CC27 /* place.json */,
 				166C3C222A7585CB00720782 /* Router.swift */,
+				727427312A7675F800D06821 /* ImagePicker.swift */,
+				7217F7B92A763CB40008E750 /* SlideButton.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -475,6 +446,136 @@
 				16D764B32A6FC80F0079917C /* AVFoundation.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		72FEC1782A8F25F400D5F4BE /* OnBoardScreen */ = {
+			isa = PBXGroup;
+			children = (
+				72FEC17B2A8F262C00D5F4BE /* UserInformation */,
+				72FEC17A2A8F262000D5F4BE /* Permission */,
+				72FEC1792A8F261000D5F4BE /* Walkthrough */,
+			);
+			path = OnBoardScreen;
+			sourceTree = "<group>";
+		};
+		72FEC1792A8F261000D5F4BE /* Walkthrough */ = {
+			isa = PBXGroup;
+			children = (
+				16B7E0AA2A72B73C00102B5E /* OnboardingView.swift */,
+			);
+			path = Walkthrough;
+			sourceTree = "<group>";
+		};
+		72FEC17A2A8F262000D5F4BE /* Permission */ = {
+			isa = PBXGroup;
+			children = (
+				21A1C00B2A68F91200561254 /* GalleryAccessView.swift */,
+				216051F82A6A2B6600301D1E /* LocationAccessView.swift */,
+			);
+			path = Permission;
+			sourceTree = "<group>";
+		};
+		72FEC17B2A8F262C00D5F4BE /* UserInformation */ = {
+			isa = PBXGroup;
+			children = (
+				1625222B2A761E990047CC27 /* InformationLocationView.swift */,
+				162522292A761E640047CC27 /* InformationLocationSearchView.swift */,
+				216051FA2A6B882200301D1E /* InformationNameView.swift */,
+			);
+			path = UserInformation;
+			sourceTree = "<group>";
+		};
+		72FEC17C2A8F278C00D5F4BE /* DetailPlace */ = {
+			isa = PBXGroup;
+			children = (
+				166A06EE2A6A2690004D6E4B /* PlacedetailView.swift */,
+				21DCD2072A71422600F55FC8 /* DetailedView.swift */,
+				16E0BF5E2A6CE50400B7FBC8 /* MissiondetailView.swift */,
+				21DCD20F2A71967000F55FC8 /* MomentCardModel.swift */,
+				21DCD20D2A71961B00F55FC8 /* MomentCardView.swift */,
+			);
+			path = DetailPlace;
+			sourceTree = "<group>";
+		};
+		72FEC17D2A8F286B00D5F4BE /* Achivement */ = {
+			isa = PBXGroup;
+			children = (
+				16B13EDB2A74280C0074B60A /* AchivmentlistView.swift */,
+				16B13EDF2A74A5ED0074B60A /* PopoverView.swift */,
+			);
+			path = Achivement;
+			sourceTree = "<group>";
+		};
+		72FEC17E2A8F28E400D5F4BE /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				72FEC17F2A8F28F200D5F4BE /* Explore */,
+				72FEC1802A8F290B00D5F4BE /* Wishlist */,
+				72FEC1812A8F291100D5F4BE /* JourneyMap */,
+				72FEC1822A8F292000D5F4BE /* Profile */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		72FEC17F2A8F28F200D5F4BE /* Explore */ = {
+			isa = PBXGroup;
+			children = (
+				1685E4B82A6A18EA008F5FE7 /* ExploreView.swift */,
+				162522392A76669D0047CC27 /* MainView.swift */,
+				16B13ECE2A7362C10074B60A /* ExploreallView.swift */,
+				16EE195E2A71DAF300309BDA /* AddphotomissionView.swift */,
+				162522352A7656EF0047CC27 /* AddNoteToPhotoView.swift */,
+				165EED4B2A702856005EC89B /* AddphotoView.swift */,
+				1625223D2A7691BB0047CC27 /* FavoriteView.swift */,
+			);
+			path = Explore;
+			sourceTree = "<group>";
+		};
+		72FEC1802A8F290B00D5F4BE /* Wishlist */ = {
+			isa = PBXGroup;
+			children = (
+				16E0BF602A6D014E00B7FBC8 /* EmptywishlistView.swift */,
+				16BC610A2A6D3B6C002C6859 /* WishlistView.swift */,
+				16CDA8592A716B1E00BBD9CF /* AddplacetowlView.swift */,
+			);
+			path = Wishlist;
+			sourceTree = "<group>";
+		};
+		72FEC1812A8F291100D5F4BE /* JourneyMap */ = {
+			isa = PBXGroup;
+			children = (
+				16CDA83B2A712CC700BBD9CF /* JorneyfilledView.swift */,
+				727427332A767A7500D06821 /* LocationMapAnnotationView.swift */,
+			);
+			path = JourneyMap;
+			sourceTree = "<group>";
+		};
+		72FEC1822A8F292000D5F4BE /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				D7A761FF2A70C91200DE143C /* UserProfileView.swift */,
+				D7A7621F2A7225F800DE143C /* ProfileMemoView.swift */,
+				D7A7621D2A71666600DE143C /* WeeklyView.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		72FEC1832A8F2B4000D5F4BE /* CheckIn */ = {
+			isa = PBXGroup;
+			children = (
+				16D764AE2A6FB33F0079917C /* CardView.swift */,
+				16D764AC2A6FB2F60079917C /* CheckinView.swift */,
+			);
+			path = CheckIn;
+			sourceTree = "<group>";
+		};
+		72FEC1842A8F2B4600D5F4BE /* CaptureMoment */ = {
+			isa = PBXGroup;
+			children = (
+				D7D888BF2A6D07F0004F984E /* MissionCards.swift */,
+				21DCD20B2A71726400F55FC8 /* MomentsCapturedView.swift */,
+			);
+			path = CaptureMoment;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -636,7 +737,6 @@
 				162522362A7656EF0047CC27 /* AddNoteToPhotoView.swift in Sources */,
 				16B13EDA2A7423CC0074B60A /* MissionCardView.swift in Sources */,
 				727427322A7675F800D06821 /* ImagePicker.swift in Sources */,
-				1625223C2A768B3B0047CC27 /* TestCamView.swift in Sources */,
 				166C3C232A7585CB00720782 /* Router.swift in Sources */,
 				D7D888C22A6D150E004F984E /* HexColor.swift in Sources */,
 				1625222C2A761E990047CC27 /* InformationLocationView.swift in Sources */,
