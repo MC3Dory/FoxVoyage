@@ -10,7 +10,7 @@ import SwiftUI
 struct GalleryAccessView: View {
     var body: some View {
         VStack{
-//            VStack{
+
             HStack{
                     Text("Enjoy")
                         .foregroundColor(Color("Black200"))
@@ -21,8 +21,7 @@ struct GalleryAccessView: View {
 
                 .frame(maxWidth: 355, alignment: .leading)
                 HStack{
-//                    Text("")
-//                        .font(.custom("SFProDisplay-Regular", size: 34))
+
                     Text("grant")
                         .foregroundColor(Color("Black200"))
                         .font(.custom("SFProDisplay-Regular", size: 34))
@@ -42,7 +41,6 @@ struct GalleryAccessView: View {
                     
                 }
                 .frame(maxWidth: 355, alignment: .leading)
-//            }
             
     
             

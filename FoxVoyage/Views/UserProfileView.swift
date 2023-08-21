@@ -10,28 +10,14 @@ import SwiftUI
 struct UserProfileView: View {
     @State private var currentTab: Int = 0
     @State private var currentNavBar: Int = 0
-    private let categories = ["Memories", "Record"]
     
     var body: some View {
         
         ZStack {
             VStack (alignment: .leading) {
-                Profile ()
-                
-                VStack (alignment: .leading, spacing: 0) {
-                    HStack {
-                        ForEach(0...categories.count - 1, id:\.self) { i in
-                            TabProfile (isActive: i == currentTab, text: categories[i])
-                                .onTapGesture {
-                                    currentTab = i
-                                }
-                        }
-                    }
-                    .padding(.leading)
-                    .padding(.trailing)
-                    .padding(.top)
-                    Divider()
-                }
+                TopProfileView ()
+
+                TabProfile(currentTab: $currentTab)
                 
                 if currentTab == 0 {
                     ProfileMemoView()
@@ -44,20 +30,8 @@ struct UserProfileView: View {
             .frame(maxHeight: .infinity)
             .ignoresSafeArea()
             
-            HStack {
-                BottomNavBar (image: Image(systemName: "magnifyingglass"), isSelected: currentNavBar == 0) {currentNavBar = 0}
-                BottomNavBar (image: Image(systemName: "bookmark"), isSelected: currentNavBar == 1) {currentNavBar = 1}
-                BottomNavBar (image: Image(systemName: "map"), isSelected: currentNavBar == 2) {currentNavBar = 2}
-                BottomNavBar (image: Image(systemName: "person.crop.circle.fill"), isSelected: currentNavBar == 3) {currentNavBar = 3}
-                
-            }
-            .frame(height: 50)
-            .padding()
-            .background(.white)
-            .clipShape(Capsule())
-            .padding()
-            .frame(maxHeight: .infinity, alignment: .bottom)
-            
+            BottomNavBar(currentNavBar: $currentNavBar)
+
         }
         
     }
@@ -69,42 +43,7 @@ struct UserProfileView_Previews: PreviewProvider {
     }
 }
 
-struct Profile: View {
-    var body: some View {
-        ZStack {
-            Image("ProfileBG")
-                .resizable()
-                .aspectRatio(contentMode: .fill)
-                .frame(maxWidth: 100)
-            //                .frame(width: 300)
-                .ignoresSafeArea()
-            
-            Circle()
-                .frame(width: 180)
-                .foregroundColor(Color("Redish400"))
-                .opacity(0.1)
-                .overlay(
-                    Image(systemName: "person.crop.circle")
-                        .resizable()
-                        .frame(width: 80, height: 80)
-                        .foregroundColor(Color("Redish400"))
-                )
-            
-            Text("Jonison")
-                .frame(height: 41)
-                .padding(.horizontal)
-                .background(.white)
-                .cornerRadius(20, corners: [.topLeft, .topRight, .bottomLeft])
-                .position(x: 120, y: 100)
-            
-        }
-        .frame(maxHeight: 300)
-        .background(.blue)
-        .ignoresSafeArea()
-    }
-}
-
-struct TabProfile: View {
+struct ProfileTabItem: View {
     let isActive: Bool
     let text: String
     
@@ -124,17 +63,24 @@ struct TabProfile: View {
     }
 }
 
-struct BottomNavBar: View {
-    let image: Image
-    let isSelected: Bool
-    let action: ()-> Void
-
+struct TabProfile: View {
+    @Binding var currentTab: Int
+    private let categories = ["Memories", "Record"]
+    
     var body: some View {
-        Button(action: action, label: {
-            image
-                .frame(maxWidth: .infinity)
-                .foregroundColor(isSelected ? Color("Redish400") : Color(.gray))
-                .font(.system(size: 25))
-        })
+        VStack (alignment: .leading, spacing: 0) {
+            HStack {
+                ForEach(0...categories.count - 1, id:\.self) { i in
+                    ProfileTabItem (isActive: i == currentTab, text: categories[i])
+                        .onTapGesture {
+                            currentTab = i
+                        }
+                }
+            }
+            .padding(.leading)
+            .padding(.trailing)
+            .padding(.top)
+            Divider()
+        }
     }
 }

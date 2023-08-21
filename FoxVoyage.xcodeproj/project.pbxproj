@@ -64,6 +64,9 @@
 		216051FB2A6B882200301D1E /* InformationNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216051FA2A6B882200301D1E /* InformationNameView.swift */; };
 		216052012A6D514E00301D1E /* InformationLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216052002A6D514E00301D1E /* InformationLocationView.swift */; };
 		21A1C00C2A68F91200561254 /* GalleryAccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A1C00B2A68F91200561254 /* GalleryAccessView.swift */; };
+		D780E3AB2A8F1642000B21BC /* MissionScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D780E3AA2A8F1642000B21BC /* MissionScrollView.swift */; };
+		D780E3AD2A8F5ED7000B21BC /* TopProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D780E3AC2A8F5ED7000B21BC /* TopProfileView.swift */; };
+		D780E3AF2A9080B6000B21BC /* BottomNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D780E3AE2A9080B6000B21BC /* BottomNavBar.swift */; };
 		D7A762002A70C91200DE143C /* UserProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A761FF2A70C91200DE143C /* UserProfileView.swift */; };
 		D7A7621C2A715E4800DE143C /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A7621B2A715E4800DE143C /* View.swift */; };
 		D7A7621E2A71666600DE143C /* WeeklyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A7621D2A71666600DE143C /* WeeklyView.swift */; };
@@ -133,6 +136,9 @@
 		216052002A6D514E00301D1E /* InformationLocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationLocationView.swift; sourceTree = "<group>"; };
 		21A1C00B2A68F91200561254 /* GalleryAccessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryAccessView.swift; sourceTree = "<group>"; };
 		21DCC53E2A68FAA6009B4A88 /* GalleryAccessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryAccessView.swift; sourceTree = "<group>"; };
+		D780E3AA2A8F1642000B21BC /* MissionScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionScrollView.swift; sourceTree = "<group>"; };
+		D780E3AC2A8F5ED7000B21BC /* TopProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopProfileView.swift; sourceTree = "<group>"; };
+		D780E3AE2A9080B6000B21BC /* BottomNavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomNavBar.swift; sourceTree = "<group>"; };
 		D7A761FF2A70C91200DE143C /* UserProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileView.swift; sourceTree = "<group>"; };
 		D7A7621B2A715E4800DE143C /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		D7A7621D2A71666600DE143C /* WeeklyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyView.swift; sourceTree = "<group>"; };
@@ -259,12 +265,15 @@
 				16E0BF5E2A6CE50400B7FBC8 /* MissiondetailView.swift */,
 				1696421C2A69A1C9000EAE19 /* MainView.swift */,
 				1685E4B82A6A18EA008F5FE7 /* ExploreView.swift */,
-				D7D888BF2A6D07F0004F984E /* MissionCards.swift */,
-				16E0BF602A6D014E00B7FBC8 /* EmptywishlistView.swift */,
 				16BC610A2A6D3B6C002C6859 /* WishlistView.swift */,
+				16E0BF602A6D014E00B7FBC8 /* EmptywishlistView.swift */,
+				D7D888BF2A6D07F0004F984E /* MissionCards.swift */,
 				D7A761FF2A70C91200DE143C /* UserProfileView.swift */,
 				D7A7621D2A71666600DE143C /* WeeklyView.swift */,
 				D7A7621F2A7225F800DE143C /* ProfileMemoView.swift */,
+				D780E3AA2A8F1642000B21BC /* MissionScrollView.swift */,
+				D780E3AC2A8F5ED7000B21BC /* TopProfileView.swift */,
+				D780E3AE2A9080B6000B21BC /* BottomNavBar.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -430,6 +439,7 @@
 				D7A762002A70C91200DE143C /* UserProfileView.swift in Sources */,
 				16AF6A0D2A68F37300A3C891 /* Testtt.swift in Sources */,
 				1685E4B92A6A18EA008F5FE7 /* ExploreView.swift in Sources */,
+				D780E3AF2A9080B6000B21BC /* BottomNavBar.swift in Sources */,
 				D7A7621E2A71666600DE143C /* WeeklyView.swift in Sources */,
 				21A1C00C2A68F91200561254 /* GalleryAccessView.swift in Sources */,
 				216051F92A6A2B6600301D1E /* LocationAccessView.swift in Sources */,
@@ -437,7 +447,9 @@
 				16BC61112A6D8455002C6859 /* PlaceModel.swift in Sources */,
 				16AF6A112A68F37F00A3C891 /* TestV.swift in Sources */,
 				16AF6A132A68F38400A3C891 /* Views.swift in Sources */,
+				D780E3AD2A8F5ED7000B21BC /* TopProfileView.swift in Sources */,
 				16AF6A0F2A68F37900A3C891 /* Test.swift in Sources */,
+				D780E3AB2A8F1642000B21BC /* MissionScrollView.swift in Sources */,
 				16AF69F32A68F08700A3C891 /* FoxVoyageApp.swift in Sources */,
 				D7D888C22A6D150E004F984E /* HexColor.swift in Sources */,
 				16E0BF5F2A6CE50400B7FBC8 /* MissiondetailView.swift in Sources */,

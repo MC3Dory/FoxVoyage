@@ -27,11 +27,7 @@ struct locationAccessView: View {
                 Text("authorize")
                     .foregroundColor(Color("Black200"))
                     .font(.custom("SFProDisplay-Regular", size: 34))
-//                Text("permission")
-//                    .font(.custom("SFProDisplay-Regular", size: 34))
-//                Text("untuk")
-//                    .foregroundColor(Color("Black200"))
-//                    .font(.custom("SFProDisplay-Regular", size: 34))
+
             }
             .frame(maxWidth: 355, alignment: .leading)
             HStack{
