@@ -48,7 +48,7 @@ struct FoxVoyageApp: App {
                         case .onboarding:
                             OnboardingView()
                         case .galleryAccess:
-                            GalleryAccessView()
+                            GalleryAccessView(galleryAcces: GalleryAccess())
                         case .infoLocation:
                             InformationLocationView()
                         case .infoLocationSearch(let locationManager):

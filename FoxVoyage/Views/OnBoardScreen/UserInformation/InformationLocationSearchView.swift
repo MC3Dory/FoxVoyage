@@ -21,23 +21,21 @@ struct InformationLocationSearchView: View {
                 Image(systemName: "magnifyingglass")
                     .foregroundColor(.gray)
                     
-                
                 TextField("home adress", text: $locationManager.searchText)
-                    .font(.custom("SFProDisplay-Regular", size: 17))
+                    .font(.body)
                     .padding(.trailing, 12.0)
                     .frame(maxWidth: 250, alignment: .leading)
                     .foregroundColor(Color("Redish400"))
                 
                 Image(systemName: "multiply")
                     .foregroundColor(.gray)
-                
-               
             }
             .padding(.horizontal, 24)
             .padding(.vertical, 0)
             .frame(width: 358, height: 56, alignment: .leading)
             .cornerRadius(999)
             .overlay(
+                
             RoundedRectangle(cornerRadius: 999)
             .inset(by: 0.5)
             .stroke(Color("Redish400"), lineWidth: 1))
@@ -63,15 +61,14 @@ struct InformationLocationSearchView: View {
                                         .foregroundColor(.white)
                                         .fontWeight(.semibold)
                                 }
-                               
                                 
                                 VStack(alignment: .leading, spacing: 4){
                                     Text(place.name ?? "")
-                                        .font(Font.custom("SF Pro Text", size: 17)
-                                          .weight(.medium))
+                                        .font(.body)
+                                        .fontWeight(.medium)
                                         .foregroundColor(Color(red: 0.77, green: 0.35, blue: 0.23))
                                     Text(place.locality ?? "")
-                                        .font(Font.custom("SF Pro Text", size: 15))
+                                        .font(.system(size: 15))
                                         .foregroundColor(Color(red: 0.77, green: 0.35, blue: 0.23))
                                 }
                             }
@@ -80,7 +77,6 @@ struct InformationLocationSearchView: View {
                             .background(Color(red: 1, green: 0.98, blue: 0.95))
                             .cornerRadius(30)
                         }
-
                     }
                 }
                 .listStyle(.plain)
@@ -93,7 +89,6 @@ struct InformationLocationSearchView: View {
                         locationManager.mapView.region = .init(center: coordinate, latitudinalMeters: 1000, longitudinalMeters: 1000)
                         locationManager.addDraggablePin(coordinate: coordinate)
                         locationManager.updatePlacemark(location: .init(latitude: coordinate.latitude, longitude: coordinate.longitude))
-                        
                     }
                 } label: {
                     Label {
@@ -104,81 +99,8 @@ struct InformationLocationSearchView: View {
                     }
                     .foregroundColor(.green)
                 }
-//                .frame(maxWidth: .infinity,alignment: .leading)
             }
-            
-//            HStack(alignment: .center, spacing: 16){
-//                ZStack{
-//                    Image("ellipse")
-//                    Image(systemName: "square.dashed")
-//                        .foregroundColor(.white)
-//                        .fontWeight(.semibold)
-//                }
-//
-//
-//                VStack(alignment: .leading, spacing: 4){
-//                    Text("Rusunawa BPJS Kabil")
-//                        .font(Font.custom("SF Pro Text", size: 17)
-//                          .weight(.medium))
-//                        .foregroundColor(Color(red: 0.77, green: 0.35, blue: 0.23))
-//                    Text("Batam")
-//                        .font(Font.custom("SF Pro Text", size: 15))
-//                        .foregroundColor(Color(red: 0.77, green: 0.35, blue: 0.23))
-//                }
-//            }
-//            .padding(12)
-//            .frame(width: 358, alignment: .leading)
-//            .background(Color(red: 1, green: 0.98, blue: 0.95))
-//            .cornerRadius(30)
-//
-//            HStack(alignment: .center, spacing: 16){
-//                ZStack{
-//                    Image("ellipse")
-//                    Image(systemName: "square.dashed")
-//                        .foregroundColor(.white)
-//                        .fontWeight(.semibold)
-//                }
-//
-//
-//                VStack(alignment: .leading, spacing: 4){
-//                    Text("Batu Aji")
-//                        .font(Font.custom("SF Pro Text", size: 17)
-//                          .weight(.medium))
-//                        .foregroundColor(Color(red: 0.77, green: 0.35, blue: 0.23))
-//                    Text("Batam")
-//                        .font(Font.custom("SF Pro Text", size: 15))
-//                        .foregroundColor(Color(red: 0.77, green: 0.35, blue: 0.23))
-//                }
-//            }
-//            .padding(12)
-//            .frame(width: 358, alignment: .leading)
-//            .background(Color(red: 1, green: 0.98, blue: 0.95))
-//            .cornerRadius(30)
-//
-//            HStack(alignment: .center, spacing: 16){
-//                ZStack{
-//                    Image("ellipse")
-//                    Image(systemName: "square.dashed")
-//                        .foregroundColor(.white)
-//                        .fontWeight(.semibold)
-//                }
-//
-//
-//                VStack(alignment: .leading, spacing: 4){
-//                    Text("Nongsa")
-//                        .font(Font.custom("SF Pro Text", size: 17)
-//                          .weight(.medium))
-//                        .foregroundColor(Color(red: 0.77, green: 0.35, blue: 0.23))
-//                    Text("Batam")
-//                        .font(Font.custom("SF Pro Text", size: 15))
-//                        .foregroundColor(Color(red: 0.77, green: 0.35, blue: 0.23))
-//                }
-//            }
-//            .padding(12)
-//            .frame(width: 358, alignment: .leading)
-//            .background(Color(red: 1, green: 0.98, blue: 0.95))
-//            .cornerRadius(30)
-            
+
             Spacer()
         }
         
@@ -218,7 +140,6 @@ struct InformationLocationSearchView: View {
                         }
                         .foregroundColor(.white)
                 }
-
             }
             .padding(.vertical, 3)
             .padding(.horizontal)
@@ -230,14 +151,6 @@ struct InformationLocationSearchView: View {
             .frame(alignment: .bottom)
         }
     }
-//    .onDisappear {
-//        locationManager.pickedLocation = nil
-//        locationManager.pickedPlaceMark = nil
-//
-//        locationManager.mapView.removeAnnotations(locationManager.mapView.annotations)
-//    }
-     
-    
 }
 
 struct InformationLocationSearchView_Previews: PreviewProvider {
@@ -245,13 +158,4 @@ struct InformationLocationSearchView_Previews: PreviewProvider {
         InformationLocationSearchView(locationManager: LocationManager())
             
     }
-}
-
-struct MapViewHelper: UIViewRepresentable{
-    @EnvironmentObject var locationManager: LocationManager
-    func makeUIView(context: Context) -> MKMapView {
-        return locationManager.mapView
-    }
-    
-    func updateUIView(_ uiView: MKMapView, context: Context) {}
 }

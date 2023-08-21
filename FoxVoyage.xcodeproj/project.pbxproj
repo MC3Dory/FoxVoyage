@@ -102,6 +102,9 @@
 		727427322A7675F800D06821 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727427312A7675F800D06821 /* ImagePicker.swift */; };
 		727427342A767A7500D06821 /* LocationMapAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727427332A767A7500D06821 /* LocationMapAnnotationView.swift */; };
 		727427352A768B9C00D06821 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16AF69F42A68F08700A3C891 /* ContentView.swift */; };
+		72FEC1862A9321E600D5F4BE /* ButtonOnBoardScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FEC1852A9321E600D5F4BE /* ButtonOnBoardScreen.swift */; };
+		72FEC1882A93243100D5F4BE /* GalleryAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FEC1872A93243100D5F4BE /* GalleryAccess.swift */; };
+		72FEC18A2A93369000D5F4BE /* MapViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FEC1892A93369000D5F4BE /* MapViewHelper.swift */; };
 		D7A762002A70C91200DE143C /* UserProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A761FF2A70C91200DE143C /* UserProfileView.swift */; };
 		D7A7621C2A715E4800DE143C /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A7621B2A715E4800DE143C /* View.swift */; };
 		D7A7621E2A71666600DE143C /* WeeklyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A7621D2A71666600DE143C /* WeeklyView.swift */; };
@@ -213,6 +216,9 @@
 		7274272E2A764DB100D06821 /* TebingLangit.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = TebingLangit.gpx; sourceTree = "<group>"; };
 		727427312A7675F800D06821 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		727427332A767A7500D06821 /* LocationMapAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationMapAnnotationView.swift; sourceTree = "<group>"; };
+		72FEC1852A9321E600D5F4BE /* ButtonOnBoardScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonOnBoardScreen.swift; sourceTree = "<group>"; };
+		72FEC1872A93243100D5F4BE /* GalleryAccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryAccess.swift; sourceTree = "<group>"; };
+		72FEC1892A93369000D5F4BE /* MapViewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewHelper.swift; sourceTree = "<group>"; };
 		D7A761FF2A70C91200DE143C /* UserProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileView.swift; sourceTree = "<group>"; };
 		D7A7621B2A715E4800DE143C /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		D7A7621D2A71666600DE143C /* WeeklyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyView.swift; sourceTree = "<group>"; };
@@ -232,14 +238,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		163A59E82A74DCA400A861DA /* Information */ = {
-			isa = PBXGroup;
-			children = (
-				16286A872A74DF85005A4A81 /* JourneyView.swift */,
-			);
-			path = Information;
-			sourceTree = "<group>";
-		};
 		166C3C0C2A75682200720782 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -256,6 +254,7 @@
 				16B13EDD2A74A5C90074B60A /* PopovercardView.swift */,
 				16B13ECA2A735E210074B60A /* NearPlaceCardView.swift */,
 				16B13ED22A7403D30074B60A /* WishlistcardView.swift */,
+				72FEC1852A9321E600D5F4BE /* ButtonOnBoardScreen.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -324,6 +323,7 @@
 		16AF69F12A68F08700A3C891 /* FoxVoyage */ = {
 			isa = PBXGroup;
 			children = (
+				16AF69F82A68F08800A3C891 /* Preview Content */,
 				7274272D2A764DB100D06821 /* KampungTerih.gpx */,
 				7274272E2A764DB100D06821 /* TebingLangit.gpx */,
 				16AF69F62A68F08800A3C891 /* Assets.xcassets */,
@@ -334,7 +334,6 @@
 				1696421F2A69A38E000EAE19 /* Fonts */,
 				16AF6A072A68F10600A3C891 /* Helpers */,
 				16AF6A062A68F10100A3C891 /* Models */,
-				16AF69F82A68F08800A3C891 /* Preview Content */,
 				16AF6A052A68F0ED00A3C891 /* Services */,
 				16AF6A022A68F0D400A3C891 /* ViewModels */,
 				16AF6A032A68F0E000A3C891 /* Views */,
@@ -357,6 +356,7 @@
 				16AF6A142A68F39800A3C891 /* filefile.swift */,
 				163A59E42A74D8CB00A861DA /* InformationViewModel.swift */,
 				7217F7AC2A76314F0008E750 /* AppDelegate.swift */,
+				72FEC1872A93243100D5F4BE /* GalleryAccess.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -370,7 +370,6 @@
 				72FEC1782A8F25F400D5F4BE /* OnBoardScreen */,
 				72FEC17C2A8F278C00D5F4BE /* DetailPlace */,
 				72FEC17D2A8F286B00D5F4BE /* Achivement */,
-				163A59E82A74DCA400A861DA /* Information */,
 				166BD69F2A72B13F002ED78D /* CoreDataRequestViews.swift */,
 				16AF6A122A68F38400A3C891 /* Views.swift */,
 			);
@@ -408,6 +407,7 @@
 				166C3C222A7585CB00720782 /* Router.swift */,
 				727427312A7675F800D06821 /* ImagePicker.swift */,
 				7217F7B92A763CB40008E750 /* SlideButton.swift */,
+				72FEC1892A93369000D5F4BE /* MapViewHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -488,6 +488,8 @@
 		72FEC17C2A8F278C00D5F4BE /* DetailPlace */ = {
 			isa = PBXGroup;
 			children = (
+				D7D888BF2A6D07F0004F984E /* MissionCards.swift */,
+				16CDA8592A716B1E00BBD9CF /* AddplacetowlView.swift */,
 				166A06EE2A6A2690004D6E4B /* PlacedetailView.swift */,
 				21DCD2072A71422600F55FC8 /* DetailedView.swift */,
 				16E0BF5E2A6CE50400B7FBC8 /* MissiondetailView.swift */,
@@ -509,6 +511,7 @@
 		72FEC17E2A8F28E400D5F4BE /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
+				162522392A76669D0047CC27 /* MainView.swift */,
 				72FEC17F2A8F28F200D5F4BE /* Explore */,
 				72FEC1802A8F290B00D5F4BE /* Wishlist */,
 				72FEC1812A8F291100D5F4BE /* JourneyMap */,
@@ -521,7 +524,6 @@
 			isa = PBXGroup;
 			children = (
 				1685E4B82A6A18EA008F5FE7 /* ExploreView.swift */,
-				162522392A76669D0047CC27 /* MainView.swift */,
 				16B13ECE2A7362C10074B60A /* ExploreallView.swift */,
 				16EE195E2A71DAF300309BDA /* AddphotomissionView.swift */,
 				162522352A7656EF0047CC27 /* AddNoteToPhotoView.swift */,
@@ -536,7 +538,6 @@
 			children = (
 				16E0BF602A6D014E00B7FBC8 /* EmptywishlistView.swift */,
 				16BC610A2A6D3B6C002C6859 /* WishlistView.swift */,
-				16CDA8592A716B1E00BBD9CF /* AddplacetowlView.swift */,
 			);
 			path = Wishlist;
 			sourceTree = "<group>";
@@ -544,6 +545,7 @@
 		72FEC1812A8F291100D5F4BE /* JourneyMap */ = {
 			isa = PBXGroup;
 			children = (
+				16286A872A74DF85005A4A81 /* JourneyView.swift */,
 				16CDA83B2A712CC700BBD9CF /* JorneyfilledView.swift */,
 				727427332A767A7500D06821 /* LocationMapAnnotationView.swift */,
 			);
@@ -572,7 +574,6 @@
 		72FEC1842A8F2B4600D5F4BE /* CaptureMoment */ = {
 			isa = PBXGroup;
 			children = (
-				D7D888BF2A6D07F0004F984E /* MissionCards.swift */,
 				21DCD20B2A71726400F55FC8 /* MomentsCapturedView.swift */,
 			);
 			path = CaptureMoment;
@@ -700,6 +701,7 @@
 				16CDA83C2A712CC700BBD9CF /* JorneyfilledView.swift in Sources */,
 				7217F7AD2A76314F0008E750 /* AppDelegate.swift in Sources */,
 				727427352A768B9C00D06821 /* ContentView.swift in Sources */,
+				72FEC1882A93243100D5F4BE /* GalleryAccess.swift in Sources */,
 				D7A762202A7225F800DE143C /* ProfileMemoView.swift in Sources */,
 				16286A882A74DF85005A4A81 /* JourneyView.swift in Sources */,
 				1625223A2A76669D0047CC27 /* MainView.swift in Sources */,
@@ -721,6 +723,7 @@
 				166BD6782A7207F2002ED78D /* DataController.swift in Sources */,
 				16B13EDE2A74A5C90074B60A /* PopovercardView.swift in Sources */,
 				16B13ED32A7403D30074B60A /* WishlistcardView.swift in Sources */,
+				72FEC1862A9321E600D5F4BE /* ButtonOnBoardScreen.swift in Sources */,
 				16CDA85A2A716B1E00BBD9CF /* AddplacetowlView.swift in Sources */,
 				1625223E2A7691BB0047CC27 /* FavoriteView.swift in Sources */,
 				D7A762002A70C91200DE143C /* UserProfileView.swift in Sources */,
@@ -737,6 +740,7 @@
 				162522362A7656EF0047CC27 /* AddNoteToPhotoView.swift in Sources */,
 				16B13EDA2A7423CC0074B60A /* MissionCardView.swift in Sources */,
 				727427322A7675F800D06821 /* ImagePicker.swift in Sources */,
+				72FEC18A2A93369000D5F4BE /* MapViewHelper.swift in Sources */,
 				166C3C232A7585CB00720782 /* Router.swift in Sources */,
 				D7D888C22A6D150E004F984E /* HexColor.swift in Sources */,
 				1625222C2A761E990047CC27 /* InformationLocationView.swift in Sources */,

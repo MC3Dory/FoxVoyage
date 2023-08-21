@@ -7,29 +7,16 @@
 
 import SwiftUI
 
-struct onboardingPage {
-    var image: String
-    var title: String
-    var description: String
-}
-
-private var onboardingSteps = [
-    onboardingPage(image: "maps", title: "Welcome to FoxVoyage!", description: "Get ready for an adventure of a lifetime! FoxVoyage gamifies your travels, transforming exploration into an exciting quest."),
-    onboardingPage(image: "badges", title: "Discover Hidden Gems", description: "Complete photo challenges, earn rewards, and uncover hidden gems along the way."),
-    onboardingPage(image: "album", title: "Cherish Your Memories", description: "Never let a precious memory fade away. FoxVoyage's organized picture storage ensures your travel moments are preserved forever. ")
-]
-
 struct OnboardingView: View {
     @EnvironmentObject var router: Router
     @State private var currentStep = 0
     @State var backToRoot: Bool = false
-    var orangeButton = 0xffC5593A
+    var btnColor = 0xffC5593A
     var bgColor = 0xff141736
     
     var body: some View {
         TabView(selection: $currentStep) {
             ForEach(0..<onboardingSteps.count,id:\.self) { it in
-                
                 VStack {
                     VStack {
                         Rectangle()
@@ -43,8 +30,7 @@ struct OnboardingView: View {
                                     .frame(maxWidth: .infinity)
                             }
                         
-                        VStack (alignment: .leading) {
-                            
+                        VStack(alignment: .leading) {
                             Text (onboardingSteps[it].title)
                                 .font(.system(size: 32))
                                 .fontWeight(.semibold)
@@ -54,18 +40,15 @@ struct OnboardingView: View {
                             Spacer()
                                 .frame(maxHeight: 10)
                             
-                            Text (onboardingSteps[it].description)
+                            Text(onboardingSteps[it].description)
                                 .font(.system(size:17))
                                 .foregroundColor (currentStep < onboardingSteps.count - 1 ? .black : .white)
                                 .multilineTextAlignment(.leading)
-                            
                         }
                         .tag(it)
-                        
                         .padding(16)
                         
                         Spacer(minLength: 25)
-                        
                     }
                     .background (currentStep < onboardingSteps.count - 1 ? .white : Color(hex: bgColor))
                     .ignoresSafeArea()
@@ -82,9 +65,8 @@ struct OnboardingView: View {
                                 .frame(width: 350, height: 50)
                                 .background (
                                     Capsule()
-                                        .fill(Color(hex: orangeButton))
+                                        .fill(Color(hex: btnColor))
                                 )
-                            
                         } else {
                             Button{
                                 router.push(.galleryAccess)
@@ -99,22 +81,13 @@ struct OnboardingView: View {
                                         .fill(Color.white)
                                 )
                             }
-                            
-                            
-                            
-                            
                         }
                     }
                 }.background(currentStep == 2 ? Color(hex: bgColor) : .white)
             }
             .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
-            
-            
         }
-        
         .navigationBarBackButtonHidden(true)
-        
-        
     }
     
     struct ContentView_Previews: PreviewProvider {
@@ -124,3 +97,14 @@ struct OnboardingView: View {
     }
 }
 
+struct onboardingPage {
+    var image: String
+    var title: String
+    var description: String
+}
+
+private var onboardingSteps = [
+    onboardingPage(image: "maps", title: "Welcome to FoxVoyage!", description: "Get ready for an adventure of a lifetime! FoxVoyage gamifies your travels, transforming exploration into an exciting quest."),
+    onboardingPage(image: "badges", title: "Discover Hidden Gems", description: "Complete photo challenges, earn rewards, and uncover hidden gems along the way."),
+    onboardingPage(image: "album", title: "Cherish Your Memories", description: "Never let a precious memory fade away. FoxVoyage's organized picture storage ensures your travel moments are preserved forever. ")
+]

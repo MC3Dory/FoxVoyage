@@ -265,6 +265,6 @@ struct PlacedetailView: View {
 
 struct PlacedetailView_Previews: PreviewProvider {
     static var previews: some View {
-        PlacedetailView(placeName: "String")
+        PlacedetailView(placeName: "Nuvasa Bay")
     }
 }

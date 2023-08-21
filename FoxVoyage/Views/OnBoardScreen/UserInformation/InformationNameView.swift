@@ -11,40 +11,27 @@ struct InformationNameView: View {
     @EnvironmentObject var viewModel : InformationViewModel
     @EnvironmentObject var router : Router
 
-    
     var body: some View {
         VStack{
             VStack{
-                Text("Welcome aboard!")
-                    .font(.custom("SFProDisplay-Regular", size: 34))
+                Text("Welcome aboard!\nWe're all set to begin, but first, what should \nwe call you?")
+                    .font(.largeTitle)
                     .frame(maxWidth: 355, alignment: .leading)
-                Text("We're all set to begin, ")
-                    .font(.custom("SFProDisplay-Regular", size: 34))
-                    .frame(maxWidth: 355, alignment: .leading)
-                Text("but first, what should ")
-                    .font(.custom("SFProDisplay-Regular", size: 34))
-                    .frame(maxWidth: 355, alignment: .leading)
-                Text("we call you?")
-                    .font(.custom("SFProDisplay-Regular", size: 34))
-                    .frame(maxWidth: 355, alignment: .leading)
-                
             }
             
             TextField("Your name....", text: $viewModel.name)
-                .font(.custom("SFProDisplay-Regular", size: 34))
+                .font(.largeTitle)
                 .frame(maxWidth: 355, alignment: .leading)
                 .foregroundColor(Color("Redish400"))
             
-            
             Spacer()
-            
             
             Button{
                 router.push(.infoLocation)
             } label: {
                 HStack{
                     Text("Next")
-                        .font(.custom("SFProText-Regular", size: 17))
+                        .font(.body)
                         .foregroundColor(.white)
                     Image(systemName: "arrow.up.forward")
                         .foregroundColor(.white)
@@ -52,13 +39,10 @@ struct InformationNameView: View {
                 .frame(maxWidth: 358, maxHeight: 64)
                 .background(viewModel.name.isEmpty ? Color.gray : Color("Redish400")).background(Color("Redish400"))
                 .cornerRadius(999)
-                
             }
             .disabled(viewModel.name.isEmpty)
         }
-        
         .navigationBarBackButtonHidden(true)
-        
     }
 }
 

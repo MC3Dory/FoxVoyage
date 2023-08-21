@@ -14,32 +14,26 @@ struct InformationLocationView: View {
     @EnvironmentObject var router : Router
     @Environment(\.dismiss) var dismiss
     @Environment(\.colorScheme) var scheme
-    
-    
-    
-    
+
     var body: some View {
         VStack{
             VStack{
                 Text("Hi, \(viewModel.name)")
                     .foregroundColor(Color("Black200"))
-                    .font(.custom("SFProDisplay-Regular", size: 34))
-                    .frame(maxWidth: 355, alignment: .leading)
                 Text("where do you reside?")
-                    .font(.custom("SFProDisplay-Regular", size: 34))
-                    .frame(maxWidth: 355, alignment: .leading)
-                
             }
+            .font(.largeTitle)
+            .frame(maxWidth: 355, alignment: .leading)
+            
             Button{
                 // MARK: Navigating To MapView
-                
                 router.push(.infoLocationSearch(locationManager: locationManager))
             } label: {
                 HStack{
                     Image(systemName: "magnifyingglass")
                         .foregroundColor(.gray)
                     
-                    if let place = locationManager.pickedPlaceMark{
+                    if locationManager.pickedPlaceMark != nil{
                         VStack(alignment: .leading) {
                             Text(locationManager.pickedPlaceMark?.name ?? "")
                                 .font(.title3.bold())
@@ -48,10 +42,9 @@ struct InformationLocationView: View {
                                 .font(.caption)
                                 .foregroundColor(.gray)
                         }
-                        
                     } else {
                         Text("home address")
-                            .font(.custom("SFProDisplay-Regular", size: 17))
+                            .font(.body)
                             .foregroundColor(.gray)
                             .padding(.trailing, 12.0)
                             .frame(maxWidth: 250, alignment: .leading)
@@ -67,6 +60,7 @@ struct InformationLocationView: View {
                         .stroke(Color(red: 0.82, green: 0.83, blue: 0.85), lineWidth: 1)
                 )
             }
+            
             Spacer()
             
             Button{
@@ -76,7 +70,7 @@ struct InformationLocationView: View {
             }label:{
                 HStack{
                     Text("Next")
-                        .font(.custom("SFProText-Regular", size: 17))
+                        .font(.body)
                         .foregroundColor(.white)
                     Image(systemName: "arrow.up.forward")
                         .foregroundColor(.white)
@@ -87,8 +81,6 @@ struct InformationLocationView: View {
                 
             }
         }
-       
         .navigationBarBackButtonHidden(true)
-        
     }
 }
