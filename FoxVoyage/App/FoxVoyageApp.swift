@@ -11,7 +11,7 @@ import SwiftUI
 struct FoxVoyageApp: App {
     var body: some Scene {
         WindowGroup {
-            PlacedetailView()
+            MissionCards()
         }
     }
 }
